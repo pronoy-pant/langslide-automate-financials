@@ -1,4 +1,5 @@
 import logo from "@/assets/langslide-logo.png";
+import logoIcon from "@/assets/langslide-icon.svg";
 import { Card } from "@/components/ui/card";
 
 const workflows = [
@@ -188,11 +189,14 @@ const Index = () => {
         <div className="absolute inset-0 gradient-primary opacity-5"></div>
         <div className="container mx-auto px-6 py-16 md:py-24 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <img 
-              src={logo} 
-              alt="Langslide" 
-              className="h-16 md:h-20 mx-auto mb-8 glow-effect"
-            />
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <img 
+                src={logoIcon} 
+                alt="Langslide Icon" 
+                className="h-16 md:h-20 glow-effect"
+              />
+              <h2 className="text-4xl md:text-6xl font-bold gradient-text">Langslide</h2>
+            </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               Intelligent Workflow Automation for{" "}
               <span className="gradient-text">Financial Services</span>
@@ -250,39 +254,22 @@ const Index = () => {
               </div>
 
               {/* Workflow Items */}
-              <div className="grid gap-6 md:gap-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {category.items.map((item, itemIndex) => (
                   <Card 
                     key={itemIndex}
-                    className="p-6 md:p-8 bg-card border-border hover:border-primary/30 transition-all duration-300 hover:glow-effect"
+                    className="p-6 bg-card border-border hover:border-primary/30 transition-all duration-300 hover:glow-effect flex flex-col"
                   >
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-lg gradient-primary flex items-center justify-center text-primary-foreground font-bold text-lg">
-                        {itemIndex + 1}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl md:text-2xl font-bold mb-4 text-foreground">
-                          {item.title}
-                        </h3>
-                        <div className="space-y-4">
-                          <div>
-                            <h4 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wide">
-                              Problem Statement
-                            </h4>
-                            <p className="text-muted-foreground leading-relaxed">
-                              {item.problem}
-                            </p>
-                          </div>
-                          <div>
-                            <h4 className="text-sm font-semibold text-accent mb-2 uppercase tracking-wide">
-                              Key Benefits & ROI
-                            </h4>
-                            <p className="text-muted-foreground leading-relaxed">
-                              {item.benefit}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                    <h3 className="text-xl font-bold mb-3 text-foreground">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-grow">
+                      {item.problem}
+                    </p>
+                    <div className="pt-4 border-t border-border">
+                      <p className="text-sm text-muted-foreground/80 leading-relaxed">
+                        {item.benefit}
+                      </p>
                     </div>
                   </Card>
                 ))}
@@ -296,11 +283,14 @@ const Index = () => {
       <footer className="py-12 md:py-16 bg-secondary/30">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <img 
-              src={logo} 
-              alt="Langslide" 
-              className="h-12 mx-auto mb-6 opacity-80"
-            />
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <img 
+                src={logoIcon} 
+                alt="Langslide Icon" 
+                className="h-10 opacity-80"
+              />
+              <h2 className="text-2xl font-bold gradient-text opacity-80">Langslide</h2>
+            </div>
             <p className="text-lg text-muted-foreground mb-6">
               Intelligent workflow automation for the financial services industry
             </p>
