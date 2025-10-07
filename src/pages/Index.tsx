@@ -1,181 +1,244 @@
-import logo from "@/assets/langslide-logo.png";
-import logoIcon from "@/assets/langslide-icon.svg";
+import logoIcon from "@/assets/langslide-icon.png";
 import { Card } from "@/components/ui/card";
+import { 
+  FileText, 
+  CreditCard, 
+  Shield, 
+  Users, 
+  TrendingUp, 
+  Umbrella,
+  Zap,
+  CircleDollarSign,
+  UserCheck,
+  Bell,
+  Eye,
+  RefreshCw,
+  Target,
+  AlertCircle,
+  CheckCircle,
+  Send,
+  FileCheck,
+  Database,
+  Lock,
+  MessageSquare,
+  Sparkles,
+  Heart,
+  BarChart3,
+  Briefcase,
+  LineChart,
+  FileSpreadsheet,
+  Globe,
+  UserCircle
+} from "lucide-react";
 
 const workflows = [
   {
     category: "Lending & Credit Automation",
-    description: "Streamline the entire credit lifecycle, from application to recovery",
+    description: "AI agents automate the entire credit lifecycle—from application to recovery",
+    icon: FileText,
     items: [
       {
-        title: "Automated Loan Application Data Collation",
-        problem: "Manually collecting and verifying applicant data from various sources is time-consuming, error-prone, and delays loan approval.",
-        benefit: "Reduces data collection time by over 90%, minimizes manual errors, shortens loan application-to-decision cycle."
+        title: "Loan Application Automation",
+        description: "AI agents collate data from multiple sources, verify documents, and create unified customer profiles",
+        icon: FileCheck,
+        metrics: "90% faster processing"
       },
       {
-        title: "Real-time Creditworthiness Assessment",
-        problem: "Traditional credit assessment relies on static credit bureau scores, which may not reflect a customer's current financial health.",
-        benefit: "Enables more accurate risk assessment, increases loan approval rates for deserving applicants, reduces default risk."
+        title: "Real-time Creditworthiness",
+        description: "Intelligent assessment using credit bureaus, bank statements, and alternative data sources",
+        icon: Target,
+        metrics: "15-20% approval increase"
       },
       {
-        title: "Automated Loan Disbursal & Repayment Reminders",
-        problem: "Manual processes for loan disbursal cause delays, and inconsistent follow-ups for EMI payments lead to higher delinquency rates.",
-        benefit: "Ensures instant loan disbursal post-approval, reduces late payments by 15-20% through proactive reminders."
+        title: "Smart Disbursal & Reminders",
+        description: "Automated loan disbursal with proactive EMI payment reminders via multiple channels",
+        icon: Bell,
+        metrics: "20% reduction in late payments"
       },
       {
-        title: "Smart Non-Performing Asset (NPA) Monitoring",
-        problem: "Identifying and managing potential NPAs relies on reactive, manual tracking, often after several defaults have already occurred.",
-        benefit: "Proactive identification of at-risk accounts, enables early intervention to prevent defaults, improves collection efficiency."
+        title: "NPA Monitoring",
+        description: "Proactive identification and early intervention for at-risk accounts",
+        icon: Eye,
+        metrics: "Early default prevention"
       },
       {
-        title: "Seamless Co-lending Partner Data Sync",
-        problem: "In co-lending partnerships, syncing loan data between a bank and fintech partner is often a manual, batch-based process.",
-        benefit: "Eliminates manual reconciliation, ensures both partners have a real-time view of the loan portfolio."
+        title: "Co-lending Sync",
+        description: "Real-time data synchronization between bank and fintech partners",
+        icon: RefreshCw,
+        metrics: "Zero reconciliation delays"
       }
     ]
   },
   {
     category: "Payments & Transaction Processing",
-    description: "Make payments faster, safer, and more efficient",
+    description: "AI agents make payments faster, safer, and more efficient across all channels",
+    icon: CreditCard,
     items: [
       {
-        title: "Automated Merchant Onboarding & KYC",
-        problem: "Onboarding merchants for payment processing involves extensive paperwork and manual verification.",
-        benefit: "Reduces merchant onboarding time from days to minutes, lowers operational costs, ensures compliance."
+        title: "Merchant Onboarding",
+        description: "Automated KYC verification with document OCR and compliance checks",
+        icon: UserCheck,
+        metrics: "Minutes vs days"
       },
       {
-        title: "Intelligent Transaction Routing",
-        problem: "Payment gateways experience revenue loss due to high transaction failure rates when servers or networks are down.",
-        benefit: "Increases payment success rates by 5-10%, reduces customer drop-offs at checkout, maximizes revenue."
+        title: "Intelligent Routing",
+        description: "Dynamic transaction routing based on real-time network health monitoring",
+        icon: Zap,
+        metrics: "5-10% success rate boost"
       },
       {
-        title: "Real-time Fraud Detection & Alerting",
-        problem: "Detecting fraudulent transactions after the fact leads to financial losses and damages reputation.",
-        benefit: "Significantly reduces fraud losses, protects customers from unauthorized transactions, minimizes chargeback penalties."
+        title: "Fraud Detection",
+        description: "Real-time AI-powered fraud screening with instant alerts",
+        icon: Shield,
+        metrics: "Significant loss reduction"
       },
       {
-        title: "Automated Chargeback Dispute Management",
-        problem: "Managing chargeback disputes is a manual, evidence-intensive process, often leading to missed deadlines and lost revenue.",
-        benefit: "Increases chargeback win rate, reduces manual effort by up to 80%, prevents revenue loss."
+        title: "Chargeback Management",
+        description: "Automated evidence collection and dispute resolution",
+        icon: AlertCircle,
+        metrics: "80% effort reduction"
       },
       {
-        title: "QR Code Payment Reconciliation for Merchants",
-        problem: "Small merchants using QR code payments from multiple providers struggle to reconcile daily collections manually.",
-        benefit: "Saves merchants hours of manual reconciliation work, provides clear visibility into daily earnings."
+        title: "QR Payment Reconciliation",
+        description: "Multi-provider payment reconciliation for merchants",
+        icon: CheckCircle,
+        metrics: "Daily auto-reconciliation"
       }
     ]
   },
   {
     category: "Compliance & Risk Management",
-    description: "Stay compliant with regulations and manage risk effectively",
+    description: "AI agents ensure continuous compliance and proactive risk management",
+    icon: Shield,
     items: [
       {
-        title: "Continuous AML/CFT Transaction Monitoring",
-        problem: "Periodic, batch-based checks for Anti-Money Laundering can miss suspicious activities that occur between checks.",
-        benefit: "Ensures real-time compliance with regulatory requirements, significantly reduces risk of heavy fines."
+        title: "AML/CFT Monitoring",
+        description: "Continuous transaction monitoring with sanctions screening",
+        icon: Eye,
+        metrics: "Real-time compliance"
       },
       {
-        title: "Automated Regulatory Reporting",
-        problem: "Financial institutions must submit numerous reports to regulators. Manually compiling this data is laborious and prone to errors.",
-        benefit: "Drastically reduces time spent on report generation, improves data accuracy, minimizes risk of non-compliance penalties."
+        title: "Regulatory Reporting",
+        description: "Automated data aggregation and report generation for regulators",
+        icon: FileSpreadsheet,
+        metrics: "Hours vs weeks"
       },
       {
-        title: "Centralized Compliance Audit Trail Generation",
-        problem: "During audits, gathering evidence of compliance from disparate systems is a chaotic and time-consuming process.",
-        benefit: "Simplifies audit preparation from weeks to hours, provides irrefutable proof of process adherence."
+        title: "Audit Trail Generation",
+        description: "Centralized compliance evidence with immutable logging",
+        icon: Database,
+        metrics: "Instant audit readiness"
       },
       {
-        title: "Third-party Vendor Risk Assessment",
-        problem: "Onboarding and monitoring third-party vendors for compliance and security risks is often overlooked.",
-        benefit: "Standardizes vendor due diligence, provides clear and objective view of vendor risk, protects from third-party breaches."
+        title: "Vendor Risk Assessment",
+        description: "Automated third-party security and compliance evaluation",
+        icon: Lock,
+        metrics: "Standardized due diligence"
       },
       {
-        title: "Automated Policy & Procedure Updates Dissemination",
-        problem: "Ensuring all employees have read and acknowledged policy changes when regulations change is a logistical nightmare.",
-        benefit: "Ensures rapid and auditable dissemination of critical policy updates, guarantees employee acknowledgment."
+        title: "Policy Updates",
+        description: "Automated dissemination and acknowledgment tracking",
+        icon: Send,
+        metrics: "100% coverage guarantee"
       }
     ]
   },
   {
     category: "Customer Operations & Experience",
-    description: "Improve customer satisfaction and enable personalized engagement",
+    description: "AI agents enable personalized, omnichannel customer engagement at scale",
+    icon: Users,
     items: [
       {
-        title: "AI-powered Customer Support Ticket Triage",
-        problem: "Manually reading, categorizing, and routing each customer query to the right agent is inefficient and slow.",
-        benefit: "Reduces first-response time significantly, improves agent productivity, ensures high-priority issues are addressed first."
+        title: "AI Support Triage",
+        description: "Intelligent categorization and routing with sentiment analysis",
+        icon: MessageSquare,
+        metrics: "Instant prioritization"
       },
       {
-        title: "Automated Cross-sell/Up-sell Offer Generation",
-        problem: "Identifying opportunities to offer existing customers relevant new products is often based on guesswork rather than data.",
-        benefit: "Increases customer lifetime value, improves cross-sell conversion rates through timely and relevant offers."
+        title: "Cross-sell Generation",
+        description: "Data-driven product recommendations at the right moment",
+        icon: Sparkles,
+        metrics: "Higher conversion rates"
       },
       {
-        title: "Personalized Financial Advisory Nudges",
-        problem: "Customers often lack the financial literacy or discipline to make optimal financial decisions.",
-        benefit: "Improves customer financial health, increases engagement with investment and insurance products."
+        title: "Financial Nudges",
+        description: "Personalized advisory based on transaction patterns",
+        icon: Heart,
+        metrics: "Improved financial health"
       },
       {
-        title: "Omnichannel Customer Complaint Resolution",
-        problem: "When a customer complains on social media, the issue is often handled in isolation from their previous interactions.",
-        benefit: "Provides unified 360-degree view of the customer, enables faster and more contextual problem-solving."
+        title: "Omnichannel Resolution",
+        description: "Unified customer view across all touchpoints",
+        icon: Globe,
+        metrics: "360-degree context"
       },
       {
-        title: "Automated Customer Offboarding & Data Archival",
-        problem: "When a customer closes their account, the process of revoking access and archiving data is often manual and forgotten.",
-        benefit: "Ensures compliance with data retention regulations, mitigates security risks from dormant active accounts."
+        title: "Account Offboarding",
+        description: "Automated access revocation and compliant data archival",
+        icon: UserCircle,
+        metrics: "Zero security gaps"
       }
     ]
   },
   {
     category: "Investment & Wealth Management",
-    description: "Automate key processes for venture capital and asset management",
+    description: "AI agents automate portfolio management and investment operations",
+    icon: TrendingUp,
     items: [
       {
-        title: "Automated Portfolio Rebalancing Alerts",
-        problem: "An investor's portfolio can drift from its target allocation due to market movements. Manually tracking deviations is impossible.",
-        benefit: "Ensures portfolios remain aligned with investment goals, helps manage risk proactively."
+        title: "Portfolio Rebalancing",
+        description: "Daily deviation tracking with actionable recommendations",
+        icon: BarChart3,
+        metrics: "Proactive risk management"
       },
       {
-        title: "Due Diligence Data Room Automation for VCs",
-        problem: "Manually requesting, tracking, and organizing documents in a data room during fundraising is tedious and inefficient.",
-        benefit: "Streamlines due diligence process, saves hours of administrative work, accelerates investment decision-making."
+        title: "Due Diligence Automation",
+        description: "Structured data room creation and document tracking for VCs",
+        icon: Briefcase,
+        metrics: "Accelerated decisions"
       },
       {
-        title: "Real-time Market Sentiment Analysis & Alerts",
-        problem: "Traders need to stay on top of market-moving news and social media sentiment, but manually tracking is impossible.",
-        benefit: "Provides early warning system for potential market volatility, enables faster reaction to breaking news."
+        title: "Market Sentiment Analysis",
+        description: "Real-time news and social media monitoring with alerts",
+        icon: LineChart,
+        metrics: "Early warning system"
       },
       {
-        title: "Automated Capital Call & Distribution Notices",
-        problem: "For VCs and private equity funds, issuing capital call notices to Limited Partners involves complex manual calculations.",
-        benefit: "Eliminates manual calculation errors, drastically reduces administrative time, provides secure communication channel."
+        title: "Capital Call Notices",
+        description: "Automated calculation and secure distribution to LPs",
+        icon: CircleDollarSign,
+        metrics: "Error-free processing"
       },
       {
-        title: "New Fund Offer (NFO) Subscription Process Automation",
-        problem: "During an NFO, AMCs receive a massive influx of applications. Manually processing these is a huge operational challenge.",
-        benefit: "Scales to handle high volumes without manual intervention, reduces processing errors, shortens time to unit allocation."
+        title: "NFO Processing",
+        description: "High-volume subscription handling with instant verification",
+        icon: FileCheck,
+        metrics: "Scalable operations"
       }
     ]
   },
   {
-    category: "Insurance & Cross-functional Automation",
-    description: "Comprehensive automation across insurance and multi-domain processes",
+    category: "Insurance & Cross-functional",
+    description: "AI agents provide comprehensive automation across insurance and multi-domain processes",
+    icon: Umbrella,
     items: [
       {
-        title: "Automated Insurance Claim Processing & Verification",
-        problem: "Initial processing of insurance claims involves significant manual effort in verifying policy details and collecting documents.",
-        benefit: "Reduces claim settlement time from weeks to days, lowers claim processing costs by 30%+, enhances customer satisfaction."
+        title: "Claim Processing",
+        description: "Automated verification, fraud detection, and instant approval for simple claims",
+        icon: CheckCircle,
+        metrics: "Days to minutes settlement"
       },
       {
-        title: "Cross-border Remittance Compliance Checks",
-        problem: "Processing international payments requires stringent compliance checks at multiple stages, making the process slow and complex.",
-        benefit: "Ensures full compliance with international and local regulations, reduces risk of penalties, accelerates remittance process."
+        title: "Remittance Compliance",
+        description: "Multi-stage compliance checks for cross-border payments",
+        icon: Globe,
+        metrics: "Full regulatory adherence"
       },
       {
-        title: "Unified Customer Financial View (360-degree Profile)",
-        problem: "A single customer may have multiple products with a bank. Data is often siloed, preventing holistic view of customer relationship.",
-        benefit: "Empowers relationship managers with complete view, enables personalized conversations, increases cross-selling effectiveness."
+        title: "360° Customer View",
+        description: "Unified financial profile across all products and touchpoints",
+        icon: UserCircle,
+        metrics: "Complete relationship insights"
       }
     ]
   }
@@ -202,7 +265,7 @@ const Index = () => {
               <span className="gradient-text">Financial Services</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-              Transform your lending, payments, compliance, and customer operations with AI-powered automation
+              AI agents that automate complex workflows across lending, payments, compliance, and operations
             </p>
             <div className="inline-block px-8 py-4 rounded-lg bg-secondary/50 backdrop-blur-sm border border-border">
               <p className="text-lg text-foreground">
@@ -224,7 +287,7 @@ const Index = () => {
               Streamline Your Entire Financial Operations
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              From loan origination to payment processing, from regulatory compliance to customer experience—our intelligent automation workflows help BFSI organizations reduce manual effort by up to 90%, accelerate decision-making, and ensure regulatory compliance at every step.
+              Intelligent AI agents handle complex workflows end-to-end—from loan origination to payment processing, compliance monitoring to customer engagement. Reduce manual effort by 90%, accelerate decisions, and maintain continuous regulatory compliance.
             </p>
           </div>
         </div>
@@ -240,15 +303,15 @@ const Index = () => {
             <div className="max-w-6xl mx-auto">
               {/* Category Header */}
               <div className="mb-12 text-center">
-                <div className="inline-block px-6 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
-                  <span className="text-sm font-semibold gradient-text uppercase tracking-wider">
-                    Category {categoryIndex + 1}
-                  </span>
+                <div className="inline-flex items-center justify-center gap-3 mb-6">
+                  <div className="p-4 rounded-2xl bg-primary/10 border border-primary/20">
+                    <category.icon className="w-8 h-8 text-primary" />
+                  </div>
                 </div>
                 <h2 className="text-3xl md:text-5xl font-bold mb-4">
                   {category.category}
                 </h2>
-                <p className="text-xl text-muted-foreground">
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                   {category.description}
                 </p>
               </div>
@@ -258,17 +321,22 @@ const Index = () => {
                 {category.items.map((item, itemIndex) => (
                   <Card 
                     key={itemIndex}
-                    className="p-6 bg-card border-border hover:border-primary/30 transition-all duration-300 hover:glow-effect flex flex-col"
+                    className="p-6 bg-card border-border hover:border-primary/30 transition-all duration-300 hover:glow-effect group"
                   >
+                    <div className="mb-4">
+                      <div className="inline-flex p-3 rounded-xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                        <item.icon className="w-6 h-6 text-primary" />
+                      </div>
+                    </div>
                     <h3 className="text-xl font-bold mb-3 text-foreground">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-grow">
-                      {item.problem}
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      {item.description}
                     </p>
-                    <div className="pt-4 border-t border-border">
-                      <p className="text-sm text-muted-foreground/80 leading-relaxed">
-                        {item.benefit}
+                    <div className="pt-4 border-t border-border mt-auto">
+                      <p className="text-sm font-semibold gradient-text">
+                        {item.metrics}
                       </p>
                     </div>
                   </Card>
