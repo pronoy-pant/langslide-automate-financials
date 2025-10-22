@@ -214,9 +214,9 @@ const Navigation = () => {
             </Link>
 
             <Button asChild size="default" className="ml-3">
-              <a href="mailto:hello@langslide.com">
-                Contact
-              </a>
+              <Link to="/request-demo">
+                Request a Demo
+              </Link>
             </Button>
           </div>
         </div>

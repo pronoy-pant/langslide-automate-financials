@@ -13,6 +13,7 @@ import RealEstate from "./pages/industries/RealEstate";
 import Logistics from "./pages/industries/Logistics";
 import HR from "./pages/industries/HR";
 import Pricing from "./pages/Pricing";
+import RequestDemo from "./pages/RequestDemo";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/industries/logistics" element={<Logistics />} />
           <Route path="/industries/hr" element={<HR />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/request-demo" element={<RequestDemo />} />
           <Route path="/bfsi" element={<Navigate to="/industries/financial-services" replace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
