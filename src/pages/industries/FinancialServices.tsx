@@ -1,4 +1,3 @@
-import logoIcon from "@/assets/langslide-icon.png";
 import { Card } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import {
@@ -255,15 +254,7 @@ const BFSI = () => {
       <header className="relative overflow-hidden border-b border-border">
         <div className="absolute inset-0 gradient-primary opacity-5"></div>
         <div className="container mx-auto px-6 py-16 md:py-24 relative">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <img 
-                src={logoIcon} 
-                alt="Langslide Icon" 
-                className="h-16 md:h-20 glow-effect"
-              />
-              <h2 className="text-4xl md:text-6xl font-bold gradient-text">Langslide</h2>
-            </div>
+          <div className="max-w-5xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               Intelligent Workflow Automation for{" "}
               <span className="gradient-text">Financial Services</span>
@@ -355,16 +346,8 @@ const BFSI = () => {
       <footer className="py-12 md:py-16 bg-secondary/30">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <img 
-                src={logoIcon} 
-                alt="Langslide Icon" 
-                className="h-10 opacity-80"
-              />
-              <h2 className="text-2xl font-bold gradient-text opacity-80">Langslide</h2>
-            </div>
             <p className="text-lg text-muted-foreground mb-6">
-              Intelligent workflow automation for the financial services industry
+              Ready to transform your financial services operations?
             </p>
             <div className="inline-block px-8 py-4 rounded-lg bg-card border border-border">
               <p className="text-base text-foreground">
