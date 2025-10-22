@@ -57,13 +57,13 @@ const Navigation = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <img 
               src={logoIcon} 
               alt="Langslide Icon" 
               className="h-14 w-auto transition-transform group-hover:scale-105"
             />
-            <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-none">Langslide</span>
+            <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent whitespace-nowrap">Langslide</span>
           </Link>
 
           {/* Navigation Links */}
@@ -168,16 +168,16 @@ const Navigation = () => {
             </DropdownMenu>
 
             <Link 
-              to="/pricing" 
+              to="/request-demo" 
               className="px-5 py-2.5 rounded-full text-foreground hover:bg-secondary transition-all font-medium"
             >
-              Pricing
+              Request Demo
             </Link>
 
             <Button asChild size="default" className="ml-3">
-              <Link to="/request-demo">
-                Request a Demo
-              </Link>
+              <a href="mailto:hello@langslide.com">
+                Contact Us
+              </a>
             </Button>
           </div>
         </div>

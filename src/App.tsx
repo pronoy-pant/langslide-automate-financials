@@ -20,8 +20,9 @@ import Marketing from "./pages/functions/Marketing";
 import Sales from "./pages/functions/Sales";
 import RevenueOperations from "./pages/functions/RevenueOperations";
 import Product from "./pages/functions/Product";
-import Pricing from "./pages/Pricing";
 import RequestDemo from "./pages/RequestDemo";
+import Terms from "./pages/legal/Terms";
+import Privacy from "./pages/legal/Privacy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -50,8 +51,9 @@ const App = () => (
           <Route path="/functions/sales" element={<Sales />} />
           <Route path="/functions/revenue-operations" element={<RevenueOperations />} />
           <Route path="/functions/product" element={<Product />} />
-          <Route path="/pricing" element={<Pricing />} />
           <Route path="/request-demo" element={<RequestDemo />} />
+          <Route path="/legal/terms" element={<Terms />} />
+          <Route path="/legal/privacy" element={<Privacy />} />
           <Route path="/bfsi" element={<Navigate to="/industries/financial-services" replace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

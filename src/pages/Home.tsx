@@ -2,6 +2,9 @@ import { Card } from "@/components/ui/card";
 import { CTA } from "@/components/ui/call-to-action";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
+import { SecuritySection } from "@/components/SecuritySection";
+import { CustomerStories } from "@/components/CustomerStories";
 import { Link } from "react-router-dom";
 import {
   Zap,
@@ -347,8 +350,14 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Security Section */}
+      <SecuritySection />
+
+      {/* Customer Stories */}
+      <CustomerStories />
+
       {/* CTA Section */}
-      <CTA 
+      <CTA
         badge="Get Started"
         title="Ready to Transform Your Operations?"
         description="Discover how Langslide's AI agents can automate complex workflows across your enterprise. From reducing manual work to ensuring compliance, we help businesses across all industries operate smarter and faster."
@@ -359,28 +368,7 @@ const Home = () => {
       />
 
       {/* Footer */}
-      <footer className="py-16 md:py-20 bg-secondary/30 border-t border-border">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-2xl font-bold gradient-text mb-6">
-              Langslide
-            </p>
-            <p className="text-lg text-muted-foreground mb-8">
-              AI agents for enterprise automation
-            </p>
-            <Button asChild size="lg">
-              <a href="mailto:hello@langslide.com">
-                Contact us
-              </a>
-            </Button>
-            <div className="mt-12 pt-8 border-t border-border">
-              <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} Langslide. All rights reserved.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
