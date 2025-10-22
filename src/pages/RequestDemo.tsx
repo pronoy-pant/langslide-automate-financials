@@ -16,11 +16,32 @@ import {
 } from "@/components/ui/select";
 import { toast } from "sonner";
 
+const countryCodes = [
+  { code: "+1", country: "US/CA", flag: "🇺🇸" },
+  { code: "+44", country: "UK", flag: "🇬🇧" },
+  { code: "+91", country: "IN", flag: "🇮🇳" },
+  { code: "+86", country: "CN", flag: "🇨🇳" },
+  { code: "+81", country: "JP", flag: "🇯🇵" },
+  { code: "+49", country: "DE", flag: "🇩🇪" },
+  { code: "+33", country: "FR", flag: "🇫🇷" },
+  { code: "+39", country: "IT", flag: "🇮🇹" },
+  { code: "+34", country: "ES", flag: "🇪🇸" },
+  { code: "+61", country: "AU", flag: "🇦🇺" },
+  { code: "+55", country: "BR", flag: "🇧🇷" },
+  { code: "+52", country: "MX", flag: "🇲🇽" },
+  { code: "+7", country: "RU", flag: "🇷🇺" },
+  { code: "+82", country: "KR", flag: "🇰🇷" },
+  { code: "+65", country: "SG", flag: "🇸🇬" },
+  { code: "+971", country: "AE", flag: "🇦🇪" },
+  { code: "+27", country: "ZA", flag: "🇿🇦" },
+];
+
 const formSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(100),
   lastName: z.string().trim().min(1, "Last name is required").max(100),
   email: z.string().trim().email("Invalid email address").max(255),
-  phone: z.string().trim().min(10, "Phone number must be at least 10 digits").max(20),
+  countryCode: z.string().min(1, "Country code is required"),
+  phone: z.string().trim().min(6, "Phone number must be at least 6 digits").max(15),
   language: z.string().min(1, "Language is required"),
   companyHeadcount: z.string().min(1, "Company headcount is required"),
   useCase: z.string().trim().max(1000, "Use case must be less than 1000 characters").optional(),
@@ -133,15 +154,35 @@ const RequestDemo = () => {
               <Label htmlFor="phone">
                 Phone Number <span className="text-destructive">*</span>
               </Label>
-              <Input
-                id="phone"
-                type="tel"
-                {...register("phone")}
-                placeholder="+1 (555) 123-4567"
-                className={errors.phone ? "border-destructive" : ""}
-              />
-              {errors.phone && (
-                <p className="text-sm text-destructive">{errors.phone.message}</p>
+              <div className="flex gap-2">
+                <Select onValueChange={(value) => setValue("countryCode", value)} defaultValue="+1">
+                  <SelectTrigger className={`w-[140px] ${errors.countryCode ? "border-destructive" : ""}`}>
+                    <SelectValue placeholder="Code" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white z-50">
+                    {countryCodes.map((item) => (
+                      <SelectItem key={item.code} value={item.code}>
+                        <span className="flex items-center gap-2">
+                          <span>{item.flag}</span>
+                          <span>{item.code}</span>
+                          <span className="text-xs text-muted-foreground">({item.country})</span>
+                        </span>
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <Input
+                  id="phone"
+                  type="tel"
+                  {...register("phone")}
+                  placeholder="555-123-4567"
+                  className={`flex-1 ${errors.phone ? "border-destructive" : ""}`}
+                />
+              </div>
+              {(errors.countryCode || errors.phone) && (
+                <p className="text-sm text-destructive">
+                  {errors.countryCode?.message || errors.phone?.message}
+                </p>
               )}
             </div>
 
