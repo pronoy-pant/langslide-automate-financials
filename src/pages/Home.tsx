@@ -1,5 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { CTA } from "@/components/ui/call-to-action";
+import { Button } from "@/components/ui/button";
+import Navigation from "@/components/Navigation";
 import { Link } from "react-router-dom";
 import {
   Zap,
@@ -54,8 +56,7 @@ const industries = [
       "Real-time fraud detection & compliance",
       "Automated KYC and document verification"
     ],
-    link: "/industries/financial-services",
-    color: "from-blue-500/20 to-cyan-500/20"
+    link: "/industries/financial-services"
   },
   {
     icon: Heart,
@@ -67,8 +68,7 @@ const industries = [
       "AI-powered claims processing",
       "Real-time patient data verification"
     ],
-    link: "/industries/healthcare",
-    color: "from-pink-500/20 to-rose-500/20"
+    link: "/industries/healthcare"
   },
   {
     icon: ShoppingCart,
@@ -80,8 +80,7 @@ const industries = [
       "Automated order fulfillment",
       "Real-time inventory sync"
     ],
-    link: "/industries/retail",
-    color: "from-yellow-500/20 to-orange-500/20"
+    link: "/industries/retail"
   },
   {
     icon: Factory,
@@ -93,8 +92,7 @@ const industries = [
       "Supply chain optimization",
       "Automated quality control"
     ],
-    link: "/industries/manufacturing",
-    color: "from-indigo-500/20 to-purple-500/20"
+    link: "/industries/manufacturing"
   },
   {
     icon: Umbrella,
@@ -106,8 +104,7 @@ const industries = [
       "AI-powered underwriting",
       "Real-time fraud detection"
     ],
-    link: "/industries/insurance",
-    color: "from-green-500/20 to-emerald-500/20"
+    link: "/industries/insurance"
   },
   {
     icon: HomeIcon,
@@ -119,8 +116,7 @@ const industries = [
       "Maintenance request routing",
       "Tenant screening automation"
     ],
-    link: "/industries/real-estate",
-    color: "from-violet-500/20 to-fuchsia-500/20"
+    link: "/industries/real-estate"
   },
   {
     icon: Truck,
@@ -132,8 +128,7 @@ const industries = [
       "Automated shipment tracking",
       "Smart warehouse operations"
     ],
-    link: "/industries/logistics",
-    color: "from-red-500/20 to-pink-500/20"
+    link: "/industries/logistics"
   },
   {
     icon: Users,
@@ -145,8 +140,7 @@ const industries = [
       "Automated onboarding workflows",
       "24/7 employee query chatbot"
     ],
-    link: "/industries/hr",
-    color: "from-teal-500/20 to-cyan-500/20"
+    link: "/industries/hr"
   }
 ];
 
@@ -173,37 +167,47 @@ const howItWorks = [
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
+      <Navigation />
+
       {/* Hero Section */}
-      <header className="relative overflow-hidden border-b border-border">
-        <div className="absolute inset-0 gradient-primary opacity-5"></div>
-        <div className="container mx-auto px-6 py-20 md:py-32 relative">
-          <div className="max-w-5xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+      <header className="relative overflow-hidden bg-gradient-to-b from-white via-secondary/20 to-white">
+        <div className="container mx-auto px-6 py-32 md:py-48 relative">
+          <div className="max-w-6xl mx-auto text-center">
+            <div className="inline-block mb-6">
+              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold border border-primary/20">
+                ✨ AI-Powered Enterprise Automation
+              </span>
+            </div>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-foreground">
               Intelligent AI Agents for{" "}
               <span className="gradient-text">Enterprise Automation</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed max-w-4xl mx-auto">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-4xl mx-auto">
               Powerful AI agents that automate complex workflows across industries—from financial services to healthcare, retail to manufacturing
             </p>
-            <div className="inline-block px-8 py-4 rounded-lg bg-secondary/50 backdrop-blur-sm border border-border">
-              <p className="text-lg text-foreground">
-                <span className="text-muted-foreground">Get in touch:</span>{" "}
-                <a href="mailto:hello@langslide.com" className="gradient-text font-semibold hover:underline transition-all">
-                  hello@langslide.com
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+              <Button asChild size="lg">
+                <a href="mailto:hello@langslide.com">
+                  Get Started <ArrowRight className="w-5 h-5" />
                 </a>
-              </p>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <a href="mailto:hello@langslide.com">
+                  Book a Demo
+                </a>
+              </Button>
             </div>
           </div>
         </div>
       </header>
 
-      {/* What We Do Section */}
-      <section className="py-16 md:py-24 border-b border-border">
+      {/* Value Props Section */}
+      <section className="py-24 md:py-32 bg-white">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
                 What We Do
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -211,21 +215,21 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-8">
               {valueProps.map((prop, index) => (
                 <Card 
                   key={index}
-                  className="p-8 bg-card border-border hover:border-primary/30 transition-all duration-300 hover:glow-effect group"
+                  className="p-10 bg-white border border-border hover:border-primary/50 transition-all group"
                 >
-                  <div className="mb-4">
-                    <div className="inline-flex p-4 rounded-xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                  <div className="mb-6">
+                    <div className="inline-flex p-4 rounded-2xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
                       <prop.icon className="w-8 h-8 text-primary" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 text-foreground">
+                  <h3 className="text-2xl font-bold mb-4 text-foreground">
                     {prop.title}
                   </h3>
-                  <p className="text-base text-muted-foreground leading-relaxed">
+                  <p className="text-lg text-muted-foreground leading-relaxed">
                     {prop.description}
                   </p>
                 </Card>
@@ -236,11 +240,11 @@ const Home = () => {
       </section>
 
       {/* Industries Section */}
-      <section className="py-16 md:py-24 border-b border-border">
+      <section className="py-24 md:py-32 bg-gradient-to-b from-white via-secondary/30 to-white">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
                 Industries We Serve
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -256,25 +260,23 @@ const Home = () => {
                   className="block"
                 >
                   <Card 
-                    className={`relative overflow-hidden p-8 bg-gradient-to-br ${industry.color} border-border hover:border-primary/50 transition-all duration-300 hover:glow-effect group cursor-pointer h-full`}
+                    className="relative overflow-hidden p-8 bg-white border border-border hover:border-primary/50 transition-all group cursor-pointer h-full"
                   >
                     <div className="relative z-10">
                       <div className="mb-6">
-                        <div className="inline-flex p-4 rounded-xl bg-background/50 border border-border backdrop-blur-sm">
+                        <div className="inline-flex p-4 rounded-2xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
                           <industry.icon className="w-8 h-8 text-primary" />
                         </div>
                       </div>
                       
-                      <h3 className="text-2xl font-bold mb-3 text-foreground group-hover:gradient-text transition-all">
+                      <h3 className="text-2xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
                         {industry.title}
                       </h3>
                       
                       <div className="mb-6">
-                        <div className="inline-block px-4 py-2 rounded-lg bg-background/70 backdrop-blur-sm border border-primary/30">
-                          <p className="text-lg font-bold gradient-text">
-                            {industry.metric}
-                          </p>
-                        </div>
+                        <span className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-semibold text-sm">
+                          {industry.metric}
+                        </span>
                       </div>
                       
                       <ul className="space-y-3 mb-6">
@@ -300,11 +302,11 @@ const Home = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-16 md:py-24 border-b border-border">
+      <section className="py-24 md:py-32 bg-white">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
                 How It Works
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -316,20 +318,20 @@ const Home = () => {
               {howItWorks.map((step, index) => (
                 <div key={index} className="relative">
                   <Card 
-                    className="p-8 bg-card border-border hover:border-primary/30 transition-all duration-300 hover:glow-effect group h-full"
+                    className="p-10 bg-white border border-border hover:border-primary/50 transition-all group h-full"
                   >
-                    <div className="mb-6">
-                      <div className="text-6xl font-bold gradient-text opacity-20 mb-4">
+                    <div className="mb-8">
+                      <div className="text-7xl font-bold gradient-text opacity-20 mb-6">
                         {step.number}
                       </div>
-                      <div className="inline-flex p-4 rounded-xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                      <div className="inline-flex p-4 rounded-2xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
                         <step.icon className="w-8 h-8 text-primary" />
                       </div>
                     </div>
                     <h3 className="text-2xl font-bold mb-4 text-foreground">
                       {step.title}
                     </h3>
-                    <p className="text-base text-muted-foreground leading-relaxed">
+                    <p className="text-lg text-muted-foreground leading-relaxed">
                       {step.description}
                     </p>
                   </Card>
@@ -357,24 +359,21 @@ const Home = () => {
       />
 
       {/* Footer */}
-      <footer className="py-12 md:py-16 bg-secondary/30">
+      <footer className="py-16 md:py-20 bg-secondary/30 border-t border-border">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-2xl font-bold text-white mb-6">
+            <p className="text-2xl font-bold gradient-text mb-6">
               Langslide
             </p>
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="text-lg text-muted-foreground mb-8">
               AI agents for enterprise automation
             </p>
-            <div className="inline-block px-8 py-4 rounded-lg bg-card border border-border">
-              <p className="text-base text-foreground">
-                <span className="text-muted-foreground">Contact us:</span>{" "}
-                <a href="mailto:hello@langslide.com" className="gradient-text font-semibold hover:underline transition-all">
-                  hello@langslide.com
-                </a>
-              </p>
-            </div>
-            <div className="mt-8 pt-8 border-t border-border">
+            <Button asChild size="lg">
+              <a href="mailto:hello@langslide.com">
+                Contact us
+              </a>
+            </Button>
+            <div className="mt-12 pt-8 border-t border-border">
               <p className="text-sm text-muted-foreground">
                 © {new Date().getFullYear()} Langslide. All rights reserved.
               </p>
