@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
+import { CTA } from "@/components/ui/call-to-action";
 import { Link } from "react-router-dom";
-import { 
+import {
   Zap,
   RefreshCw,
   Shield,
@@ -345,26 +346,15 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 border-b border-border">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Ready to Transform Your Operations?
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-              Let's discuss how AI agents can revolutionize your workflows
-            </p>
-            <div className="inline-block px-10 py-5 rounded-lg bg-primary/10 backdrop-blur-sm border border-primary/30 glow-effect">
-              <p className="text-xl text-foreground">
-                <span className="text-muted-foreground">Contact us:</span>{" "}
-                <a href="mailto:hello@langslide.com" className="gradient-text font-bold hover:underline transition-all text-2xl">
-                  hello@langslide.com
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTA 
+        badge="Get Started"
+        title="Ready to Transform Your Operations?"
+        description="Discover how Langslide's AI agents can automate complex workflows across your enterprise. From reducing manual work to ensuring compliance, we help businesses across all industries operate smarter and faster."
+        primaryButtonText="Contact Us"
+        primaryButtonHref="mailto:hello@langslide.com"
+        secondaryButtonText="Schedule a Call"
+        secondaryButtonHref="mailto:hello@langslide.com"
+      />
 
       {/* Footer */}
       <footer className="py-12 md:py-16 bg-secondary/30">

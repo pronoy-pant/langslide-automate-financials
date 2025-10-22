@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { CTA } from "@/components/ui/call-to-action";
 import {
   Factory,
   Cog,
@@ -306,6 +307,17 @@ const Manufacturing = () => {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <CTA 
+        badge="Transform Manufacturing"
+        title="Ready to optimize production and reduce downtime?"
+        description="Let Langslide's AI agents streamline your manufacturing operations—from predictive maintenance and supply chain optimization to quality control and production scheduling. Reduce costs, minimize downtime, and deliver superior products with intelligent automation."
+        primaryButtonText="Contact Us"
+        primaryButtonHref="mailto:hello@langslide.com"
+        secondaryButtonText="Request a Demo"
+        secondaryButtonHref="mailto:hello@langslide.com"
+      />
 
       {/* Footer */}
       <footer className="py-12 md:py-16 bg-secondary/30 border-t border-border">

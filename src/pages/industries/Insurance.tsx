@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { CTA } from "@/components/ui/call-to-action";
 import {
   Umbrella,
   FileCheck,
@@ -306,6 +307,17 @@ const Insurance = () => {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <CTA 
+        badge="Transform Insurance"
+        title="Ready to accelerate claims and underwriting?"
+        description="Discover how Langslide's AI agents automate underwriting, claims processing, and fraud detection for insurance companies. Improve customer satisfaction, reduce operational costs, and detect fraud with advanced AI-powered automation."
+        primaryButtonText="Contact Us"
+        primaryButtonHref="mailto:hello@langslide.com"
+        secondaryButtonText="Schedule a Call"
+        secondaryButtonHref="mailto:hello@langslide.com"
+      />
 
       {/* Footer */}
       <footer className="py-12 md:py-16 bg-secondary/30 border-t border-border">

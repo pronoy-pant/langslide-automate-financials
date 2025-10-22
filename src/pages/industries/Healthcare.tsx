@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { CTA } from "@/components/ui/call-to-action";
 import {
   Heart,
   FileText,
@@ -307,6 +308,17 @@ const FinancialServices = () => {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <CTA 
+        badge="Transform Healthcare"
+        title="Ready to revolutionize patient care?"
+        description="Let Langslide's AI agents streamline your healthcare operations—from patient intake and claims processing to clinical documentation and revenue cycle management. Reduce administrative burden and focus on what matters most: exceptional patient care."
+        primaryButtonText="Contact Us"
+        primaryButtonHref="mailto:hello@langslide.com"
+        secondaryButtonText="Schedule a Consultation"
+        secondaryButtonHref="mailto:hello@langslide.com"
+      />
 
       {/* Footer */}
       <footer className="py-12 md:py-16 bg-secondary/30 border-t border-border">

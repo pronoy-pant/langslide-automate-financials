@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { CTA } from "@/components/ui/call-to-action";
 import {
   ShoppingCart,
   Package,
@@ -306,6 +307,17 @@ const Retail = () => {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <CTA 
+        badge="Transform Retail"
+        title="Ready to elevate your customer experience?"
+        description="Let Langslide's AI agents optimize your retail operations—from personalized recommendations and dynamic pricing to inventory management and order fulfillment. Compete and win in today's fast-paced retail market with intelligent automation."
+        primaryButtonText="Contact Us"
+        primaryButtonHref="mailto:hello@langslide.com"
+        secondaryButtonText="Book a Demo"
+        secondaryButtonHref="mailto:hello@langslide.com"
+      />
 
       {/* Footer */}
       <footer className="py-12 md:py-16 bg-secondary/30 border-t border-border">

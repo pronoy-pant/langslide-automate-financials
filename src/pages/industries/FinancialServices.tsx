@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import { CTA } from "@/components/ui/call-to-action";
 import Navigation from "@/components/Navigation";
 import {
   FileText, 
@@ -341,6 +342,17 @@ const BFSI = () => {
           </div>
         </section>
       ))}
+
+      {/* CTA Section */}
+      <CTA 
+        badge="Transform Finance"
+        title="Ready to modernize your financial operations?"
+        description="Discover how Langslide's AI agents can automate lending, payments, compliance, and customer operations in financial services. Accelerate loan approvals, enhance fraud detection, and ensure regulatory compliance—all while reducing operational costs."
+        primaryButtonText="Contact Us"
+        primaryButtonHref="mailto:hello@langslide.com"
+        secondaryButtonText="Schedule a Demo"
+        secondaryButtonHref="mailto:hello@langslide.com"
+      />
 
       {/* Footer */}
       <footer className="py-12 md:py-16 bg-secondary/30">
