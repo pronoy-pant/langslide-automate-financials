@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import logoFull from "@/assets/langslide-logo.png";
+import logoIcon from "@/assets/langslide-icon.png";
 import { ChevronDown } from "lucide-react";
 import {
   DropdownMenu,
@@ -28,12 +28,13 @@ const Navigation = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center group">
+          <Link to="/" className="flex items-center gap-2 group">
             <img 
-              src={logoFull} 
-              alt="Langslide" 
-              className="h-10 w-auto transition-transform group-hover:scale-105"
+              src={logoIcon} 
+              alt="Langslide Icon" 
+              className="h-8 w-auto transition-transform group-hover:scale-105"
             />
+            <span className="text-xl font-bold text-white">Langslide</span>
           </Link>
 
           {/* Navigation Links */}

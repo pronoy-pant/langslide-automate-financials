@@ -1,4 +1,3 @@
-import logoFull from "@/assets/langslide-logo.png";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { 
@@ -177,20 +176,13 @@ const Home = () => {
       {/* Hero Section */}
       <header className="relative overflow-hidden border-b border-border">
         <div className="absolute inset-0 gradient-primary opacity-5"></div>
-        <div className="container mx-auto px-6 py-16 md:py-24 relative">
+        <div className="container mx-auto px-6 py-20 md:py-32 relative">
           <div className="max-w-5xl mx-auto text-center">
-            <div className="flex items-center justify-center mb-8">
-              <img 
-                src={logoFull} 
-                alt="Langslide" 
-                className="h-20 md:h-24 w-auto glow-effect"
-              />
-            </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
               Intelligent AI Agents for{" "}
               <span className="gradient-text">Enterprise Automation</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-4xl mx-auto">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed max-w-4xl mx-auto">
               Powerful AI agents that automate complex workflows across industries—from financial services to healthcare, retail to manufacturing
             </p>
             <div className="inline-block px-8 py-4 rounded-lg bg-secondary/50 backdrop-blur-sm border border-border">
@@ -378,13 +370,9 @@ const Home = () => {
       <footer className="py-12 md:py-16 bg-secondary/30">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="flex items-center justify-center mb-6">
-              <img 
-                src={logoFull} 
-                alt="Langslide" 
-                className="h-12 w-auto opacity-80"
-              />
-            </div>
+            <p className="text-2xl font-bold text-white mb-6">
+              Langslide
+            </p>
             <p className="text-lg text-muted-foreground mb-6">
               AI agents for enterprise automation
             </p>
