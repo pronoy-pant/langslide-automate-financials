@@ -203,10 +203,10 @@ const Home = () => {
       </header>
 
       {/* Value Props Section */}
-      <section className="py-24 md:py-32 bg-white">
+      <section className="py-32 md:py-40 bg-white">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-20">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
                 What We Do
               </h2>
@@ -215,21 +215,21 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
               {valueProps.map((prop, index) => (
                 <Card 
                   key={index}
-                  className="p-10 bg-white border border-border hover:border-primary/50 transition-all group"
+                  className="p-8 bg-white border border-border hover:border-primary/50 transition-all duration-300 group hover:scale-105"
                 >
                   <div className="mb-6">
-                    <div className="inline-flex p-4 rounded-2xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                    <div className="inline-flex p-3.5 rounded-2xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
                       <prop.icon className="w-8 h-8 text-primary" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-foreground">
+                  <h3 className="text-xl font-bold mb-4 text-foreground">
                     {prop.title}
                   </h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <p className="text-base text-muted-foreground leading-relaxed">
                     {prop.description}
                   </p>
                 </Card>
@@ -240,7 +240,7 @@ const Home = () => {
       </section>
 
       {/* Industries Section */}
-      <section className="py-24 md:py-32 bg-gradient-to-b from-white via-secondary/30 to-white">
+      <section className="py-32 md:py-40 bg-gradient-to-b from-white via-secondary/30 to-white">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
@@ -252,7 +252,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
               {industries.map((industry, index) => (
                 <Link 
                   key={index}
@@ -260,37 +260,37 @@ const Home = () => {
                   className="block"
                 >
                   <Card 
-                    className="relative overflow-hidden p-8 bg-white border border-border hover:border-primary/50 transition-all group cursor-pointer h-full"
+                    className="relative overflow-hidden p-6 bg-white border border-border hover:border-primary/50 transition-all duration-300 group cursor-pointer h-full flex flex-col hover:scale-105"
                   >
-                    <div className="relative z-10">
-                      <div className="mb-6">
-                        <div className="inline-flex p-4 rounded-2xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
-                          <industry.icon className="w-8 h-8 text-primary" />
+                    <div className="relative z-10 flex flex-col flex-1">
+                      <div className="mb-5">
+                        <div className="inline-flex p-3.5 rounded-2xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                          <industry.icon className="w-7 h-7 text-primary" />
                         </div>
                       </div>
                       
-                      <h3 className="text-2xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
+                      <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
                         {industry.title}
                       </h3>
                       
-                      <div className="mb-6">
-                        <span className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-semibold text-sm">
+                      <div className="mb-5">
+                        <span className="inline-block px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-semibold text-xs">
                           {industry.metric}
                         </span>
                       </div>
                       
-                      <ul className="space-y-3 mb-6">
+                      <ul className="space-y-2.5 mb-5 flex-1">
                         {industry.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                          <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground leading-relaxed">
+                            <CheckCircle className="w-3.5 h-3.5 text-primary mt-0.5 flex-shrink-0" />
                             <span>{feature}</span>
                           </li>
                         ))}
                       </ul>
                       
-                      <div className="flex items-center gap-2 text-primary font-semibold">
+                      <div className="flex items-center gap-2 text-primary font-semibold text-sm mt-auto">
                         Learn more
-                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
                   </Card>
