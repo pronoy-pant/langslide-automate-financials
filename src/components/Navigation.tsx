@@ -86,7 +86,7 @@ const Navigation = () => {
             <img 
               src={logoIcon} 
               alt="Langslide Icon" 
-              className="h-10 w-auto transition-transform group-hover:scale-105"
+              className="h-12 w-auto transition-transform group-hover:scale-105"
             />
             <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Langslide</span>
           </Link>
