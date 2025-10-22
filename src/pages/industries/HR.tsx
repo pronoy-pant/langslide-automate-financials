@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Users, UserPlus, GraduationCap, MessageSquare, BarChart, DollarSign, Zap, TrendingUp, CheckCircle, FileText, Calendar, Target, Award, ClipboardCheck, UserCheck, Settings, Clock, Shield } from "lucide-react";
 
 const workflows = [
@@ -81,9 +83,9 @@ const HR = () => (
           <div className="inline-flex p-4 rounded-2xl bg-primary/10 border border-primary/20 mb-8 glow-effect"><Users className="w-12 h-12 text-primary" /></div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">Intelligent Workflow Automation for{" "}<span className="gradient-text">Human Resources</span></h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-4xl mx-auto">AI agents that streamline recruitment, automate onboarding, and enhance employee support—empowering HR teams to focus on people, not paperwork</p>
-          <div className="inline-block px-8 py-4 rounded-lg bg-secondary/50 backdrop-blur-sm border border-border">
-            <p className="text-lg text-foreground"><span className="text-muted-foreground">Get in touch:</span> <a href="mailto:hello@langslide.com" className="gradient-text font-semibold hover:underline transition-all">hello@langslide.com</a></p>
-          </div>
+          <Button asChild size="lg">
+            <Link to="/request-demo">Request a Demo</Link>
+          </Button>
         </div>
       </div>
     </header>

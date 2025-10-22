@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { CTA } from "@/components/ui/call-to-action";
 import Navigation from "@/components/Navigation";
 import {
@@ -263,14 +265,9 @@ const BFSI = () => {
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
               AI agents that automate complex workflows across lending, payments, compliance, and operations
             </p>
-            <div className="inline-block px-8 py-4 rounded-lg bg-secondary/50 backdrop-blur-sm border border-border">
-              <p className="text-lg text-foreground">
-                <span className="text-muted-foreground">Get in touch:</span>{" "}
-                <a href="mailto:hello@langslide.com" className="gradient-text font-semibold hover:underline transition-all">
-                  hello@langslide.com
-                </a>
-              </p>
-            </div>
+            <Button asChild size="lg">
+              <Link to="/request-demo">Request a Demo</Link>
+            </Button>
           </div>
         </div>
       </header>
