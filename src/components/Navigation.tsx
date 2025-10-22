@@ -57,13 +57,13 @@ const Navigation = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-2 group">
             <img 
               src={logoIcon} 
               alt="Langslide Icon" 
-              className="h-18 w-auto transition-transform group-hover:scale-105"
+              className="h-14 w-auto transition-transform group-hover:scale-105"
             />
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Langslide</span>
+            <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent leading-none">Langslide</span>
           </Link>
 
           {/* Navigation Links */}
