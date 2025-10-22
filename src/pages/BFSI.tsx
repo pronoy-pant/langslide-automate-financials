@@ -1,6 +1,7 @@
 import logoIcon from "@/assets/langslide-icon.png";
 import { Card } from "@/components/ui/card";
-import { 
+import Navigation from "@/components/Navigation";
+import {
   FileText, 
   CreditCard, 
   Shield, 
@@ -244,9 +245,12 @@ const workflows = [
   }
 ];
 
-const Index = () => {
+const BFSI = () => {
   return (
     <div className="min-h-screen bg-background">
+      {/* Navigation */}
+      <Navigation />
+      
       {/* Hero Section */}
       <header className="relative overflow-hidden border-b border-border">
         <div className="absolute inset-0 gradient-primary opacity-5"></div>
@@ -382,4 +386,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default BFSI;
