@@ -104,11 +104,11 @@ const Navigation = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 px-5 py-2.5 rounded-full text-foreground hover:bg-secondary transition-all font-medium">
-                Use Cases <ChevronDown className="w-4 h-4" />
+                Solutions <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white border-border shadow-large rounded-2xl p-0" align="start">
-                <div className="grid md:grid-cols-2 gap-0 w-[700px]">
-                  {/* Left Column - Featured Use Cases */}
+              <DropdownMenuContent className="bg-white border-border shadow-large rounded-2xl p-0 z-50" align="start">
+                <div className="grid md:grid-cols-2 gap-0 w-[750px]">
+                  {/* Left Column - Use Cases */}
                   <div className="p-6 border-r border-border">
                     <div className="flex items-center gap-2 mb-4">
                       <BookOpen className="w-5 h-5 text-primary" />
@@ -131,57 +131,22 @@ const Navigation = () => {
                     </div>
                   </div>
 
-                  {/* Right Column - Categories */}
+                  {/* Right Column - Industries */}
                   <div className="p-6">
-                    <h3 className="text-sm font-bold text-foreground mb-4">By category</h3>
+                    <h3 className="text-sm font-bold text-foreground mb-4">By industry</h3>
                     <div className="space-y-1">
-                      {useCaseCategories.map((category, index) => {
-                        const IconComponent = 
-                          category.icon === "grid" ? Grid :
-                          category.icon === "trending-up" ? TrendingUp :
-                          category.icon === "headphones" ? Headphones :
-                          category.icon === "settings" ? Settings :
-                          category.icon === "dollar-sign" ? DollarSign :
-                          category.icon === "users" ? Users :
-                          Shield;
-                        
-                        return (
-                          <Link
-                            key={index}
-                            to={category.path}
-                            className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-secondary transition-all group"
-                          >
-                            <IconComponent className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                            <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
-                              {category.name}
-                            </span>
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 px-5 py-2.5 rounded-full text-foreground hover:bg-secondary transition-all font-medium">
-                Solutions <ChevronDown className="w-4 h-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white border-border w-80 shadow-large rounded-2xl">
-                <div className="p-3">
-                  <div className="text-xs font-bold text-muted-foreground mb-3 px-3">INDUSTRIES</div>
-                  <div className="grid gap-1">
-                    {industries.map((industry) => (
-                      <DropdownMenuItem key={industry.path} asChild>
-                        <Link 
+                      {industries.map((industry) => (
+                        <Link
+                          key={industry.path}
                           to={industry.path}
-                          className="cursor-pointer hover:bg-secondary rounded-xl px-3 py-3 font-medium"
+                          className="block px-3 py-2.5 rounded-xl hover:bg-secondary transition-all group"
                         >
-                          {industry.name}
+                          <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                            {industry.name}
+                          </span>
                         </Link>
-                      </DropdownMenuItem>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
               </DropdownMenuContent>
