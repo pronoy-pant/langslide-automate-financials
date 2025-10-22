@@ -150,6 +150,9 @@ const Support = () => (
             {commonApps.map((app, i) => (
               <Card key={i} className="bg-card border-border hover:border-primary/30 transition-all duration-300 text-center">
                 <CardHeader className="pb-3">
+                  <div className="w-12 h-12 mx-auto mb-3 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
+                    <span className="text-lg font-bold text-primary">{app.name.charAt(0)}</span>
+                  </div>
                   <CardTitle className="text-base font-semibold">{app.name}</CardTitle>
                   <CardDescription className="text-xs">{app.category}</CardDescription>
                 </CardHeader>
