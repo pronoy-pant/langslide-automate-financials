@@ -48,49 +48,105 @@ const industries = [
     icon: Building2,
     title: "Financial Services & Banking",
     description: "Automate lending, payments, compliance, and customer operations",
-    link: "/bfsi"
+    metric: "70% faster loan approvals",
+    features: [
+      "End-to-end loan processing automation",
+      "Real-time fraud detection & compliance",
+      "Automated KYC and document verification"
+    ],
+    link: "/industries/financial-services",
+    color: "from-blue-500/20 to-cyan-500/20"
   },
   {
     icon: Heart,
     title: "Healthcare",
     description: "Streamline patient intake, claims processing, and medical records management",
-    link: "#"
+    metric: "60% faster patient intake",
+    features: [
+      "Automate medical records management",
+      "AI-powered claims processing",
+      "Real-time patient data verification"
+    ],
+    link: "/industries/healthcare",
+    color: "from-pink-500/20 to-rose-500/20"
   },
   {
     icon: ShoppingCart,
     title: "Retail & E-commerce",
     description: "Optimize inventory, personalize experiences, and automate fulfillment",
-    link: "#"
+    metric: "80% inventory accuracy improvement",
+    features: [
+      "Personalized customer recommendations",
+      "Automated order fulfillment",
+      "Real-time inventory sync"
+    ],
+    link: "/industries/retail",
+    color: "from-yellow-500/20 to-orange-500/20"
   },
   {
     icon: Factory,
     title: "Manufacturing",
     description: "Automate supply chain, quality control, and predictive maintenance",
-    link: "#"
+    metric: "50% reduction in quality issues",
+    features: [
+      "Predictive maintenance alerts",
+      "Supply chain optimization",
+      "Automated quality control"
+    ],
+    link: "/industries/manufacturing",
+    color: "from-indigo-500/20 to-purple-500/20"
   },
   {
     icon: Umbrella,
     title: "Insurance",
     description: "Accelerate claims processing, underwriting, and fraud detection",
-    link: "#"
+    metric: "65% faster claims processing",
+    features: [
+      "Automated claims intake & triage",
+      "AI-powered underwriting",
+      "Real-time fraud detection"
+    ],
+    link: "/industries/insurance",
+    color: "from-green-500/20 to-emerald-500/20"
   },
   {
     icon: HomeIcon,
     title: "Real Estate",
     description: "Automate property management, lease processing, and compliance checks",
-    link: "#"
+    metric: "75% reduction in lease processing time",
+    features: [
+      "Automated lease processing",
+      "Maintenance request routing",
+      "Tenant screening automation"
+    ],
+    link: "/industries/real-estate",
+    color: "from-violet-500/20 to-fuchsia-500/20"
   },
   {
     icon: Truck,
     title: "Logistics & Supply Chain",
     description: "Optimize routing, track shipments, and manage warehouse operations",
-    link: "#"
+    metric: "55% improvement in delivery efficiency",
+    features: [
+      "Intelligent route planning",
+      "Automated shipment tracking",
+      "Smart warehouse operations"
+    ],
+    link: "/industries/logistics",
+    color: "from-red-500/20 to-pink-500/20"
   },
   {
     icon: Users,
     title: "Human Resources",
     description: "Streamline recruitment, onboarding, and employee support",
-    link: "#"
+    metric: "70% faster candidate screening",
+    features: [
+      "AI resume screening",
+      "Automated onboarding workflows",
+      "24/7 employee query chatbot"
+    ],
+    link: "/industries/hr",
+    color: "from-teal-500/20 to-cyan-500/20"
   }
 ];
 
@@ -200,52 +256,51 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {industries.map((industry, index) => (
-                industry.link === "#" ? (
+                <Link 
+                  key={index}
+                  to={industry.link}
+                  className="block"
+                >
                   <Card 
-                    key={index}
-                    className="p-6 bg-card border-border hover:border-primary/30 transition-all duration-300 hover:glow-effect group cursor-default"
+                    className={`relative overflow-hidden p-8 bg-gradient-to-br ${industry.color} border-border hover:border-primary/50 transition-all duration-300 hover:glow-effect group cursor-pointer h-full`}
                   >
-                    <div className="mb-4">
-                      <div className="inline-flex p-3 rounded-xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
-                        <industry.icon className="w-6 h-6 text-primary" />
-                      </div>
-                    </div>
-                    <h3 className="text-lg font-bold mb-3 text-foreground">
-                      {industry.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {industry.description}
-                    </p>
-                  </Card>
-                ) : (
-                  <Link 
-                    key={index}
-                    to={industry.link}
-                    className="block"
-                  >
-                    <Card 
-                      className="p-6 bg-card border-border hover:border-primary/50 transition-all duration-300 hover:glow-effect group cursor-pointer h-full"
-                    >
-                      <div className="mb-4">
-                        <div className="inline-flex p-3 rounded-xl bg-primary/10 border border-primary/20 group-hover:bg-primary/30 transition-colors">
-                          <industry.icon className="w-6 h-6 text-primary" />
+                    <div className="relative z-10">
+                      <div className="mb-6">
+                        <div className="inline-flex p-4 rounded-xl bg-background/50 border border-border backdrop-blur-sm">
+                          <industry.icon className="w-8 h-8 text-primary" />
                         </div>
                       </div>
-                      <h3 className="text-lg font-bold mb-3 text-foreground group-hover:gradient-text transition-all">
+                      
+                      <h3 className="text-2xl font-bold mb-3 text-foreground group-hover:gradient-text transition-all">
                         {industry.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                        {industry.description}
-                      </p>
-                      <div className="flex items-center gap-2 text-primary font-semibold text-sm">
-                        Learn more
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      
+                      <div className="mb-6">
+                        <div className="inline-block px-4 py-2 rounded-lg bg-background/70 backdrop-blur-sm border border-primary/30">
+                          <p className="text-lg font-bold gradient-text">
+                            {industry.metric}
+                          </p>
+                        </div>
                       </div>
-                    </Card>
-                  </Link>
-                )
+                      
+                      <ul className="space-y-3 mb-6">
+                        {industry.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                            <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      
+                      <div className="flex items-center gap-2 text-primary font-semibold">
+                        Learn more
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>
