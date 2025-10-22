@@ -3,7 +3,6 @@ import { CTA } from "@/components/ui/call-to-action";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { SecuritySection } from "@/components/SecuritySection";
 import { CustomerStories } from "@/components/CustomerStories";
 import { Link } from "react-router-dom";
 import {
@@ -349,9 +348,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Security Section */}
-      <SecuritySection />
 
       {/* Customer Stories */}
       <CustomerStories />

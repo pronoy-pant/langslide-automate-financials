@@ -1,3 +1,4 @@
+import React from "react";
 import { Card } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -26,10 +27,38 @@ const customerStories = [
     description: "RetailMax streamlines operations with Langslide's AI agents, saving 50,000 hours yearly and transforming customer service efficiency.",
     metric: "50,000 hours saved",
     bgColor: "from-purple-500/10 to-pink-500/10"
+  },
+  {
+    company: "FinanceFlow",
+    logo: "FF",
+    title: "FinanceFlow automates 90% of compliance reporting with Langslide",
+    description: "FinanceFlow leverages Langslide AI agents to automate regulatory reporting and compliance monitoring, reducing manual effort by 90%.",
+    metric: "90% automation achieved",
+    bgColor: "from-orange-500/10 to-amber-500/10"
+  },
+  {
+    company: "LogisticsPro",
+    logo: "LP",
+    title: "LogisticsPro cuts delivery times by 35% using Langslide",
+    description: "LogisticsPro optimizes routing and warehouse operations with Langslide's intelligent automation, achieving 35% faster deliveries and reducing costs.",
+    metric: "35% faster delivery",
+    bgColor: "from-indigo-500/10 to-violet-500/10"
   }
 ];
 
 export const CustomerStories = () => {
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+  
+  const nextStory = () => {
+    setCurrentIndex((prev) => (prev + 1) % (customerStories.length - 2));
+  };
+  
+  const prevStory = () => {
+    setCurrentIndex((prev) => (prev - 1 + (customerStories.length - 2)) % (customerStories.length - 2));
+  };
+  
+  const visibleStories = customerStories.slice(currentIndex, currentIndex + 3);
+
   return (
     <section className="py-32 md:py-40 bg-white">
       <div className="container mx-auto px-6">
@@ -44,17 +73,17 @@ export const CustomerStories = () => {
               </p>
             </div>
             <div className="hidden md:flex gap-2">
-              <Button variant="outline" size="icon" className="rounded-full">
+              <Button variant="outline" size="icon" className="rounded-full" onClick={prevStory}>
                 <ChevronLeft className="w-5 h-5" />
               </Button>
-              <Button variant="outline" size="icon" className="rounded-full">
+              <Button variant="outline" size="icon" className="rounded-full" onClick={nextStory}>
                 <ChevronRight className="w-5 h-5" />
               </Button>
             </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {customerStories.map((story, index) => (
+            {visibleStories.map((story, index) => (
               <Card 
                 key={index}
                 className="p-8 bg-white border border-border hover:border-primary/50 transition-all duration-300 group cursor-pointer hover:scale-105"

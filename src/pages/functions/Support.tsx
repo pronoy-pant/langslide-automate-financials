@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Headphones, MessageSquare, Bot, Users, Zap, CheckCircle } from "lucide-react";
@@ -163,19 +164,7 @@ const Support = () => (
       </div>
     </section>
 
-    <footer className="py-12 md:py-16 bg-secondary/30 border-t border-border">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-lg text-muted-foreground mb-6">Ready to transform your customer support?</p>
-          <Button asChild size="lg">
-            <Link to="/request-demo">Request a Demo</Link>
-          </Button>
-          <div className="mt-8 pt-8 border-t border-border">
-            <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Langslide. All rights reserved.</p>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <Footer />
   </div>
 );
 

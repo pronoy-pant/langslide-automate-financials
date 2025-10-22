@@ -49,7 +49,7 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-const RequestDemo = () => {
+const ContactUs = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const {
@@ -68,7 +68,7 @@ const RequestDemo = () => {
       // Simulate form submission
       await new Promise((resolve) => setTimeout(resolve, 1000));
       console.log("Form submitted:", data);
-      toast.success("Demo request submitted successfully! We'll be in touch soon.");
+      toast.success("Contact form submitted successfully! We'll be in touch soon.");
     } catch (error) {
       toast.error("Failed to submit request. Please try again.");
     } finally {
@@ -90,10 +90,10 @@ const RequestDemo = () => {
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
-              Request a Demo
+              Contact Us
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              To prepare for our demo call, please share a bit about yourself and the challenges you're hoping to address with Langslide.
+              Share a bit about yourself and the challenges you're hoping to address with Langslide.
             </p>
           </div>
 
@@ -274,4 +274,4 @@ const RequestDemo = () => {
   );
 };
 
-export default RequestDemo;
+export default ContactUs;

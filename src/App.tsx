@@ -20,7 +20,8 @@ import Marketing from "./pages/functions/Marketing";
 import Sales from "./pages/functions/Sales";
 import RevenueOperations from "./pages/functions/RevenueOperations";
 import Product from "./pages/functions/Product";
-import RequestDemo from "./pages/RequestDemo";
+import ContactUs from "./pages/ContactUs";
+import Security from "./pages/Security";
 import Terms from "./pages/legal/Terms";
 import Privacy from "./pages/legal/Privacy";
 import NotFound from "./pages/NotFound";
@@ -51,7 +52,8 @@ const App = () => (
           <Route path="/functions/sales" element={<Sales />} />
           <Route path="/functions/revenue-operations" element={<RevenueOperations />} />
           <Route path="/functions/product" element={<Product />} />
-          <Route path="/request-demo" element={<RequestDemo />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/security" element={<Security />} />
           <Route path="/legal/terms" element={<Terms />} />
           <Route path="/legal/privacy" element={<Privacy />} />
           <Route path="/bfsi" element={<Navigate to="/industries/financial-services" replace />} />

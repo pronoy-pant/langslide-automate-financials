@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+import Navigation from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Shield, Lock, Key, Database } from "lucide-react";
+import { Shield, Lock, Key, Database, ShieldCheck, FileSearch, AlertTriangle } from "lucide-react";
 
 const securityFeatures = [
   {
@@ -44,25 +44,34 @@ const complianceDetails = [
   }
 ];
 
-export const SecuritySection = () => {
+const Security = () => {
   return (
-    <section className="py-32 md:py-40 bg-gradient-to-b from-white via-secondary/20 to-white">
-      <div className="container mx-auto px-6">
-        <div className="max-w-7xl mx-auto">
-          {/* Top Security Badges */}
-          <div className="text-center mb-20">
-            <div className="inline-block mb-6">
-              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold border border-primary/20">
-                Security
-              </span>
+    <div className="min-h-screen bg-background">
+      <Navigation />
+
+      {/* Hero Section */}
+      <header className="relative overflow-hidden border-b border-border">
+        <div className="absolute inset-0 gradient-primary opacity-5"></div>
+        <div className="container mx-auto px-6 py-16 md:py-24 relative">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="inline-flex p-4 rounded-2xl bg-primary/10 border border-primary/20 mb-8 glow-effect">
+              <Shield className="w-12 h-12 text-primary" />
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">
-              Security and Governance
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-16">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              Security and{" "}
+              <span className="gradient-text">Governance</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-4xl mx-auto">
               Langslide helps you to keep your data secure with built-in GDPR and SOC 2 Type II compliance, encryption, and single sign-on (SSO).
             </p>
+          </div>
+        </div>
+      </header>
 
+      {/* Security Badges */}
+      <section className="py-16 md:py-24 border-b border-border">
+        <div className="container mx-auto px-6">
+          <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
               {securityFeatures.map((feature, index) => (
                 <div key={index} className="flex flex-col items-center">
@@ -74,14 +83,14 @@ export const SecuritySection = () => {
                 </div>
               ))}
             </div>
-
-            <Button asChild size="lg" className="mt-8">
-              <Link to="/security">Learn more</Link>
-            </Button>
           </div>
+        </div>
+      </section>
 
-          {/* Security & Compliance Details */}
-          <div className="mt-32">
+      {/* Security & Compliance Details */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-6">
+          <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-16 text-foreground text-center">
               Security & Compliance
             </h2>
@@ -105,7 +114,11 @@ export const SecuritySection = () => {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <Footer />
+    </div>
   );
 };
+
+export default Security;

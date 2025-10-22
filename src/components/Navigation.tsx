@@ -167,17 +167,10 @@ const Navigation = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link 
-              to="/request-demo" 
-              className="px-5 py-2.5 rounded-full text-foreground hover:bg-secondary transition-all font-medium"
-            >
-              Request Demo
-            </Link>
-
-            <Button asChild size="default" className="ml-3">
-              <a href="mailto:hello@langslide.com">
+            <Button asChild size="default">
+              <Link to="/contact-us">
                 Contact Us
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
