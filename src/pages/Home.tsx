@@ -1,4 +1,4 @@
-import logoIcon from "@/assets/langslide-icon.png";
+import logoFull from "@/assets/langslide-logo.png";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { 
@@ -179,13 +179,12 @@ const Home = () => {
         <div className="absolute inset-0 gradient-primary opacity-5"></div>
         <div className="container mx-auto px-6 py-16 md:py-24 relative">
           <div className="max-w-5xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-2 mb-8">
+            <div className="flex items-center justify-center mb-8">
               <img 
-                src={logoIcon} 
-                alt="Langslide Icon" 
-                className="h-16 md:h-20 w-auto glow-effect"
+                src={logoFull} 
+                alt="Langslide" 
+                className="h-20 md:h-24 w-auto glow-effect"
               />
-              <h2 className="text-4xl md:text-6xl font-bold gradient-text">Langslide</h2>
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               Intelligent AI Agents for{" "}
@@ -379,13 +378,12 @@ const Home = () => {
       <footer className="py-12 md:py-16 bg-secondary/30">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-2 mb-6">
+            <div className="flex items-center justify-center mb-6">
               <img 
-                src={logoIcon} 
-                alt="Langslide Icon" 
-                className="h-14 w-auto opacity-80"
+                src={logoFull} 
+                alt="Langslide" 
+                className="h-12 w-auto opacity-80"
               />
-              <h2 className="text-3xl font-bold gradient-text opacity-80">Langslide</h2>
             </div>
             <p className="text-lg text-muted-foreground mb-6">
               AI agents for enterprise automation
