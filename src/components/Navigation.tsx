@@ -19,58 +19,33 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-const industries = [
-  { name: "Financial Services & Banking", path: "/industries/financial-services" },
-  { name: "Healthcare", path: "/industries/healthcare" },
-  { name: "Retail & E-commerce", path: "/industries/retail" },
-  { name: "Manufacturing", path: "/industries/manufacturing" },
-  { name: "Insurance", path: "/industries/insurance" },
-  { name: "Real Estate", path: "/industries/real-estate" },
-  { name: "Logistics & Supply Chain", path: "/industries/logistics" },
-  { name: "Human Resources", path: "/industries/hr" },
+const functions = [
+  { name: "IT", path: "/functions/it" },
+  { name: "Finance", path: "/functions/finance" },
+  { name: "Support", path: "/functions/support" },
+  { name: "HR", path: "/functions/hr" },
+  { name: "Marketing", path: "/functions/marketing" },
+  { name: "Sales", path: "/functions/sales" },
+  { name: "Revenue Operations", path: "/functions/revenue-operations" },
+  { name: "Product (Embed)", path: "/functions/product" },
 ];
 
-const useCaseCategories = [
-  { name: "All use cases", icon: "grid", path: "#all" },
-  { name: "Sales Enablement", icon: "trending-up", path: "#sales" },
-  { name: "Customer Support", icon: "headphones", path: "#support" },
-  { name: "Operations", icon: "settings", path: "#operations" },
-  { name: "Finance & Billing", icon: "dollar-sign", path: "#finance" },
-  { name: "HR & People", icon: "users", path: "#hr" },
-  { name: "Compliance", icon: "shield", path: "#compliance" },
+const industries = [
+  { name: "Manufacturing", path: "/industries/manufacturing" },
+  { name: "Financial Services", path: "/industries/financial-services" },
+  { name: "Retail", path: "/industries/retail" },
+  { name: "Logistics", path: "/industries/logistics" },
+  { name: "Healthcare", path: "/industries/healthcare" },
+  { name: "Insurance", path: "/industries/insurance" },
+  { name: "Real Estate", path: "/industries/real-estate" },
 ];
 
 const featuredUseCases = [
-  {
-    title: "Auto-fill RFPs",
-    description: "Speed up proposals with AI-generated answers",
-    category: "Sales Enablement"
-  },
-  {
-    title: "Instant answers for sales & support",
-    description: "Empower reps with real-time knowledge",
-    category: "Customer Support"
-  },
-  {
-    title: "Draft email & ticket replies",
-    description: "Write accurate, on-brand responses in seconds",
-    category: "Customer Support"
-  },
-  {
-    title: "Loan Application Automation",
-    description: "Verify documents and create unified customer profiles",
-    category: "Finance & Billing"
-  },
-  {
-    title: "Claims Processing Automation",
-    description: "Real-time verification and processing of claims",
-    category: "Operations"
-  },
-  {
-    title: "Employee Query Chatbot",
-    description: "24/7 AI-powered HR support for common questions",
-    category: "HR & People"
-  },
+  { title: "Order-to-cash", description: "Automate the entire sales to payment cycle" },
+  { title: "Employee onboarding", description: "Streamline new hire workflows" },
+  { title: "Enterprise iPaaS", description: "Connect and orchestrate all your systems" },
+  { title: "Product-led sales", description: "Convert users to customers automatically" },
+  { title: "Embedded Integrations", description: "Offer integrations to your customers" },
 ];
 
 const Navigation = () => {
@@ -107,33 +82,54 @@ const Navigation = () => {
                 Solutions <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white border-border shadow-large rounded-2xl p-0 z-50" align="start">
-                <div className="grid md:grid-cols-2 gap-0 w-[750px]">
-                  {/* Left Column - Use Cases */}
+                <div className="grid grid-cols-3 gap-0 w-[900px]">
+                  {/* Left Column - By Function */}
                   <div className="p-6 border-r border-border">
-                    <div className="flex items-center gap-2 mb-4">
-                      <BookOpen className="w-5 h-5 text-primary" />
-                      <h3 className="text-sm font-bold text-foreground">Explore our use cases</h3>
-                    </div>
-                    <div className="space-y-3">
-                      {featuredUseCases.map((useCase, index) => (
-                        <div 
-                          key={index}
-                          className="p-3 rounded-xl hover:bg-secondary transition-all cursor-pointer group"
+                    <h3 className="text-sm font-bold text-foreground mb-4">BY FUNCTION</h3>
+                    <div className="space-y-1">
+                      {functions.map((func) => (
+                        <Link
+                          key={func.path}
+                          to={func.path}
+                          className="block px-3 py-2.5 rounded-xl hover:bg-secondary transition-all group"
                         >
-                          <h4 className="text-sm font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
-                            {useCase.title}
-                          </h4>
-                          <p className="text-xs text-muted-foreground leading-relaxed">
-                            {useCase.description}
-                          </p>
-                        </div>
+                          <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                            {func.name}
+                          </span>
+                        </Link>
                       ))}
                     </div>
                   </div>
 
-                  {/* Right Column - Industries */}
+                  {/* Middle Column - By Use Case */}
+                  <div className="p-6 border-r border-border">
+                    <h3 className="text-sm font-bold text-foreground mb-4">BY USE CASE</h3>
+                    <div className="space-y-3">
+                      {featuredUseCases.map((useCase, index) => (
+                        <div 
+                          key={index}
+                          className="px-3 py-2.5 rounded-xl hover:bg-secondary transition-all cursor-pointer group"
+                        >
+                          <h4 className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                            {useCase.title}
+                          </h4>
+                          <p className="text-xs text-muted-foreground leading-relaxed mt-0.5">
+                            {useCase.description}
+                          </p>
+                        </div>
+                      ))}
+                      <Link
+                        to="#all"
+                        className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-primary hover:underline"
+                      >
+                        View all <span className="text-xs">↗</span>
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* Right Column - By Industry */}
                   <div className="p-6">
-                    <h3 className="text-sm font-bold text-foreground mb-4">By industry</h3>
+                    <h3 className="text-sm font-bold text-foreground mb-4">BY INDUSTRY</h3>
                     <div className="space-y-1">
                       {industries.map((industry) => (
                         <Link

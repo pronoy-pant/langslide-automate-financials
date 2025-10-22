@@ -12,6 +12,14 @@ import Insurance from "./pages/industries/Insurance";
 import RealEstate from "./pages/industries/RealEstate";
 import Logistics from "./pages/industries/Logistics";
 import HR from "./pages/industries/HR";
+import IT from "./pages/functions/IT";
+import Finance from "./pages/functions/Finance";
+import Support from "./pages/functions/Support";
+import HRFunction from "./pages/functions/HRFunction";
+import Marketing from "./pages/functions/Marketing";
+import Sales from "./pages/functions/Sales";
+import RevenueOperations from "./pages/functions/RevenueOperations";
+import Product from "./pages/functions/Product";
 import Pricing from "./pages/Pricing";
 import RequestDemo from "./pages/RequestDemo";
 import NotFound from "./pages/NotFound";
@@ -34,6 +42,14 @@ const App = () => (
           <Route path="/industries/real-estate" element={<RealEstate />} />
           <Route path="/industries/logistics" element={<Logistics />} />
           <Route path="/industries/hr" element={<HR />} />
+          <Route path="/functions/it" element={<IT />} />
+          <Route path="/functions/finance" element={<Finance />} />
+          <Route path="/functions/support" element={<Support />} />
+          <Route path="/functions/hr" element={<HRFunction />} />
+          <Route path="/functions/marketing" element={<Marketing />} />
+          <Route path="/functions/sales" element={<Sales />} />
+          <Route path="/functions/revenue-operations" element={<RevenueOperations />} />
+          <Route path="/functions/product" element={<Product />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/request-demo" element={<RequestDemo />} />
           <Route path="/bfsi" element={<Navigate to="/industries/financial-services" replace />} />
