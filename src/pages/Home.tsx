@@ -179,11 +179,11 @@ const Home = () => {
         <div className="absolute inset-0 gradient-primary opacity-5"></div>
         <div className="container mx-auto px-6 py-16 md:py-24 relative">
           <div className="max-w-5xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="flex items-center justify-center gap-2 mb-8">
               <img 
                 src={logoIcon} 
                 alt="Langslide Icon" 
-                className="h-16 md:h-20 glow-effect"
+                className="h-16 md:h-20 w-auto glow-effect"
               />
               <h2 className="text-4xl md:text-6xl font-bold gradient-text">Langslide</h2>
             </div>
@@ -379,13 +379,13 @@ const Home = () => {
       <footer className="py-12 md:py-16 bg-secondary/30">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="flex items-center justify-center gap-2 mb-6">
               <img 
                 src={logoIcon} 
                 alt="Langslide Icon" 
-                className="h-10 opacity-80"
+                className="h-14 w-auto opacity-80"
               />
-              <h2 className="text-2xl font-bold gradient-text opacity-80">Langslide</h2>
+              <h2 className="text-3xl font-bold gradient-text opacity-80">Langslide</h2>
             </div>
             <p className="text-lg text-muted-foreground mb-6">
               AI agents for enterprise automation

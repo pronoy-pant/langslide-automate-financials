@@ -28,13 +28,13 @@ const Navigation = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-2 group">
             <img 
               src={logoIcon} 
               alt="Langslide" 
-              className="h-8 transition-transform group-hover:scale-105"
+              className="h-12 w-auto transition-transform group-hover:scale-105"
             />
-            <span className="text-xl font-bold gradient-text">Langslide</span>
+            <span className="text-2xl font-bold gradient-text">Langslide</span>
           </Link>
 
           {/* Navigation Links */}
