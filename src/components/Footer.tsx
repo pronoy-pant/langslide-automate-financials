@@ -46,26 +46,34 @@ export const Footer = () => {
     <footer className="bg-secondary/30 border-t border-border py-16 md:py-20">
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
-            {/* Left Side - Contact Us */}
-            <div className="lg:col-span-2">
-              <Link 
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-16">
+            {/* Left Side - Branding + Contact */}
+            <div className="lg:col-span-3">
+              <div className="flex items-center gap-2 mb-6">
+                <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent whitespace-nowrap">
+                  Langslide
+                </span>
+              </div>
+              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+                AI automation platform for modern workflows. © {new Date().getFullYear()} Langslide. All rights reserved.
+              </p>
+              <Link
                 to="/contact-us"
-                className="inline-block px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-semibold"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 Contact us
               </Link>
             </div>
             
             {/* Middle - Solutions (Large Column) */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-6">
               <h3 className="text-sm font-bold text-foreground mb-6 tracking-wider">
                 SOLUTIONS
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Departments */}
                 <div>
-                  <h4 className="text-xs font-semibold text-muted-foreground mb-4 tracking-wider">
+                  <h4 className="text-sm font-bold text-foreground mb-4 tracking-wider">
                     DEPARTMENTS
                   </h4>
                   <ul className="space-y-3">
@@ -84,7 +92,7 @@ export const Footer = () => {
                 
                 {/* Industries */}
                 <div>
-                  <h4 className="text-xs font-semibold text-muted-foreground mb-4 tracking-wider">
+                  <h4 className="text-sm font-bold text-foreground mb-4 tracking-wider">
                     INDUSTRIES
                   </h4>
                   <ul className="space-y-3">
@@ -126,19 +134,6 @@ export const Footer = () => {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-
-          <div className="pt-8 border-t border-border">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-2">
-                <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Langslide
-                </span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} Langslide. All rights reserved.
-              </p>
             </div>
           </div>
         </div>
