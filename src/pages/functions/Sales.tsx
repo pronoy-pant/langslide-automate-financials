@@ -3,11 +3,11 @@ import Navigation from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { TrendingUp, Users, FileText, DollarSign, Zap, CheckCircle } from "lucide-react";
+import { TrendingUp, Users, FileText, DollarSign, BarChart, Target, Database, Workflow, CheckCircle } from "lucide-react";
 
 const commonApps = [
-  { name: "Salesforce", category: "CRM" },
-  { name: "HubSpot CRM", category: "CRM" },
+  { name: "Salesforce", category: "CRM Platform" },
+  { name: "HubSpot", category: "Revenue Operations Platform" },
   { name: "Pipedrive", category: "Sales CRM" },
   { name: "Outreach", category: "Sales Engagement" },
   { name: "SalesLoft", category: "Sales Engagement" },
@@ -19,8 +19,18 @@ const commonApps = [
   { name: "DocuSign", category: "E-Signature" },
   { name: "PandaDoc", category: "Document Automation" },
   { name: "Calendly", category: "Meeting Scheduling" },
-  { name: "Slack", category: "Team Collaboration" },
-  { name: "Zoom", category: "Video Conferencing" },
+  { name: "Tableau", category: "Business Intelligence" },
+  { name: "Looker", category: "Business Intelligence" },
+  { name: "Clari", category: "Revenue Operations & Intelligence" },
+  { name: "InsightSquared", category: "Revenue Intelligence" },
+  { name: "LeanData", category: "Lead-to-Account Matching" },
+  { name: "Segment", category: "Customer Data Platform" },
+  { name: "Fivetran", category: "Data Pipeline Automation" },
+  { name: "dbt", category: "Data Transformation" },
+  { name: "Snowflake", category: "Data Warehouse" },
+  { name: "ChartMogul", category: "Revenue Analytics" },
+  { name: "Stripe", category: "Payment & Billing" },
+  { name: "Zuora", category: "Subscription Management" },
 ];
 
 const workflows = [
@@ -68,6 +78,50 @@ const workflows = [
       "Contract generation and e-signature"
     ]
   },
+  {
+    title: "Revenue Analytics",
+    description: "Unified visibility into revenue performance",
+    icon: BarChart,
+    capabilities: [
+      "Real-time revenue dashboards and reporting",
+      "Pipeline coverage and forecast accuracy",
+      "Win/loss analysis automation",
+      "Customer health and retention metrics"
+    ]
+  },
+  {
+    title: "Lead-to-Cash Automation",
+    description: "Streamline the entire revenue cycle",
+    icon: Workflow,
+    capabilities: [
+      "Lead routing and account matching",
+      "Opportunity progression automation",
+      "Quote-to-cash workflow orchestration",
+      "Revenue recognition automation"
+    ]
+  },
+  {
+    title: "Data Operations",
+    description: "Clean, enrich, and unify revenue data",
+    icon: Database,
+    capabilities: [
+      "Automated data cleansing and deduplication",
+      "CRM data enrichment and hygiene",
+      "Cross-system data synchronization",
+      "Data quality monitoring and alerts"
+    ]
+  },
+  {
+    title: "Territory & Quota Management",
+    description: "Optimize sales capacity and planning",
+    icon: Target,
+    capabilities: [
+      "Territory design and assignment automation",
+      "Quota setting and allocation",
+      "Capacity planning and forecasting",
+      "Commission calculation automation"
+    ]
+  },
 ];
 
 const Sales = () => (
@@ -83,10 +137,10 @@ const Sales = () => (
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             Intelligent Automation for{" "}
-            <span className="gradient-text">Sales Teams</span>
+            <span className="gradient-text">Sales & Revenue Operations</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-4xl mx-auto">
-            AI agents that qualify leads, automate outreach, and accelerate deals—enabling sales teams to focus on building relationships and closing revenue
+            AI agents that qualify leads, automate outreach, accelerate deals, and optimize revenue operations—enabling teams to drive predictable, efficient growth
           </p>
           <Button asChild size="lg">
             <Link to="/request-demo">Request a Demo</Link>
@@ -99,7 +153,7 @@ const Sales = () => (
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Sales teams spend too much time on administrative tasks, manual data entry, and unqualified leads. Langslide's AI agents automate lead qualification, outreach sequences, and proposal generation—helping sales reps focus on high-value conversations and closing deals.
+            Sales and Revenue Operations teams face challenges with administrative tasks, fragmented data, and manual workflows. Langslide's AI agents automate lead qualification, outreach sequences, data operations, and revenue analytics—helping teams focus on high-value activities and driving predictable growth.
           </p>
         </div>
       </div>
@@ -143,9 +197,9 @@ const Sales = () => (
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Common Apps for Sales Automation</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Common Apps for Sales & RevOps Automation</h2>
           <p className="text-lg text-muted-foreground text-center mb-12">
-            Langslide integrates with your existing sales tools and platforms
+            Langslide integrates with your existing sales and revenue operations stack
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {commonApps.map((app, i) => (

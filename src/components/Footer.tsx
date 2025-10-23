@@ -2,23 +2,17 @@ import { Link } from "react-router-dom";
 
 const solutionsData = {
   departments: [
-    { name: "Sales", path: "/functions/sales" },
+    { name: "Sales & Revenue Operations", path: "/functions/sales" },
     { name: "Support", path: "/functions/support" },
     { name: "Marketing", path: "/functions/marketing" },
     { name: "Finance", path: "/functions/finance" },
     { name: "IT", path: "/functions/it" },
-    { name: "HR", path: "/functions/hr" },
-    { name: "Revenue Operations", path: "/functions/revenue-operations" },
-    { name: "Product", path: "/functions/product" }
+    { name: "HR", path: "/functions/hr" }
   ],
   industries: [
     { name: "Financial Services", path: "/industries/financial-services" },
     { name: "Insurance", path: "/industries/insurance" },
-    { name: "Healthcare", path: "/industries/healthcare" },
-    { name: "Manufacturing", path: "/industries/manufacturing" },
-    { name: "Retail", path: "/industries/retail" },
-    { name: "Logistics", path: "/industries/logistics" },
-    { name: "Real Estate", path: "/industries/real-estate" }
+    { name: "Healthcare", path: "/industries/healthcare" }
   ]
 };
 

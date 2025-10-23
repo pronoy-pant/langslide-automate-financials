@@ -25,19 +25,13 @@ const functions = [
   { name: "Support", path: "/functions/support" },
   { name: "HR", path: "/functions/hr" },
   { name: "Marketing", path: "/functions/marketing" },
-  { name: "Sales", path: "/functions/sales" },
-  { name: "Revenue Operations", path: "/functions/revenue-operations" },
-  { name: "Product (Embed)", path: "/functions/product" },
+  { name: "Sales & Revenue Operations", path: "/functions/sales" },
 ];
 
 const industries = [
-  { name: "Manufacturing", path: "/industries/manufacturing" },
   { name: "Financial Services", path: "/industries/financial-services" },
-  { name: "Retail", path: "/industries/retail" },
-  { name: "Logistics", path: "/industries/logistics" },
   { name: "Healthcare", path: "/industries/healthcare" },
   { name: "Insurance", path: "/industries/insurance" },
-  { name: "Real Estate", path: "/industries/real-estate" },
 ];
 
 const featuredUseCases = [
