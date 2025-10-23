@@ -22,7 +22,8 @@ import {
   ArrowRight,
   Sparkles,
   Target,
-  TrendingUp
+  TrendingUp,
+  Workflow
 } from "lucide-react";
 
 const valueProps = [
@@ -174,32 +175,83 @@ const Home = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <header className="relative overflow-hidden bg-gradient-to-b from-white via-secondary/20 to-white">
-        <div className="container mx-auto px-6 py-32 md:py-48 relative">
-          <div className="max-w-6xl mx-auto text-center">
-            <div className="inline-block mb-6">
-              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold border border-primary/20">
-                ✨ AI-Powered Enterprise Automation
-              </span>
-            </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-foreground">
-              Intelligent AI Agents for{" "}
-              <span className="gradient-text">Enterprise Automation</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-12 leading-relaxed max-w-4xl mx-auto">
-              Powerful AI agents that automate complex workflows across industries—from financial services to healthcare, retail to manufacturing
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-              <Button asChild size="lg">
-                <a href="mailto:hello@langslide.com">
-                  Get Started <ArrowRight className="w-5 h-5" />
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <a href="mailto:hello@langslide.com">
-                  Book a Demo
-                </a>
-              </Button>
+      <header className="relative overflow-hidden bg-gradient-to-b from-white via-secondary/20 to-white dark:from-background dark:via-secondary/10 dark:to-background">
+        <div className="container mx-auto px-6 py-24 md:py-32 lg:py-40 relative">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+              
+              {/* Left Column - Content (60%) */}
+              <div className="lg:col-span-3 space-y-8">
+                <div className="mb-6">
+                  <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold border border-primary/20">
+                    ✨ AI-Powered Enterprise Automation
+                  </span>
+                </div>
+                
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground">
+                  Intelligent AI Agents for{" "}
+                  <span className="gradient-text">Enterprise Automation</span>
+                </h1>
+                
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+                  Powerful <span className="text-primary font-semibold">AI agents</span> that automate complex workflows across industries—from financial services to healthcare, retail to manufacturing
+                </p>
+                
+                <div className="pt-4">
+                  <Button asChild size="lg">
+                    <a href="mailto:hello@langslide.com">
+                      Contact Us <ArrowRight className="w-5 h-5" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+              
+              {/* Right Column - Workflow Diagram Placeholder (40%) */}
+              <div className="lg:col-span-2 relative">
+                <div className="aspect-square bg-gradient-to-br from-secondary/30 to-secondary/10 dark:from-secondary/20 dark:to-secondary/5 rounded-2xl border border-border flex items-center justify-center p-8">
+                  <div className="text-center space-y-4">
+                    <div className="w-16 h-16 mx-auto bg-primary/10 rounded-xl flex items-center justify-center">
+                      <Workflow className="w-8 h-8 text-primary" />
+                    </div>
+                    <p className="text-sm text-muted-foreground max-w-xs">
+                      Workflow Diagram Placeholder
+                    </p>
+                  </div>
+                  
+                  {/* 
+                    TODO: Replace this placeholder with a workflow diagram graphic
+                    
+                    Implementation Options:
+                    
+                    1. SVG/PNG Import:
+                       - Design in Figma/Illustrator
+                       - Export as SVG or PNG
+                       - Import: import workflowGraphic from '@/assets/workflow-diagram.svg'
+                       - Use: <img src={workflowGraphic} alt="Workflow automation" />
+                    
+                    2. React Component Approach:
+                       - Create connected card components
+                       - Use Framer Motion for animations
+                       - Show 3-5 workflow nodes with connecting arrows
+                       - Example: <WorkflowDiagram />
+                    
+                    3. Shadcn Card Composition:
+                       - Use Card components with absolute positioning
+                       - Add SVG arrows between cards
+                       - Apply floating animation (animate-float)
+                       - Implement hover effects
+                    
+                    Graphic Should Show:
+                    - 3-5 connected workflow cards/nodes
+                    - Flow arrows indicating automation sequence
+                    - Small icons or interface mockups within cards
+                    - Modern, floating design with soft shadows
+                    - Light, clean aesthetic with subtle animations
+                    - Represents: Data input → AI Processing → Automated actions
+                  */}
+                </div>
+              </div>
+              
             </div>
           </div>
         </div>
