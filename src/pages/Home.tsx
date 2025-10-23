@@ -75,18 +75,6 @@ const industries = [
     link: "/industries/healthcare"
   },
   {
-    icon: Users,
-    title: "Human Resources",
-    description: "Streamline recruitment, onboarding, and employee support",
-    metric: "70% faster candidate screening",
-    features: [
-      "AI resume screening",
-      "Automated onboarding workflows",
-      "24/7 employee query chatbot"
-    ],
-    link: "/industries/hr"
-  },
-  {
     icon: Target,
     title: "Media & Marketing",
     description: "Automate content creation, campaign management, and audience analytics",
@@ -281,7 +269,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {industries.map((industry, index) => (
                 <Link 
                   key={index}

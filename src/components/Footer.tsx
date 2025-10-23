@@ -9,7 +9,8 @@ const functionSolutions = [
 
 const industrySolutions = [
   { name: "Financial Services & Insurance", path: "/industries/financial-services" },
-  { name: "Healthcare", path: "/industries/healthcare" }
+  { name: "Healthcare", path: "/industries/healthcare" },
+  { name: "Media & Marketing", path: "/industries/media-marketing" }
 ];
 
 const companySections = [

@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import FinancialServices from "./pages/industries/FinancialServices";
 import Healthcare from "./pages/industries/Healthcare";
-import HR from "./pages/industries/HR";
 import MediaMarketing from "./pages/industries/MediaMarketing";
 import Finance from "./pages/functions/Finance";
 import HRFunction from "./pages/functions/HRFunction";
@@ -30,7 +29,6 @@ const App = () => (
           <Route path="/" element={<Home />} />
           <Route path="/industries/financial-services" element={<FinancialServices />} />
           <Route path="/industries/healthcare" element={<Healthcare />} />
-          <Route path="/industries/hr" element={<HR />} />
           <Route path="/industries/media-marketing" element={<MediaMarketing />} />
           <Route path="/functions/finance" element={<Finance />} />
           <Route path="/functions/hr" element={<HRFunction />} />
