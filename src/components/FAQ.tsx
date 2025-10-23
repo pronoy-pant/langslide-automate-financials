@@ -8,12 +8,12 @@ import {
 
 const faqs = [
   {
-    question: "How secure is my data with Langslide?",
-    answer: "Langslide prioritizes data security with enterprise-grade encryption, SOC 2 compliance, and strict access controls. All data is encrypted in transit and at rest, and we never use customer data to train our AI models. Our infrastructure is regularly audited and meets the highest industry security standards."
+    question: "What are AI agents and how do they work?",
+    answer: "AI agents are intelligent systems that can autonomously execute multi-step workflows on your behalf. Unlike simple chatbots, Langslide's AI agents understand context, make decisions, interact with your tools and data, and complete complex tasks from start to finish—such as processing documents, extracting insights, and updating systems—all without human intervention."
   },
   {
-    question: "What AI models does Langslide support?",
-    answer: "Langslide supports leading AI models including GPT-4, Claude, and other state-of-the-art language models. We continuously evaluate and integrate the latest models to ensure optimal performance for different use cases. Our platform is model-agnostic, allowing you to choose the best model for your specific workflows."
+    question: "Do I need coding skills to build AI agents?",
+    answer: "No coding required. Langslide is designed for both technical and non-technical users. You can build powerful AI agents through our intuitive interface by simply describing your workflow. For developers who want more control, we also offer advanced APIs and SDKs to create highly customized, stateful agents with sophisticated logic."
   },
   {
     question: "What can I automate with Langslide?",
