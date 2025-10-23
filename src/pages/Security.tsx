@@ -87,35 +87,6 @@ const Security = () => {
         </div>
       </section>
 
-      {/* Security & Compliance Details */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-6">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-16 text-foreground text-center">
-              Security & Compliance
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {complianceDetails.map((detail, index) => (
-                <Card 
-                  key={index}
-                  className="p-8 bg-white border border-border hover:border-primary/50 transition-all duration-300 group"
-                >
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${detail.colorClass} mb-6 flex items-center justify-center`}>
-                    <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${detail.colorClass.replace('/20', '/40')}`}></div>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4 text-foreground">
-                    {detail.title}
-                  </h3>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    {detail.description}
-                  </p>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );
