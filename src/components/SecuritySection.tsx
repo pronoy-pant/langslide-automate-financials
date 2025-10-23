@@ -26,23 +26,6 @@ const securityFeatures = [
   }
 ];
 
-const complianceDetails = [
-  {
-    title: "Data Privacy",
-    description: "Your data stays your data—never used for model training. Encryption at rest and in transit by default.",
-    colorClass: "from-blue-500/20 to-cyan-500/20"
-  },
-  {
-    title: "Access Control",
-    description: "Fine-grained permissions with Spaces, SSO/SCIM support, and role-based controls for sensitive information.",
-    colorClass: "from-red-500/20 to-pink-500/20"
-  },
-  {
-    title: "Compliance",
-    description: "SOC 2 Type II certified. GDPR compliant. Enables HIPAA compliance. Enterprise audit logs and data residency options.",
-    colorClass: "from-green-500/20 to-emerald-500/20"
-  }
-];
 
 export const SecuritySection = () => {
   return (
@@ -80,30 +63,6 @@ export const SecuritySection = () => {
             </Button>
           </div>
 
-          {/* Security & Compliance Details */}
-          <div className="mt-32">
-            <h2 className="text-3xl md:text-4xl font-bold mb-16 text-foreground text-center">
-              Security & Compliance
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {complianceDetails.map((detail, index) => (
-                <Card 
-                  key={index}
-                  className="p-8 bg-white border border-border hover:border-primary/50 transition-all duration-300 group"
-                >
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${detail.colorClass} mb-6 flex items-center justify-center`}>
-                    <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${detail.colorClass.replace('/20', '/40')}`}></div>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4 text-foreground">
-                    {detail.title}
-                  </h3>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    {detail.description}
-                  </p>
-                </Card>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
