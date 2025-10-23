@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 
-const solutions = [
+const functionSolutions = [
   { name: "Sales & Revenue Operations", path: "/functions/sales" },
   { name: "Marketing", path: "/functions/marketing" },
   { name: "Finance & Accounting", path: "/functions/finance" },
-  { name: "HR", path: "/functions/hr" },
+  { name: "HR", path: "/functions/hr" }
+];
+
+const industrySolutions = [
   { name: "Financial Services & Insurance", path: "/industries/financial-services" },
   { name: "Healthcare", path: "/industries/healthcare" }
 ];
@@ -57,18 +60,45 @@ export const Footer = () => {
               <h3 className="text-sm font-bold text-foreground mb-6 tracking-wider">
                 SOLUTIONS
               </h3>
-              <ul className="space-y-3">
-                {solutions.map((link, index) => (
-                  <li key={index}>
-                    <Link
-                      to={link.path}
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <div className="space-y-6">
+                {/* By Function */}
+                <div>
+                  <h4 className="text-sm font-bold text-foreground mb-3">
+                    BY FUNCTION
+                  </h4>
+                  <ul className="space-y-3">
+                    {functionSolutions.map((link, index) => (
+                      <li key={index}>
+                        <Link
+                          to={link.path}
+                          className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                {/* By Industry */}
+                <div>
+                  <h4 className="text-sm font-bold text-foreground mb-3">
+                    BY INDUSTRY
+                  </h4>
+                  <ul className="space-y-3">
+                    {industrySolutions.map((link, index) => (
+                      <li key={index}>
+                        <Link
+                          to={link.path}
+                          className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
             
             {/* Right Side - Company + Legal */}
