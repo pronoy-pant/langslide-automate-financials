@@ -41,6 +41,10 @@ All colors MUST be HSL.
     /* Gradient colors - soft pastels */
     --gradient-start: 250 85% 60%;
     --gradient-end: 280 75% 65%;
+    --gradient-secondary-start: 220 85% 60%;
+    --gradient-secondary-end: 180 75% 65%;
+    --gradient-accent-start: 320 75% 65%;
+    --gradient-accent-end: 280 75% 65%;
     
     /* Soft shadows */
     --shadow-soft: 0 1px 3px 0 rgb(0 0 0 / 0.05);
