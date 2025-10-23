@@ -214,12 +214,8 @@ const Home = () => {
       </header>
 
       {/* Why Langslide Section */}
-      <section className="py-32 md:py-40 bg-white relative overflow-hidden">
-        {/* Decorative Elements */}
-        <div className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-0 w-80 h-80 bg-gradient-to-tr from-secondary/20 to-transparent rounded-full blur-3xl"></div>
-        
-        <div className="container mx-auto px-6 relative z-10">
+      <section className="py-32 md:py-40 bg-white">
+        <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
@@ -231,49 +227,29 @@ const Home = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {whyLangslide.map((item, index) => {
-                // Alternate card backgrounds
-                const isAlternate = index % 2 === 1;
-                // Rotate icon colors: purple, blue, cyan, pink
-                const iconColors = [
-                  'bg-primary/10 group-hover:bg-primary/15',
-                  'bg-blue-500/10 group-hover:bg-blue-500/15',
-                  'bg-cyan-500/10 group-hover:bg-cyan-500/15',
-                  'bg-pink-500/10 group-hover:bg-pink-500/15'
-                ];
-                const iconTextColors = [
-                  'text-primary',
-                  'text-blue-500',
-                  'text-cyan-500',
-                  'text-pink-500'
-                ];
-                
-                return (
-                  <div 
-                    key={index}
-                    className={`relative p-8 rounded-2xl border-2 hover:border-transparent transition-all duration-300 group hover:shadow-lg ${isAlternate ? 'bg-primary/5 border-primary/20' : 'bg-white border-border'}`}
-                    style={{
-                      backgroundImage: isAlternate 
-                        ? `linear-gradient(${isAlternate ? 'hsl(var(--primary) / 0.05)' : 'white'}, ${isAlternate ? 'hsl(var(--primary) / 0.05)' : 'white'}), linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)))`
-                        : 'linear-gradient(white, white), linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)))',
-                      backgroundOrigin: 'border-box',
-                      backgroundClip: 'padding-box, border-box',
-                    }}
-                  >
-                    <div className="mb-6">
-                      <div className={`inline-flex p-3.5 rounded-xl transition-colors ${iconColors[index]}`}>
-                        <item.icon className={`w-7 h-7 ${iconTextColors[index]}`} />
-                      </div>
+              {whyLangslide.map((item, index) => (
+                <div 
+                  key={index}
+                  className="relative p-8 bg-white rounded-2xl border-2 border-border hover:border-transparent transition-all duration-300 group hover:shadow-lg"
+                  style={{
+                    backgroundImage: 'linear-gradient(white, white), linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)))',
+                    backgroundOrigin: 'border-box',
+                    backgroundClip: 'padding-box, border-box',
+                  }}
+                >
+                  <div className="mb-6">
+                    <div className="inline-flex p-3.5 rounded-xl bg-primary/10 group-hover:bg-primary/15 transition-colors">
+                      <item.icon className="w-7 h-7 text-primary" />
                     </div>
-                    <h3 className="text-xl font-bold mb-4 text-foreground">
-                      {item.title}
-                    </h3>
-                    <p className="text-base text-muted-foreground leading-relaxed">
-                      {item.description}
-                    </p>
                   </div>
-                );
-              })}
+                  <h3 className="text-xl font-bold mb-4 text-foreground">
+                    {item.title}
+                  </h3>
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -293,30 +269,21 @@ const Home = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {industries.map((industry, index) => {
-                // Define icon colors by industry
-                const industryIconColors = [
-                  { bg: 'bg-blue-500/10 group-hover:bg-blue-500/15', text: 'text-blue-500', border: 'border-blue-500/20' }, // Financial
-                  { bg: 'bg-red-500/10 group-hover:bg-red-500/15', text: 'text-red-500', border: 'border-red-500/20' }, // Healthcare
-                  { bg: 'bg-purple-500/10 group-hover:bg-purple-500/15', text: 'text-purple-500', border: 'border-purple-500/20' } // Media
-                ];
-                const colorScheme = industryIconColors[index];
-                
-                return (
-                  <Link 
-                    key={index}
-                    to={industry.link}
-                    className="block"
+              {industries.map((industry, index) => (
+                <Link 
+                  key={index}
+                  to={industry.link}
+                  className="block"
+                >
+                  <Card 
+                    className="relative overflow-hidden p-6 bg-white border border-border hover:border-primary/50 transition-all duration-300 group cursor-pointer h-full flex flex-col hover:scale-105"
                   >
-                    <Card 
-                      className="relative overflow-hidden p-6 bg-white border border-border hover:border-primary/50 transition-all duration-300 group cursor-pointer h-full flex flex-col hover:scale-105"
-                    >
-                      <div className="relative z-10 flex flex-col flex-1">
-                        <div className="mb-5">
-                          <div className={`inline-flex p-3.5 rounded-2xl border transition-colors ${colorScheme.bg} ${colorScheme.border}`}>
-                            <industry.icon className={`w-7 h-7 ${colorScheme.text}`} />
-                          </div>
+                    <div className="relative z-10 flex flex-col flex-1">
+                      <div className="mb-5">
+                        <div className="inline-flex p-3.5 rounded-2xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                          <industry.icon className="w-7 h-7 text-primary" />
                         </div>
+                      </div>
                       
                       <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
                         {industry.title}
@@ -344,18 +311,15 @@ const Home = () => {
                     </div>
                   </Card>
                 </Link>
-                );
-              })}
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* How It Works Section */}
-      <section className="py-32 md:py-40 bg-gradient-to-br from-primary/5 via-white to-secondary/20 relative overflow-hidden">
-        {/* Decorative mesh gradient */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
-        <div className="container mx-auto px-6 relative z-10">
+      <section className="py-32 md:py-40 bg-white">
+        <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
@@ -404,10 +368,8 @@ const Home = () => {
       {/* Customer Stories */}
       <CustomerStories />
 
-      {/* FAQ Section - with subtle background */}
-      <div className="bg-secondary/20">
-        <FAQ />
-      </div>
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* CTA Section */}
       <CTA
