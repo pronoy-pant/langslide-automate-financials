@@ -342,9 +342,6 @@ const Home = () => {
                     }}
                   >
                     <div className="mb-6">
-                      <div className="text-5xl font-bold gradient-text opacity-20 mb-4">
-                        {step.number}
-                      </div>
                       <div className="inline-flex p-3.5 rounded-xl bg-primary/10 group-hover:bg-primary/15 transition-colors">
                         <step.icon className="w-7 h-7 text-primary" />
                       </div>
