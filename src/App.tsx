@@ -6,11 +6,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import FinancialServices from "./pages/industries/FinancialServices";
 import Healthcare from "./pages/industries/Healthcare";
-import Insurance from "./pages/industries/Insurance";
 import HR from "./pages/industries/HR";
-import IT from "./pages/functions/IT";
 import Finance from "./pages/functions/Finance";
-import Support from "./pages/functions/Support";
 import HRFunction from "./pages/functions/HRFunction";
 import Marketing from "./pages/functions/Marketing";
 import Sales from "./pages/functions/Sales";
@@ -32,11 +29,8 @@ const App = () => (
           <Route path="/" element={<Home />} />
           <Route path="/industries/financial-services" element={<FinancialServices />} />
           <Route path="/industries/healthcare" element={<Healthcare />} />
-          <Route path="/industries/insurance" element={<Insurance />} />
           <Route path="/industries/hr" element={<HR />} />
-          <Route path="/functions/it" element={<IT />} />
           <Route path="/functions/finance" element={<Finance />} />
-          <Route path="/functions/support" element={<Support />} />
           <Route path="/functions/hr" element={<HRFunction />} />
           <Route path="/functions/marketing" element={<Marketing />} />
           <Route path="/functions/sales" element={<Sales />} />
@@ -45,6 +39,7 @@ const App = () => (
           <Route path="/legal/terms" element={<Terms />} />
           <Route path="/legal/privacy" element={<Privacy />} />
           <Route path="/bfsi" element={<Navigate to="/industries/financial-services" replace />} />
+          <Route path="/industries/insurance" element={<Navigate to="/industries/financial-services" replace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

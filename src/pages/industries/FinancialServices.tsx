@@ -221,15 +221,33 @@ const workflows = [
     ]
   },
   {
-    category: "Insurance & Cross-functional",
-    description: "AI agents provide comprehensive automation across insurance and multi-domain processes",
+    category: "Insurance Operations",
+    description: "AI agents automate underwriting, claims processing, and fraud detection for insurance operations",
     icon: Umbrella,
     items: [
       {
-        title: "Claim Processing",
-        description: "Automated verification, fraud detection, and instant approval for simple claims",
+        title: "AI-Powered Underwriting",
+        description: "Automated risk assessment using multiple data sources, credit scores, and predictive analytics",
+        icon: Target,
+        metrics: "75% faster decisions"
+      },
+      {
+        title: "Claims Processing & Automation",
+        description: "End-to-end claims automation with verification, fraud detection, and instant approval",
         icon: CheckCircle,
-        metrics: "Days to minutes settlement"
+        metrics: "85% faster processing"
+      },
+      {
+        title: "Fraud Detection & Prevention",
+        description: "Real-time fraud analysis with pattern detection and identity verification",
+        icon: AlertCircle,
+        metrics: "80% fraud detection rate"
+      },
+      {
+        title: "Policy Administration",
+        description: "Automated policy issuance, renewals, and modifications with customer notifications",
+        icon: FileCheck,
+        metrics: "Same-day issuance"
       },
       {
         title: "Remittance Compliance",
@@ -260,10 +278,10 @@ const BFSI = () => {
           <div className="max-w-5xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               Intelligent Workflow Automation for{" "}
-              <span className="gradient-text">Financial Services</span>
+              <span className="gradient-text">Financial Services & Insurance</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-              AI agents that automate complex workflows across lending, payments, compliance, and operations
+              AI agents that automate complex workflows across lending, payments, compliance, claims, and operations
             </p>
             <Button asChild size="lg">
               <Link to="/request-demo">Request a Demo</Link>
@@ -342,9 +360,9 @@ const BFSI = () => {
 
       {/* CTA Section */}
       <CTA 
-        badge="Transform Finance"
-        title="Ready to modernize your financial operations?"
-        description="Discover how Langslide's AI agents can automate lending, payments, compliance, and customer operations in financial services. Accelerate loan approvals, enhance fraud detection, and ensure regulatory compliance—all while reducing operational costs."
+        badge="Transform Finance & Insurance"
+        title="Ready to modernize your financial and insurance operations?"
+        description="Discover how Langslide's AI agents can automate lending, payments, compliance, claims, and underwriting. Accelerate loan approvals, enhance fraud detection, streamline claims processing, and ensure regulatory compliance—all while reducing operational costs."
         primaryButtonText="Contact Us"
         primaryButtonHref="mailto:hello@langslide.com"
         secondaryButtonText="Schedule a Demo"
@@ -356,7 +374,7 @@ const BFSI = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-lg text-muted-foreground mb-6">
-              Ready to transform your financial services operations?
+              Ready to transform your financial services and insurance operations?
             </p>
             <div className="inline-block px-8 py-4 rounded-lg bg-card border border-border">
               <p className="text-base text-foreground">

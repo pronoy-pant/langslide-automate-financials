@@ -20,18 +20,15 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const functions = [
-  { name: "IT", path: "/functions/it" },
-  { name: "Finance", path: "/functions/finance" },
-  { name: "Support", path: "/functions/support" },
+  { name: "Finance & Accounting", path: "/functions/finance" },
   { name: "HR", path: "/functions/hr" },
   { name: "Marketing", path: "/functions/marketing" },
   { name: "Sales & Revenue Operations", path: "/functions/sales" },
 ];
 
 const industries = [
-  { name: "Financial Services", path: "/industries/financial-services" },
+  { name: "Financial Services & Insurance", path: "/industries/financial-services" },
   { name: "Healthcare", path: "/industries/healthcare" },
-  { name: "Insurance", path: "/industries/insurance" },
 ];
 
 const featuredUseCases = [

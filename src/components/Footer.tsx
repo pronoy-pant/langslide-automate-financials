@@ -1,20 +1,13 @@
 import { Link } from "react-router-dom";
 
-const solutionsData = {
-  departments: [
-    { name: "Sales & Revenue Operations", path: "/functions/sales" },
-    { name: "Support", path: "/functions/support" },
-    { name: "Marketing", path: "/functions/marketing" },
-    { name: "Finance", path: "/functions/finance" },
-    { name: "IT", path: "/functions/it" },
-    { name: "HR", path: "/functions/hr" }
-  ],
-  industries: [
-    { name: "Financial Services", path: "/industries/financial-services" },
-    { name: "Insurance", path: "/industries/insurance" },
-    { name: "Healthcare", path: "/industries/healthcare" }
-  ]
-};
+const solutions = [
+  { name: "Sales & Revenue Operations", path: "/functions/sales" },
+  { name: "Marketing", path: "/functions/marketing" },
+  { name: "Finance & Accounting", path: "/functions/finance" },
+  { name: "HR", path: "/functions/hr" },
+  { name: "Financial Services & Insurance", path: "/industries/financial-services" },
+  { name: "Healthcare", path: "/industries/healthcare" }
+];
 
 const companySections = [
   {
@@ -39,10 +32,10 @@ export const Footer = () => {
   return (
     <footer className="bg-secondary/30 border-t border-border py-16 md:py-20">
       <div className="container mx-auto px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-16">
+          <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {/* Left Side - Branding + Contact */}
-            <div className="lg:col-span-3">
+            <div>
               <div className="flex items-center gap-2 mb-6">
                 <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent whitespace-nowrap">
                   Langslide
@@ -59,54 +52,27 @@ export const Footer = () => {
               </Link>
             </div>
             
-            {/* Middle - Solutions (Large Column) */}
-            <div className="lg:col-span-6">
+            {/* Middle - Solutions */}
+            <div>
               <h3 className="text-sm font-bold text-foreground mb-6 tracking-wider">
                 SOLUTIONS
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Departments */}
-                <div>
-                  <h4 className="text-sm font-bold text-foreground mb-4 tracking-wider">
-                    DEPARTMENTS
-                  </h4>
-                  <ul className="space-y-3">
-                    {solutionsData.departments.map((link, index) => (
-                      <li key={index}>
-                        <Link
-                          to={link.path}
-                          className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                        >
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                
-                {/* Industries */}
-                <div>
-                  <h4 className="text-sm font-bold text-foreground mb-4 tracking-wider">
-                    INDUSTRIES
-                  </h4>
-                  <ul className="space-y-3">
-                    {solutionsData.industries.map((link, index) => (
-                      <li key={index}>
-                        <Link
-                          to={link.path}
-                          className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                        >
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+              <ul className="space-y-3">
+                {solutions.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      to={link.path}
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
             
             {/* Right Side - Company + Legal */}
-            <div className="lg:col-span-3">
+            <div>
               <div className="space-y-8">
                 {companySections.map((section, index) => (
                   <div key={index}>

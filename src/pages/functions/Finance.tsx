@@ -83,10 +83,10 @@ const Finance = () => (
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             Intelligent Automation for{" "}
-            <span className="gradient-text">Finance Teams</span>
+            <span className="gradient-text">Finance & Accounting Teams</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-4xl mx-auto">
-            AI agents that automate AP/AR, expense management, and financial reporting—enabling finance teams to focus on strategic decision-making
+            AI agents that automate AP/AR, expense management, and financial reporting—enabling finance and accounting teams to focus on strategic decision-making
           </p>
           <Button asChild size="lg">
             <Link to="/request-demo">Request a Demo</Link>
@@ -99,7 +99,7 @@ const Finance = () => (
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Finance teams spend countless hours on manual data entry, invoice processing, and reconciliation. Langslide's AI agents automate these repetitive tasks, ensure accuracy, and provide real-time financial insights—freeing finance professionals to drive business growth.
+            Finance and accounting teams spend countless hours on manual data entry, invoice processing, and reconciliation. Langslide's AI agents automate these repetitive tasks, ensure accuracy, and provide real-time financial insights—freeing finance professionals to drive business growth.
           </p>
         </div>
       </div>
@@ -143,7 +143,7 @@ const Finance = () => (
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Common Apps for Finance Automation</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Common Apps for Finance & Accounting Automation</h2>
           <p className="text-lg text-muted-foreground text-center mb-12">
             Langslide integrates with your existing financial systems and tools
           </p>
