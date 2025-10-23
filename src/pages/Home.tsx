@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { CustomerStories } from "@/components/CustomerStories";
-import { SecuritySection } from "@/components/SecuritySection";
+import { FAQ } from "@/components/FAQ";
 import { Link } from "react-router-dom";
 import {
   Zap,
@@ -13,15 +13,9 @@ import {
   CheckCircle,
   Building2,
   Heart,
-  ShoppingCart,
-  Factory,
-  Umbrella,
-  Home as HomeIcon,
-  Truck,
-  Users,
+  Target,
   ArrowRight,
   Sparkles,
-  Target,
   TrendingUp,
   Workflow
 } from "lucide-react";
@@ -364,11 +358,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Security and Governance */}
-      <SecuritySection />
-
       {/* Customer Stories */}
       <CustomerStories />
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* CTA Section */}
       <CTA

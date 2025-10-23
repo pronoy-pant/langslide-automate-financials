@@ -12,7 +12,6 @@ import HRFunction from "./pages/functions/HRFunction";
 import Marketing from "./pages/functions/Marketing";
 import Sales from "./pages/functions/Sales";
 import ContactUs from "./pages/ContactUs";
-import Security from "./pages/Security";
 import Terms from "./pages/legal/Terms";
 import Privacy from "./pages/legal/Privacy";
 import NotFound from "./pages/NotFound";
@@ -35,7 +34,6 @@ const App = () => (
           <Route path="/functions/marketing" element={<Marketing />} />
           <Route path="/functions/sales" element={<Sales />} />
           <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/security" element={<Security />} />
           <Route path="/legal/terms" element={<Terms />} />
           <Route path="/legal/privacy" element={<Privacy />} />
           <Route path="/bfsi" element={<Navigate to="/industries/financial-services" replace />} />
