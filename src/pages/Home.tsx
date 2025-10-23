@@ -20,26 +20,26 @@ import {
   Workflow
 } from "lucide-react";
 
-const valueProps = [
+const whyLangslide = [
   {
     icon: Zap,
-    title: "90% Reduction in Manual Work",
-    description: "Automate repetitive tasks and free your team for strategic work"
+    title: "Fastest Time-to-Value",
+    description: "From concept to fully automated workflow in minutes - realize instant impact and ROI with Langslide's rapid deployment."
   },
   {
-    icon: RefreshCw,
-    title: "Real-time Process Automation",
-    description: "AI agents work 24/7 to keep your operations running smoothly"
+    icon: Workflow,
+    title: "Truly Stateful Agents",
+    description: "Unlike simple chatbots, our agents remember context, make decisions, and adapt to your business in real-time."
+  },
+  {
+    icon: Target,
+    title: "No-Code to Full-Code",
+    description: "Intuitive visual tools for everyone, with powerful APIs and SDKs for developers who need advanced control."
   },
   {
     icon: Shield,
-    title: "Regulatory Compliance Built-in",
-    description: "Stay compliant with automated monitoring and reporting"
-  },
-  {
-    icon: CheckCircle,
-    title: "Seamless System Integration",
-    description: "Connect with your existing tools and workflows effortlessly"
+    title: "Enterprise-Grade Security",
+    description: "Built for regulated industries with SOC 2 compliance, encryption, and full audit trails to keep your data safe."
   }
 ];
 
@@ -213,37 +213,42 @@ const Home = () => {
         </div>
       </header>
 
-      {/* Value Props Section */}
+      {/* Why Langslide Section */}
       <section className="py-32 md:py-40 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-                What We Do
+                Why Langslide
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Langslide builds custom AI agents that handle end-to-end workflows, integrate with your existing systems, and scale with your business
+                Langslide brings intelligent, context-aware automation to repetitive work—making teams faster, sharper, and more impactful.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-              {valueProps.map((prop, index) => (
-                <Card 
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {whyLangslide.map((item, index) => (
+                <div 
                   key={index}
-                  className="p-8 bg-white border border-border hover:border-primary/50 transition-all duration-300 group hover:scale-105"
+                  className="relative p-8 bg-white rounded-2xl border-2 border-border hover:border-transparent transition-all duration-300 group hover:shadow-lg"
+                  style={{
+                    backgroundImage: 'linear-gradient(white, white), linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)))',
+                    backgroundOrigin: 'border-box',
+                    backgroundClip: 'padding-box, border-box',
+                  }}
                 >
                   <div className="mb-6">
-                    <div className="inline-flex p-3.5 rounded-2xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
-                      <prop.icon className="w-8 h-8 text-primary" />
+                    <div className="inline-flex p-3.5 rounded-xl bg-primary/10 group-hover:bg-primary/15 transition-colors">
+                      <item.icon className="w-7 h-7 text-primary" />
                     </div>
                   </div>
                   <h3 className="text-xl font-bold mb-4 text-foreground">
-                    {prop.title}
+                    {item.title}
                   </h3>
                   <p className="text-base text-muted-foreground leading-relaxed">
-                    {prop.description}
+                    {item.description}
                   </p>
-                </Card>
+                </div>
               ))}
             </div>
           </div>
