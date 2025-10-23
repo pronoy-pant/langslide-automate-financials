@@ -318,14 +318,14 @@ const Home = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-24 md:py-32 bg-white">
+      <section className="py-32 md:py-40 bg-white">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
                 How It Works
               </h2>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                 Three simple steps to transform your operations
               </p>
             </div>
@@ -333,27 +333,32 @@ const Home = () => {
             <div className="grid md:grid-cols-3 gap-8">
               {howItWorks.map((step, index) => (
                 <div key={index} className="relative">
-                  <Card 
-                    className="p-10 bg-white border border-border hover:border-primary/50 transition-all group h-full"
+                  <div 
+                    className="relative p-8 bg-white rounded-2xl border-2 border-border hover:border-transparent transition-all duration-300 group hover:shadow-lg h-full"
+                    style={{
+                      backgroundImage: 'linear-gradient(white, white), linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)))',
+                      backgroundOrigin: 'border-box',
+                      backgroundClip: 'padding-box, border-box',
+                    }}
                   >
-                    <div className="mb-8">
-                      <div className="text-7xl font-bold gradient-text opacity-20 mb-6">
+                    <div className="mb-6">
+                      <div className="text-5xl font-bold gradient-text opacity-20 mb-4">
                         {step.number}
                       </div>
-                      <div className="inline-flex p-4 rounded-2xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
-                        <step.icon className="w-8 h-8 text-primary" />
+                      <div className="inline-flex p-3.5 rounded-xl bg-primary/10 group-hover:bg-primary/15 transition-colors">
+                        <step.icon className="w-7 h-7 text-primary" />
                       </div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 text-foreground">
+                    <h3 className="text-xl font-bold mb-4 text-foreground">
                       {step.title}
                     </h3>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
+                    <p className="text-base text-muted-foreground leading-relaxed">
                       {step.description}
                     </p>
-                  </Card>
+                  </div>
                   {index < howItWorks.length - 1 && (
                     <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                      <ArrowRight className="w-8 h-8 text-primary/30" />
+                      <ArrowRight className="w-6 h-6 text-primary/30" />
                     </div>
                   )}
                 </div>
