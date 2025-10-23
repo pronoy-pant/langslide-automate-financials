@@ -75,66 +75,6 @@ const industries = [
     link: "/industries/healthcare"
   },
   {
-    icon: ShoppingCart,
-    title: "Retail & E-commerce",
-    description: "Optimize inventory, personalize experiences, and automate fulfillment",
-    metric: "80% inventory accuracy improvement",
-    features: [
-      "Personalized customer recommendations",
-      "Automated order fulfillment",
-      "Real-time inventory sync"
-    ],
-    link: "/industries/retail"
-  },
-  {
-    icon: Factory,
-    title: "Manufacturing",
-    description: "Automate supply chain, quality control, and predictive maintenance",
-    metric: "50% reduction in quality issues",
-    features: [
-      "Predictive maintenance alerts",
-      "Supply chain optimization",
-      "Automated quality control"
-    ],
-    link: "/industries/manufacturing"
-  },
-  {
-    icon: Umbrella,
-    title: "Insurance",
-    description: "Accelerate claims processing, underwriting, and fraud detection",
-    metric: "65% faster claims processing",
-    features: [
-      "Automated claims intake & triage",
-      "AI-powered underwriting",
-      "Real-time fraud detection"
-    ],
-    link: "/industries/insurance"
-  },
-  {
-    icon: HomeIcon,
-    title: "Real Estate",
-    description: "Automate property management, lease processing, and compliance checks",
-    metric: "75% reduction in lease processing time",
-    features: [
-      "Automated lease processing",
-      "Maintenance request routing",
-      "Tenant screening automation"
-    ],
-    link: "/industries/real-estate"
-  },
-  {
-    icon: Truck,
-    title: "Logistics & Supply Chain",
-    description: "Optimize routing, track shipments, and manage warehouse operations",
-    metric: "55% improvement in delivery efficiency",
-    features: [
-      "Intelligent route planning",
-      "Automated shipment tracking",
-      "Smart warehouse operations"
-    ],
-    link: "/industries/logistics"
-  },
-  {
     icon: Users,
     title: "Human Resources",
     description: "Streamline recruitment, onboarding, and employee support",
@@ -145,6 +85,18 @@ const industries = [
       "24/7 employee query chatbot"
     ],
     link: "/industries/hr"
+  },
+  {
+    icon: Target,
+    title: "Media & Marketing",
+    description: "Automate content creation, campaign management, and audience analytics",
+    metric: "65% faster content production",
+    features: [
+      "AI-powered content generation",
+      "Automated campaign optimization",
+      "Real-time audience insights"
+    ],
+    link: "/industries/media-marketing"
   }
 ];
 
@@ -329,7 +281,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-10">
               {industries.map((industry, index) => (
                 <Link 
                   key={index}
