@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { CustomerStories } from "@/components/CustomerStories";
+import { SecuritySection } from "@/components/SecuritySection";
 import { Link } from "react-router-dom";
 import {
   Zap,
@@ -348,6 +349,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Security and Governance */}
+      <SecuritySection />
 
       {/* Customer Stories */}
       <CustomerStories />
