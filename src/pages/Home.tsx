@@ -176,78 +176,100 @@ const Home = () => {
 
       {/* Hero Section */}
       <header className="relative overflow-hidden bg-gradient-to-b from-white via-secondary/20 to-white dark:from-background dark:via-secondary/10 dark:to-background">
-        <div className="container mx-auto px-6 py-24 md:py-32 lg:py-40 relative">
+        <div className="container mx-auto px-6 py-20 md:py-28 lg:py-36 relative">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
               
-              {/* Left Column - Content (60%) */}
-              <div className="lg:col-span-3 space-y-8">
-                <div className="mb-6">
-                  <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold border border-primary/20">
+              {/* Left Column - Content */}
+              <div className="space-y-6 lg:space-y-8">
+                <div>
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold border border-primary/20">
                     ✨ AI-Powered Enterprise Automation
                   </span>
                 </div>
                 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] text-foreground">
                   Intelligent AI Agents for{" "}
                   <span className="gradient-text">Enterprise Automation</span>
                 </h1>
                 
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+                <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-xl">
                   Powerful <span className="text-primary font-semibold">AI agents</span> that automate complex workflows across industries—from financial services to healthcare, retail to manufacturing
                 </p>
                 
-                <div className="pt-4">
-                  <Button asChild size="lg">
+                <div className="pt-2">
+                  <Button asChild size="lg" className="text-base px-8 py-6">
                     <a href="mailto:hello@langslide.com">
-                      Contact Us <ArrowRight className="w-5 h-5" />
+                      Contact Us <ArrowRight className="w-5 h-5 ml-2" />
                     </a>
                   </Button>
                 </div>
               </div>
               
-              {/* Right Column - Workflow Diagram Placeholder (40%) */}
-              <div className="lg:col-span-2 relative">
-                <div className="aspect-square bg-gradient-to-br from-secondary/30 to-secondary/10 dark:from-secondary/20 dark:to-secondary/5 rounded-2xl border border-border flex items-center justify-center p-8">
-                  <div className="text-center space-y-4">
-                    <div className="w-16 h-16 mx-auto bg-primary/10 rounded-xl flex items-center justify-center">
-                      <Workflow className="w-8 h-8 text-primary" />
+              {/* Right Column - Workflow Diagram Placeholder */}
+              <div className="relative lg:pl-8">
+                <div className="relative aspect-[4/3] bg-gradient-to-br from-primary/5 via-secondary/20 to-primary/10 dark:from-primary/5 dark:via-secondary/10 dark:to-primary/5 rounded-3xl border border-border/50 shadow-xl overflow-hidden">
+                  {/* Background Pattern */}
+                  <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+                  
+                  {/* Workflow Nodes Mockup */}
+                  <div className="relative h-full flex items-center justify-center p-8">
+                    <div className="space-y-6 w-full max-w-md">
+                      {/* Node 1 */}
+                      <div className="bg-white dark:bg-background border border-border rounded-xl p-4 shadow-lg transform translate-x-0 hover:scale-105 transition-transform">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <CheckCircle className="w-5 h-5 text-primary" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="h-3 bg-foreground/10 rounded w-24 mb-2"></div>
+                            <div className="h-2 bg-foreground/5 rounded w-32"></div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Arrow */}
+                      <div className="flex justify-center">
+                        <ArrowRight className="w-6 h-6 text-primary/40" />
+                      </div>
+                      
+                      {/* Node 2 */}
+                      <div className="bg-white dark:bg-background border border-border rounded-xl p-4 shadow-lg transform translate-x-8 hover:scale-105 transition-transform">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <Workflow className="w-5 h-5 text-primary" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="h-3 bg-foreground/10 rounded w-28 mb-2"></div>
+                            <div className="h-2 bg-foreground/5 rounded w-36"></div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Arrow */}
+                      <div className="flex justify-center">
+                        <ArrowRight className="w-6 h-6 text-primary/40" />
+                      </div>
+                      
+                      {/* Node 3 */}
+                      <div className="bg-white dark:bg-background border border-border rounded-xl p-4 shadow-lg transform translate-x-0 hover:scale-105 transition-transform">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <Zap className="w-5 h-5 text-primary" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="h-3 bg-foreground/10 rounded w-20 mb-2"></div>
+                            <div className="h-2 bg-foreground/5 rounded w-28"></div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-sm text-muted-foreground max-w-xs">
-                      Workflow Diagram Placeholder
-                    </p>
                   </div>
                   
                   {/* 
-                    TODO: Replace this placeholder with a workflow diagram graphic
-                    
-                    Implementation Options:
-                    
-                    1. SVG/PNG Import:
-                       - Design in Figma/Illustrator
-                       - Export as SVG or PNG
-                       - Import: import workflowGraphic from '@/assets/workflow-diagram.svg'
-                       - Use: <img src={workflowGraphic} alt="Workflow automation" />
-                    
-                    2. React Component Approach:
-                       - Create connected card components
-                       - Use Framer Motion for animations
-                       - Show 3-5 workflow nodes with connecting arrows
-                       - Example: <WorkflowDiagram />
-                    
-                    3. Shadcn Card Composition:
-                       - Use Card components with absolute positioning
-                       - Add SVG arrows between cards
-                       - Apply floating animation (animate-float)
-                       - Implement hover effects
-                    
-                    Graphic Should Show:
-                    - 3-5 connected workflow cards/nodes
-                    - Flow arrows indicating automation sequence
-                    - Small icons or interface mockups within cards
-                    - Modern, floating design with soft shadows
-                    - Light, clean aesthetic with subtle animations
-                    - Represents: Data input → AI Processing → Automated actions
+                    TODO: Replace this mockup with actual workflow diagram graphic
+                    This is a temporary visual representation showing the automation flow concept.
+                    For production, replace with custom-designed SVG or interactive component.
                   */}
                 </div>
               </div>
