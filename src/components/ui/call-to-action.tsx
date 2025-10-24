@@ -24,7 +24,7 @@ function CTA({
   return (
     <div className="w-full py-24 lg:py-32">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col text-center bg-gradient-to-br from-secondary to-white rounded-3xl p-12 lg:p-20 gap-10 items-center border border-border shadow-large">
+        <div className="flex flex-col text-center bg-gradient-to-br from-primary/15 via-accent/10 to-secondary/20 rounded-3xl p-12 lg:p-20 gap-10 items-center border border-primary/20 shadow-large">
           <div>
             <Badge className="px-4 py-2 text-sm font-semibold">{badge}</Badge>
           </div>

@@ -125,7 +125,7 @@ const Home = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <header className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-white to-accent/5">
+      <header className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-white to-accent/10">
         <div className="container mx-auto px-6 py-20 md:py-28 lg:py-36 relative">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
@@ -230,7 +230,7 @@ const Home = () => {
       </header>
 
       {/* Industries We Serve Section - Kore.ai Style */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-accent/5 via-secondary/30 to-primary/5">
+      <section className="py-20 md:py-32 bg-gradient-to-r from-accent/10 via-primary/5 to-accent/10">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             
@@ -330,7 +330,7 @@ const Home = () => {
       </section>
 
       {/* Why Langslide Section */}
-      <section className="py-32 md:py-40 bg-gradient-to-b from-white via-primary/5 to-white">
+      <section className="py-32 md:py-40 bg-gradient-to-br from-white via-secondary/40 to-primary/10">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
@@ -372,7 +372,7 @@ const Home = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-32 md:py-40 bg-gradient-to-br from-accent/5 via-white to-primary/5">
+      <section className="py-32 md:py-40 bg-gradient-to-bl from-primary/10 via-white to-accent/15">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
