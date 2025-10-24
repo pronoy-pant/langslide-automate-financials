@@ -35,7 +35,7 @@ const faqs = [
 
 export const FAQ = () => {
   return (
-    <section className="py-24 md:py-32 bg-gradient-to-br from-primary/10 via-secondary/40 to-accent/10">
+    <section className="py-24 md:py-32" style={{ background: 'linear-gradient(135deg, hsl(330 80% 70% / 0.1), hsl(240 5% 96% / 0.4), hsl(30 90% 65% / 0.1))' }}>
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">

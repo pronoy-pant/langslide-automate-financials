@@ -125,7 +125,7 @@ const Home = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <header className="relative overflow-hidden bg-gradient-to-br from-primary/20 via-white to-accent/20">
+      <header className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(250 85% 60% / 0.15), hsl(210 90% 65% / 0.15))' }}>
         <div className="container mx-auto px-6 py-20 md:py-28 lg:py-36 relative">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
@@ -230,7 +230,7 @@ const Home = () => {
       </header>
 
       {/* Industries We Serve Section - Kore.ai Style */}
-      <section className="py-20 md:py-32 bg-gradient-to-r from-accent/20 via-primary/10 to-accent/20">
+      <section className="py-20 md:py-32" style={{ background: 'linear-gradient(90deg, hsl(180 85% 60% / 0.15), hsl(210 90% 65% / 0.1), hsl(180 85% 60% / 0.15))' }}>
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             
@@ -330,7 +330,7 @@ const Home = () => {
       </section>
 
       {/* Why Langslide Section */}
-      <section className="py-32 md:py-40 bg-gradient-to-br from-white via-secondary/50 to-primary/20">
+      <section className="py-32 md:py-40" style={{ background: 'linear-gradient(135deg, hsl(0 0% 100%), hsl(240 5% 96% / 0.5), hsl(330 80% 70% / 0.15))' }}>
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
@@ -372,7 +372,7 @@ const Home = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-32 md:py-40 bg-gradient-to-bl from-primary/20 via-white to-accent/25">
+      <section className="py-32 md:py-40" style={{ background: 'linear-gradient(225deg, hsl(30 90% 65% / 0.15), hsl(0 0% 100%), hsl(250 85% 60% / 0.2))' }}>
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
