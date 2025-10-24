@@ -60,7 +60,7 @@ export const CustomerStories = () => {
   const visibleStories = customerStories.slice(currentIndex, currentIndex + 3);
 
   return (
-    <section className="py-32 md:py-40 bg-gradient-to-tr from-accent/10 via-white to-primary/10">
+    <section className="py-32 md:py-40 bg-gradient-to-tr from-accent/20 via-white to-primary/20">
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-12">
