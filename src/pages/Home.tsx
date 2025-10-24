@@ -233,72 +233,70 @@ const Home = () => {
       <section className="py-20 md:py-32 bg-gradient-to-b from-white via-secondary/20 to-white">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            
+            {/* Heading with Industry Buttons on Right */}
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-12">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight max-w-xl">
+                AI Agents Built for{" "}
+                <span className="gradient-text">Enterprise Industries</span>
+              </h2>
               
-              {/* Left Column - Heading and Dynamic Content */}
-              <div className="space-y-8">
-                {/* Heading with Industry Buttons */}
-                <div className="space-y-6">
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                    AI Agents Built for{" "}
-                    <span className="gradient-text">Enterprise Industries</span>
-                  </h2>
-                  
-                  {/* Industry Selection Buttons */}
-                  <div className="flex flex-wrap gap-3">
-                    {industries.map((industry) => (
-                      <button
-                        key={industry.id}
-                        onClick={() => setActiveIndustry(industry.id)}
-                        className={`px-5 py-2.5 rounded-full font-semibold text-xs uppercase tracking-wide transition-all duration-300 ${
-                          activeIndustry === industry.id
-                            ? 'bg-foreground text-background shadow-md'
-                            : 'bg-secondary/60 text-foreground hover:bg-secondary'
-                        }`}
-                      >
-                        {industry.title}
-                      </button>
-                    ))}
-                  </div>
+              {/* Industry Selection Buttons */}
+              <div className="flex flex-wrap gap-3">
+                {industries.map((industry) => (
+                  <button
+                    key={industry.id}
+                    onClick={() => setActiveIndustry(industry.id)}
+                    className={`px-5 py-2.5 rounded-full font-semibold text-xs uppercase tracking-wide transition-all duration-300 ${
+                      activeIndustry === industry.id
+                        ? 'bg-foreground text-background shadow-md'
+                        : 'bg-secondary/60 text-foreground hover:bg-secondary'
+                    }`}
+                  >
+                    {industry.title}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+              
+              {/* Left Column - Dynamic Content (3 columns) */}
+              <div className="lg:col-span-3 space-y-6 animate-fade-in">
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                  {selectedIndustry.description}
+                </p>
+
+                <div className="inline-block">
+                  <span className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-semibold text-sm">
+                    {selectedIndustry.metric}
+                  </span>
                 </div>
 
-                {/* Dynamic Content Below Heading */}
-                <div className="space-y-6 animate-fade-in">
-                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                    {selectedIndustry.description}
-                  </p>
+                <div className="space-y-3">
+                  {selectedIndustry.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-sm md:text-base text-foreground">{feature}</span>
+                    </div>
+                  ))}
+                </div>
 
-                  <div className="inline-block">
-                    <span className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-semibold text-sm">
-                      {selectedIndustry.metric}
-                    </span>
-                  </div>
-
-                  <div className="space-y-3">
-                    {selectedIndustry.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm md:text-base text-foreground">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="pt-4">
-                    <Link 
-                      to={selectedIndustry.link}
-                      className="inline-flex items-center gap-2 text-primary font-semibold text-base hover:gap-3 transition-all duration-300"
-                    >
-                      Learn More About {selectedIndustry.title}
-                      <ArrowRight className="w-5 h-5" />
-                    </Link>
-                  </div>
+                <div className="pt-4">
+                  <Link 
+                    to={selectedIndustry.link}
+                    className="inline-flex items-center gap-2 text-primary font-semibold text-base hover:gap-3 transition-all duration-300"
+                  >
+                    Learn More About {selectedIndustry.title}
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
                 </div>
               </div>
 
-              {/* Right Column - Dynamic Background Image */}
+              {/* Right Column - Dynamic Background Image (2 columns) */}
               <Link 
                 to={selectedIndustry.link}
-                className="block relative rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 group cursor-pointer min-h-[500px] lg:min-h-[600px]"
+                className="lg:col-span-2 block relative rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 group cursor-pointer min-h-[400px] lg:min-h-[500px]"
               >
                 {/* Background Image */}
                 <div 
@@ -312,9 +310,9 @@ const Home = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
                 
                 {/* Content Overlay */}
-                <div className="relative h-full min-h-[500px] lg:min-h-[600px] flex flex-col justify-end p-8 lg:p-12">
+                <div className="relative h-full min-h-[400px] lg:min-h-[500px] flex flex-col justify-end p-8">
                   <div className="space-y-4 animate-fade-in">
-                    <h3 className="text-3xl lg:text-4xl font-bold text-white">
+                    <h3 className="text-2xl lg:text-3xl font-bold text-white">
                       {selectedIndustry.tagline}
                     </h3>
                     
