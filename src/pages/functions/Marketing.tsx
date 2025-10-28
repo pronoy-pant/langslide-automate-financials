@@ -4,23 +4,28 @@ import { Footer } from "@/components/Footer";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Megaphone, Target, Mail, BarChart, Zap, CheckCircle } from "lucide-react";
+interface App {
+  name: string;
+  category: string;
+  logo?: string;
+}
 
-const commonApps = [
-  { name: "HubSpot", category: "Marketing Automation" },
-  { name: "Marketo", category: "Marketing Automation" },
-  { name: "Salesforce Marketing Cloud", category: "Marketing Automation" },
-  { name: "Mailchimp", category: "Email Marketing" },
-  { name: "ActiveCampaign", category: "Email Marketing" },
-  { name: "Google Analytics", category: "Analytics" },
-  { name: "Google Ads", category: "Advertising" },
-  { name: "Facebook Ads", category: "Social Advertising" },
-  { name: "LinkedIn Ads", category: "B2B Advertising" },
-  { name: "Hootsuite", category: "Social Media Management" },
-  { name: "Buffer", category: "Social Media Management" },
-  { name: "Canva", category: "Design & Content Creation" },
-  { name: "WordPress", category: "Content Management" },
-  { name: "SEMrush", category: "SEO & Marketing Analytics" },
-  { name: "Zapier", category: "Workflow Automation" },
+const commonApps: App[] = [
+  { name: "HubSpot", category: "Marketing Automation", logo: "https://logo.clearbit.com/hubspot.com" },
+  { name: "Marketo", category: "Marketing Automation", logo: "https://logo.clearbit.com/marketo.com" },
+  { name: "Salesforce Marketing Cloud", category: "Marketing Automation", logo: "https://logo.clearbit.com/salesforce.com" },
+  { name: "Mailchimp", category: "Email Marketing", logo: "https://logo.clearbit.com/mailchimp.com" },
+  { name: "ActiveCampaign", category: "Email Marketing", logo: "https://logo.clearbit.com/activecampaign.com" },
+  { name: "Google Analytics", category: "Analytics", logo: "https://logo.clearbit.com/google.com" },
+  { name: "Google Ads", category: "Advertising", logo: "https://logo.clearbit.com/google.com" },
+  { name: "Facebook Ads", category: "Social Advertising", logo: "https://logo.clearbit.com/facebook.com" },
+  { name: "LinkedIn Ads", category: "B2B Advertising", logo: "https://logo.clearbit.com/linkedin.com" },
+  { name: "Hootsuite", category: "Social Media Management", logo: "https://logo.clearbit.com/hootsuite.com" },
+  { name: "Buffer", category: "Social Media Management", logo: "https://logo.clearbit.com/buffer.com" },
+  { name: "Canva", category: "Design & Content Creation", logo: "https://logo.clearbit.com/canva.com" },
+  { name: "WordPress", category: "Content Management", logo: "https://logo.clearbit.com/wordpress.org" },
+  { name: "SEMrush", category: "SEO & Marketing Analytics", logo: "https://logo.clearbit.com/semrush.com" },
+  { name: "Zapier", category: "Workflow Automation", logo: "https://logo.clearbit.com/zapier.com" },
 ];
 
 const workflows = [
@@ -147,17 +152,21 @@ const Marketing = () => (
           <p className="text-lg text-muted-foreground text-center mb-12">
             Langslide integrates with your existing marketing tools and platforms
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {commonApps.map((app, i) => (
-              <Card key={i} className="bg-card border-border hover:border-primary/30 transition-all duration-300 text-center">
-                <CardHeader className="pb-3">
-                  <div className="w-12 h-12 mx-auto mb-3 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
-                    <span className="text-lg font-bold text-primary">{app.name.charAt(0)}</span>
-                  </div>
-                  <CardTitle className="text-base font-semibold">{app.name}</CardTitle>
-                  <CardDescription className="text-xs">{app.category}</CardDescription>
-                </CardHeader>
-              </Card>
+              <div key={i} className="flex flex-col items-center text-center group hover:scale-110 transition-all duration-300">
+                <div className="w-20 h-20 mb-4 flex items-center justify-center group-hover:drop-shadow-lg transition-all duration-300">
+                  {app.logo ? (
+                    <img src={app.logo} alt={app.name} className="w-full h-full object-contain opacity-90 group-hover:opacity-100 group-hover:brightness-110 transition-all duration-300" />
+                  ) : (
+                    <div className="w-16 h-16 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
+                      <span className="text-2xl font-bold text-primary">{app.name.charAt(0)}</span>
+                    </div>
+                  )}
+                </div>
+                <p className="text-sm font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">{app.name}</p>
+                <p className="text-xs text-muted-foreground">{app.category}</p>
+              </div>
             ))}
           </div>
         </div>

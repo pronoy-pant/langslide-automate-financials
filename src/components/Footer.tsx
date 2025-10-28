@@ -33,10 +33,10 @@ const companySections = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-secondary/30 border-t border-border py-16 md:py-20">
+    <footer className="bg-gradient-mesh border-t border-border py-16 md:py-20">
       <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
             {/* Left Side - Branding + Contact */}
             <div>
               <div className="flex items-center gap-2 mb-6">
@@ -44,34 +44,37 @@ export const Footer = () => {
                   Langslide
                 </span>
               </div>
-              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-                AI automation platform for modern workflows. © {new Date().getFullYear()} Langslide. All rights reserved.
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                AI-powered workflow automation for modern enterprises.
+              </p>
+              <p className="text-xs text-muted-foreground mb-6">
+                © {new Date().getFullYear()} Langslide. All rights reserved.
               </p>
               <Link
                 to="/contact-us"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                Contact us
+                Contact us →
               </Link>
             </div>
             
             {/* Middle - Solutions */}
             <div>
-              <h3 className="text-sm font-bold text-foreground mb-6 tracking-wider">
-                SOLUTIONS
+              <h3 className="text-xs font-bold text-foreground mb-6 uppercase tracking-wider">
+                Solutions
               </h3>
               <div className="space-y-6">
                 {/* By Function */}
                 <div>
-                  <h4 className="text-sm font-bold text-foreground mb-3">
-                    BY FUNCTION
+                  <h4 className="text-xs font-semibold text-muted-foreground mb-3 uppercase tracking-wide">
+                    By Function
                   </h4>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2">
                     {functionSolutions.map((link, index) => (
                       <li key={index}>
                         <Link
                           to={link.path}
-                          className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                          className="text-sm text-foreground hover:text-primary transition-colors"
                         >
                           {link.name}
                         </Link>
@@ -82,15 +85,15 @@ export const Footer = () => {
                 
                 {/* By Industry */}
                 <div>
-                  <h4 className="text-sm font-bold text-foreground mb-3">
-                    BY INDUSTRY
+                  <h4 className="text-xs font-semibold text-muted-foreground mb-3 uppercase tracking-wide">
+                    By Industry
                   </h4>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2">
                     {industrySolutions.map((link, index) => (
                       <li key={index}>
                         <Link
                           to={link.path}
-                          className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                          className="text-sm text-foreground hover:text-primary transition-colors"
                         >
                           {link.name}
                         </Link>
@@ -106,15 +109,15 @@ export const Footer = () => {
               <div className="space-y-8">
                 {companySections.map((section, index) => (
                   <div key={index}>
-                    <h3 className="text-sm font-bold text-foreground mb-6 tracking-wider">
+                    <h3 className="text-xs font-bold text-foreground mb-6 uppercase tracking-wider">
                       {section.title}
                     </h3>
-                    <ul className="space-y-3">
+                    <ul className="space-y-2">
                       {section.links.map((link, linkIndex) => (
                         <li key={linkIndex}>
                           <Link
                             to={link.path}
-                            className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                            className="text-sm text-foreground hover:text-primary transition-colors"
                           >
                             {link.name}
                           </Link>

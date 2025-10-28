@@ -44,7 +44,7 @@ const Navigation = () => {
   const isHome = location.pathname === "/";
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-border bg-white/80 backdrop-blur-md shadow-soft">
+    <nav className="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-xl shadow-soft">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -63,7 +63,7 @@ const Navigation = () => {
               <DropdownMenuTrigger className="flex items-center gap-1 px-5 py-2.5 rounded-full text-foreground hover:bg-secondary transition-all font-medium">
                 Product <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white border-border shadow-large rounded-2xl">
+              <DropdownMenuContent className="glass border-border shadow-xl rounded-2xl">
                 <DropdownMenuItem className="text-muted-foreground">Coming soon</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -72,7 +72,7 @@ const Navigation = () => {
               <DropdownMenuTrigger className="flex items-center gap-1 px-5 py-2.5 rounded-full text-foreground hover:bg-secondary transition-all font-medium">
                 Solutions <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white border-border shadow-large rounded-2xl p-0 z-50" align="start">
+              <DropdownMenuContent className="glass border-border shadow-xl rounded-2xl p-0 z-50" align="start">
                 <div className="grid grid-cols-3 gap-0 w-[900px]">
                   {/* Left Column - By Function */}
                   <div className="p-6 border-r border-border">
@@ -143,7 +143,7 @@ const Navigation = () => {
               <DropdownMenuTrigger className="flex items-center gap-1 px-5 py-2.5 rounded-full text-foreground hover:bg-secondary transition-all font-medium">
                 Resources <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white border-border shadow-large rounded-2xl">
+              <DropdownMenuContent className="glass border-border shadow-xl rounded-2xl">
                 <DropdownMenuItem className="text-muted-foreground">Coming soon</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -152,7 +152,7 @@ const Navigation = () => {
               <DropdownMenuTrigger className="flex items-center gap-1 px-5 py-2.5 rounded-full text-foreground hover:bg-secondary transition-all font-medium">
                 Company <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white border-border shadow-large rounded-2xl">
+              <DropdownMenuContent className="glass border-border shadow-xl rounded-2xl">
                 <DropdownMenuItem className="text-muted-foreground">About</DropdownMenuItem>
                 <DropdownMenuItem className="text-muted-foreground">Careers</DropdownMenuItem>
               </DropdownMenuContent>

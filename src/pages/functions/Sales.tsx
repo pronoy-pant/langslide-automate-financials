@@ -5,32 +5,28 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { TrendingUp, Users, FileText, DollarSign, BarChart, Target, Database, Workflow, CheckCircle } from "lucide-react";
 
-const commonApps = [
-  { name: "Salesforce", category: "CRM Platform" },
-  { name: "HubSpot", category: "Revenue Operations Platform" },
-  { name: "Pipedrive", category: "Sales CRM" },
-  { name: "Outreach", category: "Sales Engagement" },
-  { name: "SalesLoft", category: "Sales Engagement" },
-  { name: "LinkedIn Sales Navigator", category: "Social Selling" },
-  { name: "Gong", category: "Revenue Intelligence" },
-  { name: "Chorus.ai", category: "Conversation Intelligence" },
-  { name: "ZoomInfo", category: "Sales Intelligence" },
-  { name: "Clearbit", category: "Data Enrichment" },
-  { name: "DocuSign", category: "E-Signature" },
-  { name: "PandaDoc", category: "Document Automation" },
-  { name: "Calendly", category: "Meeting Scheduling" },
-  { name: "Tableau", category: "Business Intelligence" },
-  { name: "Looker", category: "Business Intelligence" },
-  { name: "Clari", category: "Revenue Operations & Intelligence" },
-  { name: "InsightSquared", category: "Revenue Intelligence" },
-  { name: "LeanData", category: "Lead-to-Account Matching" },
-  { name: "Segment", category: "Customer Data Platform" },
-  { name: "Fivetran", category: "Data Pipeline Automation" },
-  { name: "dbt", category: "Data Transformation" },
-  { name: "Snowflake", category: "Data Warehouse" },
-  { name: "ChartMogul", category: "Revenue Analytics" },
-  { name: "Stripe", category: "Payment & Billing" },
-  { name: "Zuora", category: "Subscription Management" },
+interface App {
+  name: string;
+  category: string;
+  logo?: string;
+}
+
+const commonApps: App[] = [
+  { name: "Salesforce", category: "CRM Platform", logo: "https://logo.clearbit.com/salesforce.com" },
+  { name: "HubSpot", category: "Revenue Operations Platform", logo: "https://logo.clearbit.com/hubspot.com" },
+  { name: "Pipedrive", category: "Sales CRM", logo: "https://logo.clearbit.com/pipedrive.com" },
+  { name: "Outreach", category: "Sales Engagement", logo: "https://logo.clearbit.com/outreach.io" },
+  { name: "SalesLoft", category: "Sales Engagement", logo: "https://logo.clearbit.com/salesloft.com" },
+  { name: "LinkedIn", category: "Social Selling", logo: "https://logo.clearbit.com/linkedin.com" },
+  { name: "Gong", category: "Revenue Intelligence", logo: "https://logo.clearbit.com/gong.io" },
+  { name: "ZoomInfo", category: "Sales Intelligence", logo: "https://logo.clearbit.com/zoominfo.com" },
+  { name: "Clearbit", category: "Data Enrichment", logo: "https://logo.clearbit.com/clearbit.com" },
+  { name: "DocuSign", category: "E-Signature", logo: "https://logo.clearbit.com/docusign.com" },
+  { name: "Calendly", category: "Meeting Scheduling", logo: "https://logo.clearbit.com/calendly.com" },
+  { name: "Tableau", category: "Business Intelligence", logo: "https://logo.clearbit.com/tableau.com" },
+  { name: "Snowflake", category: "Data Warehouse", logo: "https://logo.clearbit.com/snowflake.com" },
+  { name: "Stripe", category: "Payment & Billing", logo: "https://logo.clearbit.com/stripe.com" },
+  { name: "Zuora", category: "Subscription Management", logo: "https://logo.clearbit.com/zuora.com" },
 ];
 
 const workflows = [
@@ -201,17 +197,21 @@ const Sales = () => (
           <p className="text-lg text-muted-foreground text-center mb-12">
             Langslide integrates with your existing sales and revenue operations stack
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {commonApps.map((app, i) => (
-              <Card key={i} className="bg-card border-border hover:border-primary/30 transition-all duration-300 text-center">
-                <CardHeader className="pb-3">
-                  <div className="w-12 h-12 mx-auto mb-3 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
-                    <span className="text-lg font-bold text-primary">{app.name.charAt(0)}</span>
-                  </div>
-                  <CardTitle className="text-base font-semibold">{app.name}</CardTitle>
-                  <CardDescription className="text-xs">{app.category}</CardDescription>
-                </CardHeader>
-              </Card>
+              <div key={i} className="flex flex-col items-center text-center group hover:scale-110 transition-all duration-300">
+                <div className="w-20 h-20 mb-4 flex items-center justify-center group-hover:drop-shadow-lg transition-all duration-300">
+                  {app.logo ? (
+                    <img src={app.logo} alt={app.name} className="w-full h-full object-contain opacity-90 group-hover:opacity-100 group-hover:brightness-110 transition-all duration-300" />
+                  ) : (
+                    <div className="w-16 h-16 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
+                      <span className="text-2xl font-bold text-primary">{app.name.charAt(0)}</span>
+                    </div>
+                  )}
+                </div>
+                <p className="text-sm font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">{app.name}</p>
+                <p className="text-xs text-muted-foreground">{app.category}</p>
+              </div>
             ))}
           </div>
         </div>

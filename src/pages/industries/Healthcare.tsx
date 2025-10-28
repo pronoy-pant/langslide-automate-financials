@@ -3,6 +3,9 @@ import Navigation from "@/components/Navigation";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CTA } from "@/components/ui/call-to-action";
+import { Footer } from "@/components/Footer";
+import { motion } from "framer-motion";
+import { useState } from "react";
 import {
   Heart,
   FileText,

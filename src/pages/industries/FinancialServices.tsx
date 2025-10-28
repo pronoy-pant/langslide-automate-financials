@@ -3,6 +3,9 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CTA } from "@/components/ui/call-to-action";
 import Navigation from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
+import { motion } from "framer-motion";
+import { useState } from "react";
 import {
   FileText, 
   CreditCard, 
@@ -12,386 +15,207 @@ import {
   Umbrella,
   Zap,
   CircleDollarSign,
-  UserCheck,
-  Bell,
-  Eye,
-  RefreshCw,
-  Target,
-  AlertCircle,
   CheckCircle,
-  Send,
-  FileCheck,
-  Database,
-  Lock,
-  MessageSquare,
   Sparkles,
-  Heart,
-  BarChart3,
-  Briefcase,
-  LineChart,
-  FileSpreadsheet,
-  Globe,
-  UserCircle
+  TrendingDown
 } from "lucide-react";
 
-const workflows = [
-  {
-    category: "Lending & Credit Automation",
-    description: "AI agents automate the entire credit lifecycle—from application to recovery",
-    icon: FileText,
-    items: [
-      {
-        title: "Loan Application Automation",
-        description: "AI agents collate data from multiple sources, verify documents, and create unified customer profiles",
-        icon: FileCheck,
-        metrics: "90% faster processing"
-      },
-      {
-        title: "Real-time Creditworthiness",
-        description: "Intelligent assessment using credit bureaus, bank statements, and alternative data sources",
-        icon: Target,
-        metrics: "15-20% approval increase"
-      },
-      {
-        title: "Smart Disbursal & Reminders",
-        description: "Automated loan disbursal with proactive EMI payment reminders via multiple channels",
-        icon: Bell,
-        metrics: "20% reduction in late payments"
-      },
-      {
-        title: "NPA Monitoring",
-        description: "Proactive identification and early intervention for at-risk accounts",
-        icon: Eye,
-        metrics: "Early default prevention"
-      },
-      {
-        title: "Co-lending Sync",
-        description: "Real-time data synchronization between bank and fintech partners",
-        icon: RefreshCw,
-        metrics: "Zero reconciliation delays"
-      }
-    ]
-  },
-  {
-    category: "Payments & Transaction Processing",
-    description: "AI agents make payments faster, safer, and more efficient across all channels",
-    icon: CreditCard,
-    items: [
-      {
-        title: "Merchant Onboarding",
-        description: "Automated KYC verification with document OCR and compliance checks",
-        icon: UserCheck,
-        metrics: "Minutes vs days"
-      },
-      {
-        title: "Intelligent Routing",
-        description: "Dynamic transaction routing based on real-time network health monitoring",
-        icon: Zap,
-        metrics: "5-10% success rate boost"
-      },
-      {
-        title: "Fraud Detection",
-        description: "Real-time AI-powered fraud screening with instant alerts",
-        icon: Shield,
-        metrics: "Significant loss reduction"
-      },
-      {
-        title: "Chargeback Management",
-        description: "Automated evidence collection and dispute resolution",
-        icon: AlertCircle,
-        metrics: "80% effort reduction"
-      },
-      {
-        title: "QR Payment Reconciliation",
-        description: "Multi-provider payment reconciliation for merchants",
-        icon: CheckCircle,
-        metrics: "Daily auto-reconciliation"
-      }
-    ]
-  },
-  {
-    category: "Compliance & Risk Management",
-    description: "AI agents ensure continuous compliance and proactive risk management",
-    icon: Shield,
-    items: [
-      {
-        title: "AML/CFT Monitoring",
-        description: "Continuous transaction monitoring with sanctions screening",
-        icon: Eye,
-        metrics: "Real-time compliance"
-      },
-      {
-        title: "Regulatory Reporting",
-        description: "Automated data aggregation and report generation for regulators",
-        icon: FileSpreadsheet,
-        metrics: "Hours vs weeks"
-      },
-      {
-        title: "Audit Trail Generation",
-        description: "Centralized compliance evidence with immutable logging",
-        icon: Database,
-        metrics: "Instant audit readiness"
-      },
-      {
-        title: "Vendor Risk Assessment",
-        description: "Automated third-party security and compliance evaluation",
-        icon: Lock,
-        metrics: "Standardized due diligence"
-      },
-      {
-        title: "Policy Updates",
-        description: "Automated dissemination and acknowledgment tracking",
-        icon: Send,
-        metrics: "100% coverage guarantee"
-      }
-    ]
-  },
-  {
-    category: "Customer Operations & Experience",
-    description: "AI agents enable personalized, omnichannel customer engagement at scale",
-    icon: Users,
-    items: [
-      {
-        title: "AI Support Triage",
-        description: "Intelligent categorization and routing with sentiment analysis",
-        icon: MessageSquare,
-        metrics: "Instant prioritization"
-      },
-      {
-        title: "Cross-sell Generation",
-        description: "Data-driven product recommendations at the right moment",
-        icon: Sparkles,
-        metrics: "Higher conversion rates"
-      },
-      {
-        title: "Financial Nudges",
-        description: "Personalized advisory based on transaction patterns",
-        icon: Heart,
-        metrics: "Improved financial health"
-      },
-      {
-        title: "Omnichannel Resolution",
-        description: "Unified customer view across all touchpoints",
-        icon: Globe,
-        metrics: "360-degree context"
-      },
-      {
-        title: "Account Offboarding",
-        description: "Automated access revocation and compliant data archival",
-        icon: UserCircle,
-        metrics: "Zero security gaps"
-      }
-    ]
-  },
-  {
-    category: "Investment & Wealth Management",
-    description: "AI agents automate portfolio management and investment operations",
-    icon: TrendingUp,
-    items: [
-      {
-        title: "Portfolio Rebalancing",
-        description: "Daily deviation tracking with actionable recommendations",
-        icon: BarChart3,
-        metrics: "Proactive risk management"
-      },
-      {
-        title: "Due Diligence Automation",
-        description: "Structured data room creation and document tracking for VCs",
-        icon: Briefcase,
-        metrics: "Accelerated decisions"
-      },
-      {
-        title: "Market Sentiment Analysis",
-        description: "Real-time news and social media monitoring with alerts",
-        icon: LineChart,
-        metrics: "Early warning system"
-      },
-      {
-        title: "Capital Call Notices",
-        description: "Automated calculation and secure distribution to LPs",
-        icon: CircleDollarSign,
-        metrics: "Error-free processing"
-      },
-      {
-        title: "NFO Processing",
-        description: "High-volume subscription handling with instant verification",
-        icon: FileCheck,
-        metrics: "Scalable operations"
-      }
-    ]
-  },
-  {
-    category: "Insurance Operations",
-    description: "AI agents automate underwriting, claims processing, and fraud detection for insurance operations",
-    icon: Umbrella,
-    items: [
-      {
-        title: "AI-Powered Underwriting",
-        description: "Automated risk assessment using multiple data sources, credit scores, and predictive analytics",
-        icon: Target,
-        metrics: "75% faster decisions"
-      },
-      {
-        title: "Claims Processing & Automation",
-        description: "End-to-end claims automation with verification, fraud detection, and instant approval",
-        icon: CheckCircle,
-        metrics: "85% faster processing"
-      },
-      {
-        title: "Fraud Detection & Prevention",
-        description: "Real-time fraud analysis with pattern detection and identity verification",
-        icon: AlertCircle,
-        metrics: "80% fraud detection rate"
-      },
-      {
-        title: "Policy Administration",
-        description: "Automated policy issuance, renewals, and modifications with customer notifications",
-        icon: FileCheck,
-        metrics: "Same-day issuance"
-      },
-      {
-        title: "Remittance Compliance",
-        description: "Multi-stage compliance checks for cross-border payments",
-        icon: Globe,
-        metrics: "Full regulatory adherence"
-      },
-      {
-        title: "360° Customer View",
-        description: "Unified financial profile across all products and touchpoints",
-        icon: UserCircle,
-        metrics: "Complete relationship insights"
-      }
-    ]
-  }
+const workflowCategories = [
+  { id: "lending", label: "Lending & Credit", icon: FileText },
+  { id: "payments", label: "Payments", icon: CreditCard },
+  { id: "compliance", label: "Compliance", icon: Shield },
+  { id: "customer", label: "Customer Ops", icon: Users },
+  { id: "investment", label: "Investment", icon: TrendingUp },
+  { id: "insurance", label: "Insurance", icon: Umbrella },
+];
+
+const workflows = {
+  lending: [
+    { icon: FileText, title: "Loan Application", metric: "90% faster" },
+    { icon: TrendingUp, title: "Credit Assessment", metric: "15-20% more approvals" },
+    { icon: CheckCircle, title: "Smart Disbursal", metric: "20% fewer late payments" },
+  ],
+  payments: [
+    { icon: CheckCircle, title: "Merchant Onboarding", metric: "Minutes vs days" },
+    { icon: Zap, title: "Intelligent Routing", metric: "5-10% better success" },
+    { icon: Shield, title: "Fraud Detection", metric: "Real-time screening" },
+  ],
+  compliance: [
+    { icon: Shield, title: "AML Monitoring", metric: "Real-time compliance" },
+    { icon: FileText, title: "Regulatory Reporting", metric: "Hours vs weeks" },
+    { icon: CheckCircle, title: "Audit Trail", metric: "Instant readiness" },
+  ],
+  customer: [
+    { icon: Sparkles, title: "AI Support Triage", metric: "Instant prioritization" },
+    { icon: TrendingUp, title: "Cross-sell Generation", metric: "Higher conversions" },
+    { icon: Shield, title: "Omnichannel Resolution", metric: "360° context" },
+  ],
+  investment: [
+    { icon: TrendingUp, title: "Portfolio Rebalancing", metric: "Proactive risk management" },
+    { icon: FileText, title: "Due Diligence", metric: "Accelerated decisions" },
+    { icon: TrendingDown, title: "Market Sentiment", metric: "Early warning system" },
+  ],
+  insurance: [
+    { icon: TrendingUp, title: "AI Underwriting", metric: "75% faster decisions" },
+    { icon: CheckCircle, title: "Claims Processing", metric: "85% faster processing" },
+    { icon: Shield, title: "Fraud Detection", metric: "80% detection rate" },
+  ],
+};
+
+const stats = [
+  { value: "90%", label: "Time reduction" },
+  { value: "99.9%", label: "Accuracy" },
+  { value: "10x", label: "ROI" },
 ];
 
 const BFSI = () => {
+  const [activeTab, setActiveTab] = useState("lending");
+
   return (
-    <div className="min-h-screen bg-background">
-      {/* Navigation */}
+    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, hsl(220 20% 96%), hsl(210 25% 94%), hsl(200 20% 95%))' }}>
       <Navigation />
       
       {/* Hero Section */}
-      <header className="relative overflow-hidden border-b border-border">
-        <div className="absolute inset-0 gradient-primary opacity-5"></div>
+      <header className="relative overflow-hidden bg-gradient-mesh border-b border-border pt-6">
         <div className="container mx-auto px-6 py-16 md:py-24 relative">
-          <div className="max-w-5xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              Intelligent Workflow Automation for{" "}
-              <span className="gradient-text">Financial Services & Insurance</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-              AI agents that automate complex workflows across lending, payments, compliance, claims, and operations
-            </p>
-            <Button asChild size="lg">
-              <Link to="/request-demo">Request a Demo</Link>
-            </Button>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="mb-6">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold border border-primary/20">
+                    <Shield className="w-4 h-4" />
+                    Financial Services & Insurance
+                  </span>
+                </div>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                  Intelligent automation for{" "}
+                  <span className="gradient-text">finance & insurance</span>
+                </h1>
+                <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+                  AI agents that automate lending, payments, compliance, and claims processing
+                </p>
+                <div className="flex gap-4">
+                  <Button asChild size="lg">
+                    <Link to="/contact-us">Get Started</Link>
+                  </Button>
+                  <Button asChild size="lg" variant="outline">
+                    <Link to="#workflows">View Workflows</Link>
+                  </Button>
+                </div>
+              </motion.div>
+
+              {/* Visual Dashboard */}
+              <motion.div
+                className="glass rounded-3xl p-8 shadow-2xl"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <div className="grid grid-cols-3 gap-4">
+                  {stats.map((stat, index) => (
+                    <motion.div
+                      key={index}
+                      className="bg-white rounded-2xl p-6 text-center border-2 border-border"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.4 + index * 0.1 }}
+                    >
+                      <div className="text-3xl font-bold text-primary mb-2">
+                        {stat.value}
+                      </div>
+                      <div className="text-sm text-muted-foreground">{stat.label}</div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </header>
 
-      {/* Introduction */}
-      <section className="py-16 md:py-24 border-b border-border">
+      {/* Workflow Categories - Tabbed */}
+      <section className="py-20 md:py-32 bg-white" id="workflows">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Streamline Your Entire Financial Operations
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Intelligent AI agents handle complex workflows end-to-end—from loan origination to payment processing, compliance monitoring to customer engagement. Reduce manual effort by 90%, accelerate decisions, and maintain continuous regulatory compliance.
-            </p>
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                Workflow <span className="gradient-text">Automation</span>
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Streamline operations across all areas
+              </p>
+            </div>
+
+            {/* Tabs */}
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
+              {workflowCategories.map((cat) => {
+                const Icon = cat.icon;
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => setActiveTab(cat.id)}
+                    className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all ${
+                      activeTab === cat.id
+                        ? 'gradient-primary text-primary-foreground shadow-md'
+                        : 'bg-white border-2 border-border text-foreground hover:bg-primary/10 hover:text-primary'
+                    }`}
+                  >
+                    <Icon className="w-4 h-4" />
+                    {cat.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Tab Content */}
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              <div className="grid md:grid-cols-3 gap-6">
+                {workflows[activeTab as keyof typeof workflows].map((workflow, idx) => {
+                  const Icon = workflow.icon;
+                  return (
+                    <Card
+                      key={idx}
+                      className="p-6 bg-white border-2 border-border hover:border-primary/50 transition-all group"
+                    >
+                      <div className="mb-4">
+                        <div className="inline-flex p-3 rounded-xl bg-primary/10 group-hover:bg-primary/15 transition-colors">
+                          <Icon className="w-6 h-6 text-primary" />
+                        </div>
+                      </div>
+                      <h3 className="text-lg font-bold mb-2">{workflow.title}</h3>
+                      <div className="inline-flex px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-semibold text-xs mt-4">
+                        {workflow.metric}
+                      </div>
+                    </Card>
+                  );
+                })}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Workflow Categories */}
-      {workflows.map((category, categoryIndex) => (
-        <section 
-          key={categoryIndex} 
-          className="py-16 md:py-24 border-b border-border"
-        >
-          <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto">
-              {/* Category Header */}
-              <div className="mb-12 text-center">
-                <div className="inline-flex items-center justify-center gap-3 mb-6">
-                  <div className="p-4 rounded-2xl bg-primary/10 border border-primary/20">
-                    <category.icon className="w-8 h-8 text-primary" />
-                  </div>
-                </div>
-                <h2 className="text-3xl md:text-5xl font-bold mb-4">
-                  {category.category}
-                </h2>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                  {category.description}
-                </p>
-              </div>
-
-              {/* Workflow Items */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {category.items.map((item, itemIndex) => (
-                  <Card 
-                    key={itemIndex}
-                    className="p-6 bg-card border-border hover:border-primary/30 transition-all duration-300 hover:glow-effect group"
-                  >
-                    <div className="mb-4">
-                      <div className="inline-flex p-3 rounded-xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
-                        <item.icon className="w-6 h-6 text-primary" />
-                      </div>
-                    </div>
-                    <h3 className="text-xl font-bold mb-3 text-foreground">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                      {item.description}
-                    </p>
-                    <div className="pt-4 border-t border-border mt-auto">
-                      <p className="text-sm font-semibold gradient-text">
-                        {item.metrics}
-                      </p>
-                    </div>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      ))}
-
-      {/* CTA Section */}
+      {/* CTA */}
       <CTA 
-        badge="Transform Finance & Insurance"
-        title="Ready to modernize your financial and insurance operations?"
-        description="Discover how Langslide's AI agents can automate lending, payments, compliance, claims, and underwriting. Accelerate loan approvals, enhance fraud detection, streamline claims processing, and ensure regulatory compliance—all while reducing operational costs."
+        badge="Transform Finance"
+        title="Ready to modernize your operations?"
+        description="Automate lending, payments, compliance, and claims with AI agents."
         primaryButtonText="Contact Us"
         primaryButtonHref="mailto:hello@langslide.com"
-        secondaryButtonText="Schedule a Demo"
-        secondaryButtonHref="mailto:hello@langslide.com"
+        secondaryButtonText="View Demo"
+        secondaryButtonHref="/contact-us"
       />
 
-      {/* Footer */}
-      <footer className="py-12 md:py-16 bg-secondary/30">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg text-muted-foreground mb-6">
-              Ready to transform your financial services and insurance operations?
-            </p>
-            <div className="inline-block px-8 py-4 rounded-lg bg-card border border-border">
-              <p className="text-base text-foreground">
-                <span className="text-muted-foreground">Contact us:</span>{" "}
-                <a href="mailto:hello@langslide.com" className="gradient-text font-semibold hover:underline transition-all">
-                  hello@langslide.com
-                </a>
-              </p>
-            </div>
-            <div className="mt-8 pt-8 border-t border-border">
-              <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} Langslide. All rights reserved.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

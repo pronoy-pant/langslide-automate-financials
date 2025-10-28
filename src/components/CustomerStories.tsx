@@ -2,6 +2,8 @@ import React from "react";
 import { Card } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { TrendingUp, Users, Clock } from "lucide-react";
 
 const customerStories = [
   {
@@ -84,33 +86,44 @@ export const CustomerStories = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {visibleStories.map((story, index) => (
-              <Card 
+              <motion.div
                 key={index}
-                className="p-8 bg-white border border-border hover:border-primary/50 transition-all duration-300 group cursor-pointer hover:scale-105"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className={`w-full aspect-video rounded-xl bg-gradient-to-br ${story.bgColor} mb-6 flex items-center justify-center`}>
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/40 to-accent/40 flex items-center justify-center">
-                      <span className="text-white font-bold text-lg">{story.logo}</span>
+                <Card 
+                  className="p-8 bg-white border-2 border-border hover:border-primary/50 transition-all duration-300 group cursor-pointer h-full"
+                >
+                  {/* Logo Section */}
+                  <div className={`w-full aspect-video rounded-2xl bg-gradient-to-br ${story.bgColor} mb-6 flex items-center justify-center overflow-hidden`}>
+                    <div className="flex flex-col items-center gap-4">
+                      <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/40 to-accent/40 flex items-center justify-center shadow-lg">
+                        <span className="text-white font-bold text-2xl">{story.logo}</span>
+                      </div>
+                      <span className="text-2xl font-bold text-foreground">{story.company}</span>
                     </div>
-                    <span className="text-2xl font-bold text-foreground">{story.company}</span>
                   </div>
-                </div>
 
-                <div className="mb-4">
-                  <span className="inline-block px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-semibold text-xs">
-                    {story.metric}
-                  </span>
-                </div>
+                  {/* Metric Badge */}
+                  <div className="mb-6">
+                    <div className="inline-flex items-center gap-2 px-4 py-3 rounded-2xl bg-primary/10 border-2 border-primary/20 group-hover:bg-primary/15 group-hover:border-primary/30 transition-all">
+                      <TrendingUp className="w-5 h-5 text-primary" />
+                      <span className="text-primary font-bold text-lg">{story.metric}</span>
+                    </div>
+                  </div>
 
-                <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
-                  {story.title}
-                </h3>
+                  {/* Title & Description */}
+                  <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                    {story.title}
+                  </h3>
 
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  {story.description}
-                </p>
-              </Card>
+                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                    {story.description}
+                  </p>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>

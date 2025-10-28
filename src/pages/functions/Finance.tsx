@@ -5,22 +5,26 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { DollarSign, Receipt, TrendingUp, FileText, Zap, CheckCircle } from "lucide-react";
 
-const commonApps = [
-  { name: "QuickBooks", category: "Accounting" },
-  { name: "Xero", category: "Accounting" },
-  { name: "NetSuite", category: "ERP & Financial Management" },
-  { name: "SAP", category: "ERP & Financial Management" },
-  { name: "Oracle Financials", category: "ERP & Financial Management" },
-  { name: "Stripe", category: "Payment Processing" },
-  { name: "PayPal", category: "Payment Processing" },
-  { name: "Bill.com", category: "Accounts Payable" },
-  { name: "Expensify", category: "Expense Management" },
-  { name: "Concur", category: "Expense Management" },
-  { name: "Coupa", category: "Procurement" },
-  { name: "Workday Financial", category: "Financial Planning" },
-  { name: "Tableau", category: "Financial Analytics" },
-  { name: "Power BI", category: "Financial Analytics" },
-  { name: "BlackLine", category: "Account Reconciliation" },
+interface App {
+  name: string;
+  category: string;
+  logo?: string;
+}
+
+const commonApps: App[] = [
+  { name: "QuickBooks", category: "Accounting", logo: "https://logo.clearbit.com/intuit.com" },
+  { name: "Xero", category: "Accounting", logo: "https://logo.clearbit.com/xero.com" },
+  { name: "NetSuite", category: "ERP & Financial Management", logo: "https://logo.clearbit.com/netsuite.com" },
+  { name: "SAP", category: "ERP & Financial Management", logo: "https://logo.clearbit.com/sap.com" },
+  { name: "Oracle", category: "ERP & Financial Management", logo: "https://logo.clearbit.com/oracle.com" },
+  { name: "Stripe", category: "Payment Processing", logo: "https://logo.clearbit.com/stripe.com" },
+  { name: "PayPal", category: "Payment Processing", logo: "https://logo.clearbit.com/paypal.com" },
+  { name: "Bill.com", category: "Accounts Payable", logo: "https://logo.clearbit.com/bill.com" },
+  { name: "Expensify", category: "Expense Management", logo: "https://logo.clearbit.com/expensify.com" },
+  { name: "Concur", category: "Expense Management", logo: "https://logo.clearbit.com/concur.com" },
+  { name: "Tableau", category: "Financial Analytics", logo: "https://logo.clearbit.com/tableau.com" },
+  { name: "Power BI", category: "Financial Analytics", logo: "https://logo.clearbit.com/powerbi.microsoft.com" },
+  { name: "BlackLine", category: "Account Reconciliation", logo: "https://logo.clearbit.com/blackline.com" },
 ];
 
 const workflows = [
@@ -147,17 +151,21 @@ const Finance = () => (
           <p className="text-lg text-muted-foreground text-center mb-12">
             Langslide integrates with your existing financial systems and tools
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {commonApps.map((app, i) => (
-              <Card key={i} className="bg-card border-border hover:border-primary/30 transition-all duration-300 text-center">
-                <CardHeader className="pb-3">
-                  <div className="w-12 h-12 mx-auto mb-3 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
-                    <span className="text-lg font-bold text-primary">{app.name.charAt(0)}</span>
-                  </div>
-                  <CardTitle className="text-base font-semibold">{app.name}</CardTitle>
-                  <CardDescription className="text-xs">{app.category}</CardDescription>
-                </CardHeader>
-              </Card>
+              <div key={i} className="flex flex-col items-center text-center group hover:scale-110 transition-all duration-300">
+                <div className="w-20 h-20 mb-4 flex items-center justify-center group-hover:drop-shadow-lg transition-all duration-300">
+                  {app.logo ? (
+                    <img src={app.logo} alt={app.name} className="w-full h-full object-contain opacity-90 group-hover:opacity-100 group-hover:brightness-110 transition-all duration-300" />
+                  ) : (
+                    <div className="w-16 h-16 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
+                      <span className="text-2xl font-bold text-primary">{app.name.charAt(0)}</span>
+                    </div>
+                  )}
+                </div>
+                <p className="text-sm font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">{app.name}</p>
+                <p className="text-xs text-muted-foreground">{app.category}</p>
+              </div>
             ))}
           </div>
         </div>

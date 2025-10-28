@@ -5,22 +5,28 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Button } from "@/components/ui/button";
 import { Users, UserPlus, GraduationCap, Calendar, Zap, CheckCircle } from "lucide-react";
 
-const commonApps = [
-  { name: "Workday", category: "HR Management System" },
-  { name: "BambooHR", category: "HR Software" },
-  { name: "ADP", category: "Payroll & HR" },
-  { name: "Greenhouse", category: "Applicant Tracking System" },
-  { name: "Lever", category: "Recruiting Software" },
-  { name: "Zenefits", category: "HR Platform" },
-  { name: "Gusto", category: "Payroll & Benefits" },
-  { name: "Namely", category: "HR Platform" },
-  { name: "15Five", category: "Performance Management" },
-  { name: "Lattice", category: "Performance Management" },
-  { name: "Culture Amp", category: "Employee Engagement" },
-  { name: "DocuSign", category: "Document Signing" },
-  { name: "SAP SuccessFactors", category: "HR Management" },
-  { name: "Oracle HCM", category: "HR Management" },
-  { name: "Rippling", category: "HR & IT Management" },
+interface App {
+  name: string;
+  category: string;
+  logo?: string;
+}
+
+const commonApps: App[] = [
+  { name: "Workday", category: "HR Management System", logo: "https://logo.clearbit.com/workday.com" },
+  { name: "BambooHR", category: "HR Software", logo: "https://logo.clearbit.com/bamboohr.com" },
+  { name: "ADP", category: "Payroll & HR", logo: "https://logo.clearbit.com/adp.com" },
+  { name: "Greenhouse", category: "Applicant Tracking System", logo: "https://logo.clearbit.com/greenhouse.io" },
+  { name: "Lever", category: "Recruiting Software", logo: "https://logo.clearbit.com/lever.co" },
+  { name: "Zenefits", category: "HR Platform", logo: "https://logo.clearbit.com/zenefits.com" },
+  { name: "Gusto", category: "Payroll & Benefits", logo: "https://logo.clearbit.com/gusto.com" },
+  { name: "Namely", category: "HR Platform", logo: "https://logo.clearbit.com/namely.com" },
+  { name: "15Five", category: "Performance Management", logo: "https://logo.clearbit.com/15five.com" },
+  { name: "Lattice", category: "Performance Management", logo: "https://logo.clearbit.com/lattice.com" },
+  { name: "Culture Amp", category: "Employee Engagement", logo: "https://logo.clearbit.com/cultureamp.com" },
+  { name: "DocuSign", category: "Document Signing", logo: "https://logo.clearbit.com/docusign.com" },
+  { name: "SAP SuccessFactors", category: "HR Management", logo: "https://logo.clearbit.com/sapsuccessfactors.com" },
+  { name: "Oracle HCM", category: "HR Management", logo: "https://logo.clearbit.com/oracle.com" },
+  { name: "Rippling", category: "HR & IT Management", logo: "https://logo.clearbit.com/rippling.com" },
 ];
 
 const workflows = [
@@ -147,17 +153,21 @@ const HRFunction = () => (
           <p className="text-lg text-muted-foreground text-center mb-12">
             Langslide integrates with your existing HR systems and tools
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {commonApps.map((app, i) => (
-              <Card key={i} className="bg-card border-border hover:border-primary/30 transition-all duration-300 text-center">
-                <CardHeader className="pb-3">
-                  <div className="w-12 h-12 mx-auto mb-3 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
-                    <span className="text-lg font-bold text-primary">{app.name.charAt(0)}</span>
-                  </div>
-                  <CardTitle className="text-base font-semibold">{app.name}</CardTitle>
-                  <CardDescription className="text-xs">{app.category}</CardDescription>
-                </CardHeader>
-              </Card>
+              <div key={i} className="flex flex-col items-center text-center group hover:scale-110 transition-all duration-300">
+                <div className="w-20 h-20 mb-4 flex items-center justify-center group-hover:drop-shadow-lg transition-all duration-300">
+                  {app.logo ? (
+                    <img src={app.logo} alt={app.name} className="w-full h-full object-contain opacity-90 group-hover:opacity-100 group-hover:brightness-110 transition-all duration-300" />
+                  ) : (
+                    <div className="w-16 h-16 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
+                      <span className="text-2xl font-bold text-primary">{app.name.charAt(0)}</span>
+                    </div>
+                  )}
+                </div>
+                <p className="text-sm font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">{app.name}</p>
+                <p className="text-xs text-muted-foreground">{app.category}</p>
+              </div>
             ))}
           </div>
         </div>
