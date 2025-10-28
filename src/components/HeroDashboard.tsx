@@ -15,14 +15,15 @@ const HeroDashboard = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="bg-white rounded-2xl p-4 shadow-lg border-2 border-border hover:border-primary/50 transition-colors">
+          <div className="bg-white rounded-2xl p-3 shadow-lg border-2 border-border hover:border-primary/50 transition-colors">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                <Database className="w-5 h-5" />
+              <div className="w-8 h-8 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                <Database className="w-4 h-4" />
               </div>
               <div>
-                <div className="h-2 w-24 bg-foreground/10 rounded mb-2" />
-                <div className="h-2 w-16 bg-foreground/5 rounded" />
+                <div className="text-sm font-semibold text-foreground">Data Sources</div>
+                <div className="text-xs text-muted-foreground">APIs & Systems</div>
+                <div className="text-xs text-primary/60 mt-1">30+ Integrations</div>
               </div>
             </div>
           </div>
@@ -41,14 +42,15 @@ const HeroDashboard = () => {
               animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            <div className="relative bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl p-4 shadow-xl border-2 border-primary/50 backdrop-blur-sm">
+            <div className="relative bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl p-3 shadow-xl border-2 border-primary/50 backdrop-blur-sm">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-primary-foreground shadow-md">
-                  <Sparkles className="w-5 h-5" />
+                <div className="w-8 h-8 rounded-xl bg-primary flex items-center justify-center text-primary-foreground shadow-md">
+                  <Sparkles className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="h-2 w-28 bg-primary/30 rounded mb-2" />
-                  <div className="h-2 w-20 bg-primary/20 rounded" />
+                  <div className="text-sm font-semibold text-primary">AI Agents</div>
+                  <div className="text-xs text-primary/70">Processing</div>
+                  <div className="text-xs text-primary/50 mt-1">Real-time</div>
                 </div>
               </div>
             </div>
@@ -62,14 +64,15 @@ const HeroDashboard = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <div className="bg-white rounded-2xl p-4 shadow-lg border-2 border-border hover:border-primary/50 transition-colors">
+          <div className="bg-white rounded-2xl p-3 shadow-lg border-2 border-border hover:border-primary/50 transition-colors">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-600">
-                <ArrowRight className="w-5 h-5" />
+              <div className="w-8 h-8 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-600">
+                <ArrowRight className="w-4 h-4" />
               </div>
               <div>
-                <div className="h-2 w-20 bg-foreground/10 rounded mb-2" />
-                <div className="h-2 w-14 bg-foreground/5 rounded" />
+                <div className="text-sm font-semibold text-foreground">Workflow</div>
+                <div className="text-xs text-muted-foreground">Execution</div>
+                <div className="text-xs text-teal-600/70 mt-1">Automated</div>
               </div>
             </div>
           </div>
@@ -82,14 +85,15 @@ const HeroDashboard = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <div className="bg-white rounded-2xl p-4 shadow-lg border-2 border-border hover:border-primary/50 transition-colors">
+          <div className="bg-white rounded-2xl p-3 shadow-lg border-2 border-border hover:border-primary/50 transition-colors">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center text-green-600">
-                <CheckCircle className="w-5 h-5" />
+              <div className="w-8 h-8 rounded-xl bg-green-500/10 flex items-center justify-center text-green-600">
+                <CheckCircle className="w-4 h-4" />
               </div>
               <div>
-                <div className="h-2 w-20 bg-foreground/10 rounded mb-2" />
-                <div className="h-2 w-14 bg-foreground/5 rounded" />
+                <div className="text-sm font-semibold text-foreground">Complete</div>
+                <div className="text-xs text-muted-foreground">Success</div>
+                <div className="text-xs text-green-600/70 mt-1">Verified</div>
               </div>
             </div>
           </div>
@@ -97,25 +101,75 @@ const HeroDashboard = () => {
 
         {/* Node 5 - Deliver (floating) */}
         <motion.div
-          className="absolute top-[20%] left-[80%]"
+          className="absolute top-[20%] left-[72%]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: [0, 1, 1], y: [20, 0, -10, 0] }}
           transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
         >
-          <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-4 shadow-xl border-2 border-primary/30 backdrop-blur-sm">
+          <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-3 shadow-xl border-2 border-primary/30 backdrop-blur-sm">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-600">
-                <Zap className="w-5 h-5" />
+              <div className="w-8 h-8 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-600">
+                <Zap className="w-4 h-4" />
               </div>
               <div>
-                <div className="h-2 w-24 bg-foreground/10 rounded mb-2" />
-                <div className="h-2 w-16 bg-foreground/5 rounded" />
+                <div className="text-sm font-semibold text-foreground">Deliver</div>
+                <div className="text-xs text-muted-foreground">Results</div>
+                <div className="text-xs text-orange-600/70 mt-1">Instant</div>
               </div>
             </div>
           </div>
         </motion.div>
         
-        {/* Floating Metrics */}
+        {/* Connecting Lines */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
+          {/* Line from Data Sources to AI Agents */}
+          <motion.path
+            d="M 15% 25% Q 25% 15% 35% 25%"
+            stroke="hsl(var(--primary))"
+            strokeWidth="2"
+            fill="none"
+            strokeDasharray="5,5"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 2, delay: 0.5 }}
+          />
+          
+          {/* Line from AI Agents to Workflow */}
+          <motion.path
+            d="M 35% 35% Q 20% 40% 15% 50%"
+            stroke="hsl(var(--primary))"
+            strokeWidth="2"
+            fill="none"
+            strokeDasharray="5,5"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 2, delay: 1 }}
+          />
+          
+          {/* Line from Workflow to Complete */}
+          <motion.path
+            d="M 20% 55% Q 25% 50% 40% 55%"
+            stroke="hsl(var(--primary))"
+            strokeWidth="2"
+            fill="none"
+            strokeDasharray="5,5"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 2, delay: 1.5 }}
+          />
+          
+          {/* Line from Complete to Deliver */}
+          <motion.path
+            d="M 40% 50% Q 60% 30% 75% 35%"
+            stroke="hsl(var(--primary))"
+            strokeWidth="2"
+            fill="none"
+            strokeDasharray="5,5"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 2, delay: 2 }}
+          />
+        </svg>
         <div className="absolute bottom-4 left-4 right-4 flex gap-3">
           <motion.div
             className="flex-1 bg-white/80 backdrop-blur-sm rounded-xl p-3 shadow-md border"

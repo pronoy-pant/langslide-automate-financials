@@ -39,8 +39,8 @@ All colors MUST be HSL.
     --radius: 1rem;
 
     /* Gradient colors - darker blue theme matching logo */
-    --gradient-start: 210 80% 50%;
-    --gradient-end: 200 85% 45%;
+    --gradient-start: 220 90% 55%;  /* Darker blue */
+    --gradient-end: 195 85% 60%;    /* Lighter cyan-blue */
     --gradient-blue: 210 90% 40%;
     --gradient-teal: 185 70% 40%;
     --gradient-orange: 30 90% 65%;

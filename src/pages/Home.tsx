@@ -167,7 +167,7 @@ const Home = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold border border-primary/20">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 gradient-text text-sm font-semibold border border-primary/20">
                     <Sparkles className="w-4 h-4" />
                     AI-Powered Automation
                   </span>
@@ -319,7 +319,7 @@ const Home = () => {
                 </p>
 
                 <div className="inline-block">
-                  <span className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-semibold text-sm">
+                  <span className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 gradient-text font-semibold text-sm">
                     {selectedIndustry.metric}
                   </span>
                 </div>
@@ -342,7 +342,7 @@ const Home = () => {
                 <div className="pt-4">
                   <Link 
                     to={selectedIndustry.link}
-                    className="inline-flex items-center gap-2 text-primary font-semibold text-base hover:gap-3 transition-all duration-300"
+                    className="inline-flex items-center gap-2 gradient-text font-semibold text-base hover:gap-3 transition-all duration-300"
                   >
                     Learn More <ArrowRight className="w-5 h-5" />
                   </Link>
@@ -399,7 +399,6 @@ const Home = () => {
                   title: whyLangslide[0].title,
                   description: whyLangslide[0].description,
                   icon: whyLangslide[0].icon,
-                  className: "lg:col-span-2",
                 },
                 {
                   title: whyLangslide[1].title,

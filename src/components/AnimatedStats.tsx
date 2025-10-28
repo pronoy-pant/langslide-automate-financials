@@ -77,7 +77,7 @@ const StatCard = ({ stat, index, inView }: { stat: Stat; index: number; inView: 
             {inView ? Math.round(count) : 0}
           </span>
           {stat.suffix && (
-            <span className="text-2xl font-semibold text-primary">{stat.suffix}</span>
+            <span className="text-2xl font-semibold gradient-text">{stat.suffix}</span>
           )}
         </div>
         <p className="text-base text-muted-foreground">{stat.label}</p>
@@ -87,4 +87,5 @@ const StatCard = ({ stat, index, inView }: { stat: Stat; index: number; inView: 
 };
 
 export default AnimatedStats;
+
 

@@ -85,7 +85,7 @@ const ContactUs = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <div className="inline-block mb-6">
-              <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold border border-primary/20">
+              <span className="px-4 py-2 rounded-full bg-primary/10 gradient-text text-sm font-semibold border border-primary/20">
                 Get Started
               </span>
             </div>
@@ -264,7 +264,7 @@ const ContactUs = () => {
             <p className="text-xs text-muted-foreground leading-relaxed">
               Langslide uses your contact information to communicate with you about our products and services. 
               You may unsubscribe at any time. Please review our{" "}
-              <a href="#" className="text-primary hover:underline">Privacy Policy</a>
+              <a href="#" className="gradient-text hover:underline">Privacy Policy</a>
               {" "}to learn about our privacy practices, data protection measures, and unsubscribe procedures.
             </p>
           </form>

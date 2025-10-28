@@ -49,7 +49,7 @@ const InteractiveFeatureCard = ({
         </div>
 
         {/* Title */}
-        <h3 className="text-lg font-bold mb-2 text-foreground group-hover:text-primary transition-colors">
+        <h3 className="text-lg font-bold mb-2 text-foreground group-hover:gradient-text transition-all">
           {title}
         </h3>
 
@@ -60,7 +60,7 @@ const InteractiveFeatureCard = ({
 
         {/* Metrics badge */}
         {metrics && (
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-semibold text-xs mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 gradient-text font-semibold text-xs mb-4">
             {metrics}
           </div>
         )}
@@ -82,7 +82,7 @@ const InteractiveFeatureCard = ({
         {/* Expand indicator */}
         {expandedContent && (
           <motion.div
-            className="flex items-center gap-2 text-primary text-sm font-medium mt-4"
+            className="flex items-center gap-2 gradient-text text-sm font-medium mt-4"
             animate={isExpanded ? { opacity: 1 } : { opacity: 0.7 }}
           >
             <span>{isExpanded ? "Show Less" : "Learn More"}</span>
@@ -103,4 +103,5 @@ const InteractiveFeatureCard = ({
 };
 
 export default InteractiveFeatureCard;
+
 

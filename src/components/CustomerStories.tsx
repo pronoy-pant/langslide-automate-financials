@@ -110,12 +110,12 @@ export const CustomerStories = () => {
                   <div className="mb-6">
                     <div className="inline-flex items-center gap-2 px-4 py-3 rounded-2xl bg-primary/10 border-2 border-primary/20 group-hover:bg-primary/15 group-hover:border-primary/30 transition-all">
                       <TrendingUp className="w-5 h-5 text-primary" />
-                      <span className="text-primary font-bold text-lg">{story.metric}</span>
+                      <span className="gradient-text font-bold text-lg">{story.metric}</span>
                     </div>
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                  <h3 className="text-xl font-bold mb-3 text-foreground group-hover:gradient-text transition-all line-clamp-2">
                     {story.title}
                   </h3>
 

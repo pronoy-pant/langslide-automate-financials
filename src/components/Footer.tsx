@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/langslide-logo.png";
 
 const functionSolutions = [
   { name: "Sales & Revenue Operations", path: "/functions/sales" },
@@ -17,8 +18,8 @@ const companySections = [
   {
     title: "COMPANY",
     links: [
-      { name: "About Us", path: "#" },
-      { name: "Careers", path: "#" },
+      { name: "About Us", path: "/about" },
+      { name: "Careers", path: "/careers" },
       { name: "Support", path: "mailto:hello@langslide.com" }
     ]
   },
@@ -40,9 +41,11 @@ export const Footer = () => {
             {/* Left Side - Branding + Contact */}
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent whitespace-nowrap">
-                  Langslide
-                </span>
+                <img 
+                  src={logo} 
+                  alt="Langslide Logo" 
+                  className="h-10 w-auto"
+                />
               </div>
               <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                 AI-powered workflow automation for modern enterprises.

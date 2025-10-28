@@ -60,7 +60,7 @@ export const FAQ = () => {
               </h2>
               <p className="text-base text-muted-foreground leading-relaxed">
                 Common questions answered. Can't find what you're looking for?{" "}
-                <Link to="/contact-us" className="text-primary font-semibold hover:underline">
+                <Link to="/contact-us" className="gradient-text font-semibold hover:underline">
                   Contact us
                 </Link>
                 .
@@ -78,7 +78,7 @@ export const FAQ = () => {
                       value={`item-${index}`}
                       className="border border-border rounded-xl px-6 bg-white hover:border-primary/50 transition-all duration-300 group"
                     >
-                      <AccordionTrigger className="text-left text-base font-semibold hover:no-underline py-6 group-hover:text-primary transition-colors">
+                      <AccordionTrigger className="text-left text-base font-semibold hover:no-underline py-6 group-hover:gradient-text transition-all">
                         <div className="flex items-center gap-4">
                           <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/15 transition-colors">
                             <Icon className="w-5 h-5 text-primary" />

@@ -139,7 +139,7 @@ const Privacy = () => {
               <h2 className="text-3xl font-bold mb-6 text-foreground">12. Contact Us</h2>
               <p className="text-muted-foreground leading-relaxed">
                 If you have questions or concerns about this Privacy Policy or our data practices, please contact us at:{" "}
-                <a href="mailto:hello@langslide.com" className="text-primary hover:underline">
+                <a href="mailto:hello@langslide.com" className="gradient-text hover:underline">
                   hello@langslide.com
                 </a>
               </p>

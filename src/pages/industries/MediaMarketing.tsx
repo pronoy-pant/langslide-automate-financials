@@ -3,6 +3,11 @@ import Navigation from "@/components/Navigation";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CTA } from "@/components/ui/call-to-action";
+import { FAQ } from "@/components/FAQ";
+import { Footer } from "@/components/Footer";
+import AutoLogoCarousel from "@/components/AutoLogoCarousel";
+import FunctionHeroDashboard from "@/components/FunctionHeroDashboard";
+import { motion } from "framer-motion";
 import {
   Target,
   Video,
@@ -23,7 +28,9 @@ import {
   CheckCircle,
   Sparkles,
   Eye,
-  MousePointerClick
+  MousePointerClick,
+  ArrowRight,
+  Clock
 } from "lucide-react";
 
 const workflows = [
@@ -215,9 +222,42 @@ const workflows = [
   }
 ];
 
+const mediaMarketingApps = [
+  { name: "Google", category: "Advertising", logo: "https://logo.clearbit.com/google.com" },
+  { name: "Facebook", category: "Social Media", logo: "https://logo.clearbit.com/facebook.com" },
+  { name: "Instagram", category: "Social Media", logo: "https://logo.clearbit.com/instagram.com" },
+  { name: "Twitter", category: "Social Media", logo: "https://logo.clearbit.com/twitter.com" },
+  { name: "LinkedIn", category: "Professional", logo: "https://logo.clearbit.com/linkedin.com" },
+  { name: "TikTok", category: "Social Media", logo: "https://logo.clearbit.com/tiktok.com" },
+  { name: "YouTube", category: "Video Platform", logo: "https://logo.clearbit.com/youtube.com" },
+  { name: "Snapchat", category: "Social Media", logo: "https://logo.clearbit.com/snapchat.com" },
+  { name: "Pinterest", category: "Visual Discovery", logo: "https://logo.clearbit.com/pinterest.com" },
+  { name: "Reddit", category: "Community", logo: "https://logo.clearbit.com/reddit.com" },
+  { name: "HubSpot", category: "Marketing Automation", logo: "https://logo.clearbit.com/hubspot.com" },
+  { name: "Salesforce", category: "CRM", logo: "https://logo.clearbit.com/salesforce.com" },
+  { name: "Mailchimp", category: "Email Marketing", logo: "https://logo.clearbit.com/mailchimp.com" },
+  { name: "Constant Contact", category: "Email Marketing", logo: "https://logo.clearbit.com/constantcontact.com" },
+  { name: "SendGrid", category: "Email Delivery", logo: "https://logo.clearbit.com/sendgrid.com" },
+  { name: "Hootsuite", category: "Social Management", logo: "https://logo.clearbit.com/hootsuite.com" },
+  { name: "Buffer", category: "Social Media", logo: "https://logo.clearbit.com/buffer.com" },
+  { name: "Sprout Social", category: "Social Media", logo: "https://logo.clearbit.com/sproutsocial.com" },
+  { name: "Canva", category: "Design", logo: "https://logo.clearbit.com/canva.com" },
+  { name: "Adobe Creative Cloud", category: "Design", logo: "https://logo.clearbit.com/adobe.com" },
+  { name: "Figma", category: "Design", logo: "https://logo.clearbit.com/figma.com" },
+  { name: "Sketch", category: "Design", logo: "https://logo.clearbit.com/sketch.com" },
+  { name: "WordPress", category: "CMS", logo: "https://logo.clearbit.com/wordpress.com" },
+  { name: "Squarespace", category: "Website Builder", logo: "https://logo.clearbit.com/squarespace.com" },
+  { name: "Wix", category: "Website Builder", logo: "https://logo.clearbit.com/wix.com" },
+  { name: "Shopify", category: "E-commerce", logo: "https://logo.clearbit.com/shopify.com" },
+  { name: "WooCommerce", category: "E-commerce", logo: "https://logo.clearbit.com/woocommerce.com" },
+  { name: "Magento", category: "E-commerce", logo: "https://logo.clearbit.com/magento.com" },
+  { name: "BigCommerce", category: "E-commerce", logo: "https://logo.clearbit.com/bigcommerce.com" },
+  { name: "SEMrush", category: "SEO", logo: "https://logo.clearbit.com/semrush.com" }
+];
+
 const MediaMarketing = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, hsl(220 20% 96%), hsl(210 25% 94%), hsl(200 20% 95%))' }}>
       <Navigation />
       
       {/* Hero Section */}
@@ -304,6 +344,30 @@ const MediaMarketing = () => {
           </div>
         </div>
       </section>
+
+      {/* Integration Focus */}
+      <section className="py-16 md:py-20 bg-white border-y border-border">
+        <div className="container mx-auto px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">
+                Trusted by Leading Marketing Teams
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Integrates with{" "}
+                <span className="gradient-text">your marketing stack</span>
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Connect seamlessly with 30+ social media, advertising, and design platforms
+              </p>
+            </div>
+            <AutoLogoCarousel apps={mediaMarketingApps} rows={3} speed={40} />
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* CTA Section */}
       <CTA 
