@@ -108,14 +108,14 @@ const FunctionHeroDashboard = ({ icon: MainIcon, workflows, metrics }: FunctionH
         })}
 
         {/* Connecting Lines */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
+        <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }} viewBox="0 0 100 100" preserveAspectRatio="none">
           {/* Line from AI Agents to Active Processing */}
           <motion.path
-            d="M 15% 20% Q 30% 15% 50% 20%"
+            d="M 15 20 Q 30 15 50 20"
             stroke="hsl(var(--primary))"
-            strokeWidth="2"
+            strokeWidth="0.5"
             fill="none"
-            strokeDasharray="5,5"
+            strokeDasharray="1,1"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 2, delay: 0.5 }}
@@ -123,11 +123,11 @@ const FunctionHeroDashboard = ({ icon: MainIcon, workflows, metrics }: FunctionH
           
           {/* Line from Active Processing to Workflow 1 */}
           <motion.path
-            d="M 50% 30% Q 30% 50% 15% 50%"
+            d="M 50 30 Q 30 50 15 50"
             stroke="hsl(var(--primary))"
-            strokeWidth="2"
+            strokeWidth="0.5"
             fill="none"
-            strokeDasharray="5,5"
+            strokeDasharray="1,1"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 2, delay: 1 }}
@@ -135,11 +135,11 @@ const FunctionHeroDashboard = ({ icon: MainIcon, workflows, metrics }: FunctionH
           
           {/* Line from Active Processing to Workflow 2 */}
           <motion.path
-            d="M 50% 30% Q 45% 50% 50% 50%"
+            d="M 50 30 Q 45 50 50 50"
             stroke="hsl(var(--primary))"
-            strokeWidth="2"
+            strokeWidth="0.5"
             fill="none"
-            strokeDasharray="5,5"
+            strokeDasharray="1,1"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 2, delay: 1.2 }}
@@ -147,11 +147,11 @@ const FunctionHeroDashboard = ({ icon: MainIcon, workflows, metrics }: FunctionH
           
           {/* Line from Workflow 1 to Workflow 3 */}
           <motion.path
-            d="M 15% 60% Q 15% 80% 15% 80%"
+            d="M 15 60 Q 15 80 15 80"
             stroke="hsl(var(--primary))"
-            strokeWidth="2"
+            strokeWidth="0.5"
             fill="none"
-            strokeDasharray="5,5"
+            strokeDasharray="1,1"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 2, delay: 1.5 }}
@@ -159,11 +159,11 @@ const FunctionHeroDashboard = ({ icon: MainIcon, workflows, metrics }: FunctionH
           
           {/* Line from Workflow 2 to Workflow 4 */}
           <motion.path
-            d="M 50% 60% Q 50% 80% 50% 80%"
+            d="M 50 60 Q 50 80 50 80"
             stroke="hsl(var(--primary))"
-            strokeWidth="2"
+            strokeWidth="0.5"
             fill="none"
-            strokeDasharray="5,5"
+            strokeDasharray="1,1"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 2, delay: 1.7 }}

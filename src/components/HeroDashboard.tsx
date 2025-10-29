@@ -121,14 +121,14 @@ const HeroDashboard = () => {
         </motion.div>
         
         {/* Connecting Lines */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
+        <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }} viewBox="0 0 100 100" preserveAspectRatio="none">
           {/* Line from Data Sources to AI Agents */}
           <motion.path
-            d="M 15% 25% Q 25% 15% 35% 25%"
+            d="M 15 25 Q 25 15 35 25"
             stroke="hsl(var(--primary))"
-            strokeWidth="2"
+            strokeWidth="0.5"
             fill="none"
-            strokeDasharray="5,5"
+            strokeDasharray="1,1"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 2, delay: 0.5 }}
@@ -136,11 +136,11 @@ const HeroDashboard = () => {
           
           {/* Line from AI Agents to Workflow */}
           <motion.path
-            d="M 35% 35% Q 20% 40% 15% 50%"
+            d="M 35 35 Q 20 40 15 50"
             stroke="hsl(var(--primary))"
-            strokeWidth="2"
+            strokeWidth="0.5"
             fill="none"
-            strokeDasharray="5,5"
+            strokeDasharray="1,1"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 2, delay: 1 }}
@@ -148,11 +148,11 @@ const HeroDashboard = () => {
           
           {/* Line from Workflow to Complete */}
           <motion.path
-            d="M 20% 55% Q 25% 50% 40% 55%"
+            d="M 20 55 Q 25 50 40 55"
             stroke="hsl(var(--primary))"
-            strokeWidth="2"
+            strokeWidth="0.5"
             fill="none"
-            strokeDasharray="5,5"
+            strokeDasharray="1,1"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 2, delay: 1.5 }}
@@ -160,11 +160,11 @@ const HeroDashboard = () => {
           
           {/* Line from Complete to Deliver */}
           <motion.path
-            d="M 40% 50% Q 60% 30% 75% 35%"
+            d="M 40 50 Q 60 30 75 35"
             stroke="hsl(var(--primary))"
-            strokeWidth="2"
+            strokeWidth="0.5"
             fill="none"
-            strokeDasharray="5,5"
+            strokeDasharray="1,1"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 2, delay: 2 }}

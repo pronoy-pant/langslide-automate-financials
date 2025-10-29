@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import Home from "./pages/Home";
 import FinancialServices from "./pages/industries/FinancialServices";
 import Healthcare from "./pages/industries/Healthcare";
@@ -16,6 +17,8 @@ import DataExtraction from "./pages/use-cases/DataExtraction";
 import CustomerSupport from "./pages/use-cases/CustomerSupport";
 import ComplianceMonitoring from "./pages/use-cases/ComplianceMonitoring";
 import UseCases from "./pages/UseCases";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import ContactUs from "./pages/ContactUs";
 import About from "./pages/company/About";
 import Careers from "./pages/company/Careers";
@@ -26,11 +29,12 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
+  <HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/industries/financial-services" element={<FinancialServices />} />
@@ -45,6 +49,8 @@ const App = () => (
           <Route path="/use-cases/customer-support" element={<CustomerSupport />} />
           <Route path="/use-cases/compliance-monitoring" element={<ComplianceMonitoring />} />
           <Route path="/use-cases" element={<UseCases />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/about" element={<About />} />
           <Route path="/careers" element={<Careers />} />
@@ -57,6 +63,7 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
+  </HelmetProvider>
 );
 
 export default App;

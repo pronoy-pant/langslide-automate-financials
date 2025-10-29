@@ -20,6 +20,7 @@ const companySections = [
     links: [
       { name: "About Us", path: "/about" },
       { name: "Careers", path: "/careers" },
+      { name: "Blog", path: "/blog" },
       { name: "Support", path: "mailto:hello@langslide.com" }
     ]
   },

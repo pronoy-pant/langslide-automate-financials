@@ -146,6 +146,10 @@ const Navigation = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
+            <Link to="/blog" className="px-5 py-2.5 rounded-full text-foreground hover:bg-secondary transition-all font-medium">
+              Blog
+            </Link>
+
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 px-5 py-2.5 rounded-full text-foreground hover:bg-secondary transition-all font-medium">
                 Resources <ChevronDown className="w-4 h-4" />
